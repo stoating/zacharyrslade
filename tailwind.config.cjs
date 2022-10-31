@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'circle': "url('/img/home/circle.png')",
-        'image' : "url('/img/home/image.png')",
+        'circle': "url('/images/home/circle.png')",
+        'image' : "url('/images/home/image.png')",
       },
       backgroundSize: {
         '12vmin': '12vmin',

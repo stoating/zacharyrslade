@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { Header } from "../includes/header";
-import { NavigationBar } from "../includes/navigation-bar";
+import { Header } from "../../public/includes/header";
+import { NavigationBar } from "../../public/includes/navigation-bar";
 
 const Home: NextPage = () => {
 

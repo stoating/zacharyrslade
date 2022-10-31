@@ -1,12 +1,12 @@
-const NavigationBarItems = [
-  {id: 1, text: "About", ref: "/about"},
-  {id: 2, text: "Resume", ref: "/resume"},
-  {id: 3, text: "Home", ref: "/"},
-  {id: 4, text: "Stoating", ref: "/stoating"},
-  {id: 5, text: "Contact", ref: "/contact"},
-]
+import React from 'react';
+import { NavigationItems } from "../defines/navigation-items";
 
 export const NavigationBar = () => {
+
+  const NavigationBarItems = NavigationItems.filter(function (NavigationItems) {
+    return NavigationItems.target !=="_blank";
+  });
+
   return (
     <div className="flex items-center ring ring-black">
       {NavigationBarItems.map(item => (
