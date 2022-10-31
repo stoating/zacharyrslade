@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavigationItems } from "../defines/navigation-items";
 
 export const NavigationBar = () => {

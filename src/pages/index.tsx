@@ -43,7 +43,7 @@ const Home: NextPage = () => {
             </div>
           ))}
         </div>
-        <div id="menu-background-pattern" className="h-screen w-screen bg-12vmin bg-circle absolute z-0 peer-hover/menu-item:bg-10vmin peer-hover/menu-item:opacity-100 transition-all ease-out duration-700"></div>
+        <div id="menu-background-pattern" className="h-screen w-screen bg-12vmin bg-circle absolute z-0 peer-hover/menu-item:bg-9vmin peer-hover/menu-item:opacity-100 transition-all ease-out duration-700"></div>
         <div id="menu-background-image" className="h-screen w-screen bg-cover bg-image absolute z-0 peer-hover/menu-item:opacity-20 transition-all ease-out duration-700"></div>
       </div>
     </>

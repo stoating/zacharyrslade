@@ -9,7 +9,7 @@ module.exports = {
       },
       backgroundSize: {
         '12vmin': '12vmin',
-        '10vmin': '10vmin',
+        '9vmin': '9vmin',
         '110vmax': '110vmax',
       }
     },
