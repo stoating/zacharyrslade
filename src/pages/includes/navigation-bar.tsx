@@ -1,10 +1,10 @@
-  const NavigationBarItems = [
-    {id: 1, text: "Home", ref: "/"},
-    {id: 2, text: "About", ref: "/about"},
-    {id: 3, text: "Resume", ref: "/resume"},
-    {id: 4, text: "Stoating", ref: "/stoating"},
-    {id: 5, text: "Contact", ref: "/contact"},
-  ]
+const NavigationBarItems = [
+  {id: 1, text: "Home", ref: "/"},
+  {id: 2, text: "About", ref: "/about"},
+  {id: 3, text: "Resume", ref: "/resume"},
+  {id: 4, text: "Stoating", ref: "/stoating"},
+  {id: 5, text: "Contact", ref: "/contact"},
+]
 
 export function NavigationBar() {
   return (
@@ -16,4 +16,4 @@ export function NavigationBar() {
       ))}
     </div>
   );
-};
+}

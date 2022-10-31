@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 export function Header() {
   return (
@@ -11,4 +11,4 @@ export function Header() {
     <link rel="manifest" href="/img/icons/site.webmanifest" />
   </Head>
   );
-};
+}
