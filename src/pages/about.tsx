@@ -6,11 +6,11 @@ import { NavigationBar } from "../../public/includes/navigation-bar";
 const Home: NextPage = () => {
   return (
     <>
-      <div className="flex h-screen flex-col justify-between">
+      <div className="flex h-screen flex-col justify-between ring ring-green-500">
         <Header />
         <NavigationBar />
         <main>
-          <div>about</div>
+          <div className="flex mx-auto">about</div>
         </main>
         <Footer />
       </div>

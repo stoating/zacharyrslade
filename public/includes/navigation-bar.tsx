@@ -7,9 +7,9 @@ export const NavigationBar = () => {
   });
 
   return (
-    <div className="flex items-center ring ring-black">
+    <div className="flex ring ring-black">
       {NavigationBarItems.map(item => (
-        <div key={item.id} className="mx-auto block ring ring-blue-600">
+        <div key={item.id} className="mx-auto block ring ring-red-600">
           <a href={item.ref}>{item.text}</a>
         </div>
       ))}
