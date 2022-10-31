@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Header } from "./includes/header";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 
@@ -7,11 +8,13 @@ const Home: NextPage = () => {
   //const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   const MenuItems = [
-    {id: 1, text: "About", ref: "/"},
-    {id: 2, text: "Resume", ref: "/"},
-    {id: 3, text: "LinkedIn", ref: "/"},
-    {id: 4, text: "GitHub", ref: "/"},
-    {id: 5, text: "Stoating", ref: "/"},
+    {id: 1, text: "About", ref: "/about"},
+    {id: 2, text: "Resume", ref: "/resume"},
+    {id: 3, text: "LinkedIn", ref: "https://www.linkedin.com/in/zacharyslade1"},
+    {id: 4, text: "Xing", ref: "https://www.xing.com/profile/Zachary_Slade"},
+    {id: 5, text: "GitHub", ref: "https://github.com/stoating"},
+    {id: 6, text: "Stoating", ref: "/stoating"},
+    {id: 7, text: "Contact", ref: "/contact"},
   ]
 
   const handleMenuItemMouseOver = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -20,7 +23,7 @@ const Home: NextPage = () => {
     const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
     const menuBackgroundPattern = document.getElementById("menu-background-pattern");
-    menuBackgroundPattern!.style.backgroundPositionX = myOffset + "%";
+    menuBackgroundPattern!.style.backgroundPositionX = -1*myOffset + "%";
 
     const menuBackgroundImage = document.getElementById("menu-background-image");
     menuBackgroundImage!.style.backgroundPositionX = myOffset + "%";
@@ -28,14 +31,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Zachary Slade</title>
-        <meta name="description" content="Welcome to my personal page" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png" />
-        <link rel="manifest" href="/img/icons/site.webmanifest" />
-      </Head>
+      <Header />
       {/*
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
         <div className="flex w-full items-center justify-center pt-6 text-2xl text-blue-500">
