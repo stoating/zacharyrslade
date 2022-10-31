@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
+  //const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   const MenuItems = [
     {id: 1, text: "Home"      , ref: "/"},
@@ -14,9 +14,9 @@ const Home: NextPage = () => {
   ]
 
   const handleMenuItemMouseOver = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    let selectedAnchorNumber = parseInt(event.currentTarget.id.split("-").pop() as string);
-    let myOffsetStepSize = 100/MenuItems.length;
-    let myOffset = selectedAnchorNumber * myOffsetStepSize;
+    const selectedAnchorNumber = parseInt(event.currentTarget.id.split("-").pop() as string);
+    const myOffsetStepSize = 100/MenuItems.length;
+    const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
     const menuBackgroundPattern = document.getElementById("menu-background-pattern");
     menuBackgroundPattern!.style.backgroundPositionX = myOffset + "%";
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
       */}
       <div id="menu" className="mx-auto flex min-h-screen items-center bg-gray-700">
         <div id="menu-items" className="peer/menu-item hover:opacity-100 z-10">
-          {MenuItems.map((item) => (
+          {MenuItems.map(item => (
             <div id={"menu-item-div-"+item.id} className="group/item">
               <a id={"menu-item-"+item.id} className="text-white text-5xl font-sans block opacity-80 group-hover/item:opacity-100 p-1 m-1" href={item.ref} onMouseOver={handleMenuItemMouseOver}>{item.text}</a>
             </div>
@@ -60,25 +60,25 @@ const Home: NextPage = () => {
 
 export default Home;
 
-const AuthShowcase: React.FC = () => {
-  const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery();
-  const { data: sessionData }   = useSession();
+// const AuthShowcase: React.FC = () => {
+//   const { data: secretMessage } = trpc.auth.getSecretMessage.useQuery();
+//   const { data: sessionData }   = useSession();
 
-  return (
-    <div className="flex flex-col items-center justify-center gap-2">
-      {sessionData && (
-        <p className="text-2xl text-blue-500">
-          Logged in as {sessionData?.user?.name}
-        </p>
-      )}
-      {secretMessage && (
-        <p className="text-2xl text-blue-500">{secretMessage}</p>
-      )}
-      <button
-        className="rounded-md border border-black bg-violet-50 px-4 py-2 text-xl shadow-lg hover:bg-violet-100"
-        onClick={sessionData ? () => signOut() : () => signIn()}>
-        {sessionData ? "Sign out" : "Sign in"}
-      </button>
-    </div>
-  );
-};
+//   return (
+//     <div className="flex flex-col items-center justify-center gap-2">
+//       {sessionData && (
+//         <p className="text-2xl text-blue-500">
+//           Logged in as {sessionData?.user?.name}
+//         </p>
+//       )}
+//       {secretMessage && (
+//         <p className="text-2xl text-blue-500">{secretMessage}</p>
+//       )}
+//       <button
+//         className="rounded-md border border-black bg-violet-50 px-4 py-2 text-xl shadow-lg hover:bg-violet-100"
+//         onClick={sessionData ? () => signOut() : () => signIn()}>
+//         {sessionData ? "Sign out" : "Sign in"}
+//       </button>
+//     </div>
+//   );
+// };
