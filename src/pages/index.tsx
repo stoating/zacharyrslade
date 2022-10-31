@@ -7,10 +7,11 @@ const Home: NextPage = () => {
   //const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
   const MenuItems = [
-    {id: 1, text: "Home"      , ref: "/"},
-    {id: 2, text: "Shop"      , ref: "/"},
-    {id: 3, text: "About"     , ref: "/"},
-    {id: 4, text: "Contact Us", ref: "/"},
+    {id: 1, text: "About", ref: "/"},
+    {id: 2, text: "Resume", ref: "/"},
+    {id: 3, text: "LinkedIn", ref: "/"},
+    {id: 4, text: "GitHub", ref: "/"},
+    {id: 5, text: "Stoating", ref: "/"},
   ]
 
   const handleMenuItemMouseOver = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -43,11 +44,11 @@ const Home: NextPage = () => {
         <AuthShowcase />
       </main>
       */}
-      <div id="menu" className="mx-auto flex min-h-screen items-center bg-gray-700">
-        <div id="menu-items" className="peer/menu-item hover:opacity-100 z-10">
+      <div id="menu" className="mx-auto flex min-h-screen items-center bg-gray-700 ring ring-red-700">
+        <div id="menu-items" className="mx-auto peer/menu-item hover:opacity-100 z-10 ring ring-black">
           {MenuItems.map(item => (
-            <div key={item.id} id={"menu-item-div-"+item.id} className="group/item">
-              <a id={"menu-item-"+item.id} className="text-white text-5xl font-sans block opacity-80 group-hover/item:opacity-100 p-1 m-1" href={item.ref} onMouseOver={handleMenuItemMouseOver}>{item.text}</a>
+            <div key={item.id} id={"menu-item-div-"+item.id} className="inline-block group/item opacity-70 hover:opacity-100 ring ring-red-900">
+              <a id={"menu-item-"+item.id} className="text-white text-5xl font-sans inline-block opacity-80 group-hover/item:opacity-100 p-1 m-1 ring ring-green-900" href={item.ref} onMouseOver={handleMenuItemMouseOver}>{item.text}</a>
             </div>
           ))}
         </div>
