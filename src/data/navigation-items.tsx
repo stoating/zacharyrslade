@@ -3,23 +3,22 @@ import {FaLinkedin} from 'react-icons/fa';
 import {FaGithub} from 'react-icons/fa';
 
 export const NavigationItems = [
-    {id: 1, text: "Home"    , ref: "/"},
     {
-        id: 2,
+        id: 1,
         text: "Xing",
         ref: "https://www.xing.com/profile/Zachary_Slade",
         target: "_blank",
         icon: <FaLinkedin/>,
     },
     {
-        id: 3,
+        id: 2,
         text: "LinkedIn",
         ref: "https://www.linkedin.com/in/zacharyslade1",
         target: "_blank",
         icon: <FaXingSquare/>,
     },
     {
-        id: 4,
+        id: 3,
         text: "GitHub",
         ref: "https://github.com/stoating",
         target: "_blank",

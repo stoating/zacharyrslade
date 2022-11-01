@@ -10,35 +10,6 @@ export const ProfessionalProfiles = () => {
       <div className="mx-auto flex">professional profiles</div>
       <div className="mx-auto flex">professional profiles</div>
       <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
-      <div className="mx-auto flex">professional profiles</div>
     </div>
   );
 };

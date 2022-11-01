@@ -13,32 +13,6 @@ export const Resume = () => {
       <div className="mx-auto flex">resume</div>
       <div className="mx-auto flex">resume</div>
       <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
-      <div className="mx-auto flex">resume</div>
     </div>
   );
 };

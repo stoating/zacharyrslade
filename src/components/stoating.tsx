@@ -12,33 +12,6 @@ export const Stoating = () => {
       <div className="mx-auto flex">stoating</div>
       <div className="mx-auto flex">stoating</div>
       <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
-      <div className="mx-auto flex">stoating</div>
     </div>
   );
 };
