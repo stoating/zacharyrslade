@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/head";
+import { Header } from "../components/header";
 import { NavigationItems } from "../data/navigation-items";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";

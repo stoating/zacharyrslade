@@ -11,7 +11,7 @@ export const Footer = () => {
   });
 
   return (
-    <footer className="z-20 flex bg-slate-200 ring ring-black">
+    <footer className="z-20 flex bg-slate-600 ring ring-black">
       <div className="mx-auto ring ring-red-500">left</div>
       <div className="mx-auto ring ring-green-500">
         {InternalLinkItems.map((item) => (

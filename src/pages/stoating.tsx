@@ -1,15 +1,16 @@
 import type { NextPage } from "next";
-import { Header } from "../components/head";
+import { Header } from "../components/header";
+import Spacer from "../components/spacer";
 import { Footer } from "../components/footer";
 import { NavigationBar } from "../components/navigation-bar";
 
 const Stoating: NextPage = () => {
   return (
     <>
-      <div className="flex h-screen flex-col justify-between -z-10 opacity-100 ring ring-green-500">
-        <Header />
+      <Header />
+      <div className="-z-10 m-0 flex min-h-screen flex-col">
         <NavigationBar />
-        <main className=" bg-slate-400 relative">
+        <main className=" relative bg-slate-400">
           <div>about</div>
           <div>about</div>
           <div>about</div>
@@ -19,6 +20,7 @@ const Stoating: NextPage = () => {
           <div>about</div>
           <div>about</div>
         </main>
+        <Spacer bgColor="bg-slate-400" />
         <Footer />
       </div>
     </>
