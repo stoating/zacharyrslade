@@ -1,4 +1,4 @@
-import { NavigationItems } from "../defines/navigation-items";
+import { NavigationItems } from "../data/navigation-items";
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
@@ -11,7 +11,7 @@ export const Footer = () => {
   });
 
   return (
-    <footer className="flex ring ring-black">
+    <footer className="z-20 flex bg-slate-200 ring ring-black">
       <div className="mx-auto ring ring-red-500">left</div>
       <div className="mx-auto ring ring-green-500">
         {InternalLinkItems.map((item) => (
@@ -21,20 +21,19 @@ export const Footer = () => {
         ))}
       </div>
       <div className="mx-auto ring ring-blue-500">
-        <div className="flex ring">Contact</div>
+        <div className="flex ring">Get in touch:</div>
+      </div>
+      <div className="mx-auto ring">
         <div className="flex ring">
-          <i className="icon ring">
+          <i className="ring">
             <MdEmail />
           </i>
-          zack.slade@gmail.com
         </div>
-        <div className="flex ring">
-          {ExternalLinkItems.map((item) => (
-            <div key={item.id} className="mx-auto ring">
-              <a href={item.ref}>{item.icon}</a>
-            </div>
-          ))}
-        </div>
+        {ExternalLinkItems.map((item) => (
+          <div key={item.id} className="mx-auto ring">
+            <a href={item.ref}>{item.icon}</a>
+          </div>
+        ))}
       </div>
     </footer>
   );

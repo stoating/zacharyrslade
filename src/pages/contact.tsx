@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
-import { Header } from "../../public/includes/header";
-import { Footer } from "../../public/includes/footer";
-import { NavigationBar } from "../../public/includes/navigation-bar";
+import { Header } from "../components/head";
+import { Footer } from "../components/footer";
+import { NavigationBar } from "../components/navigation-bar";
 
-const Home: NextPage = () => {
+const Contact: NextPage = () => {
   return (
     <>
-      <div className="flex h-screen flex-col justify-between">
+      <div className="flex h-screen flex-col justify-between -z-10 opacity-100 ring ring-green-500">
         <Header />
         <NavigationBar />
-        <main>
+        <main className="bg-slate-400 relative">
           <div>contact</div>
         </main>
         <Footer />
@@ -18,4 +18,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Contact;
