@@ -26,34 +26,6 @@ const About: NextPage = () => {
             <div className="mx-auto flex">about</div>
             <div className="mx-auto flex">about</div>
             <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
-            <div className="mx-auto flex">about</div>
           </div>
         </main>
         <Spacer bgColor="bg-slate-400" />

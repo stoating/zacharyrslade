@@ -29,4 +29,5 @@ export const NavigationItems = [
     },
     {id: 7, text: "Stoating", ref: "/stoating"},
     {id: 8, text: "Contact" , ref: "/contact"},
+    {id: 9, text: "OnePager" , ref: "/onepage"},
 ]

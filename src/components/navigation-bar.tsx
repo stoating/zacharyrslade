@@ -6,7 +6,7 @@ export const NavigationBar = () => {
   });
 
   return (
-    <div className="z-20 flex bg-slate-500 ring ring-black">
+    <div className="fixed top-0 z-20 flex w-full bg-slate-500 ring ring-black">
       {NavigationBarItems.map((item) => (
         <div
           key={item.id}
