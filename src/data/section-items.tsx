@@ -1,4 +1,4 @@
-export const Sections = {
+export const SectionItems = {
     Stoating: 'stoating',
     Contact: 'contact',
     About: 'about',
