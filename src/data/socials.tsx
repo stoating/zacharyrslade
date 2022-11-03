@@ -4,6 +4,7 @@ import {FaGithub} from 'react-icons/fa';
 
 export const Socials = [
     {
+        id: 1,
         text: "LinkedIn",
         ref: "https://www.linkedin.com/in/zacharyslade1",
         icon: <FaXingSquare/>,
@@ -11,6 +12,7 @@ export const Socials = [
         for: ['zack'],
     },
     {
+        id: 2,
         text: "Xing",
         ref: "https://www.xing.com/profile/Zachary_Slade",
         icon: <FaLinkedin/>,
@@ -18,6 +20,7 @@ export const Socials = [
         for: ['zack'],
     },
     {
+        id: 3,
         text: "GitHub",
         ref: "https://github.com/stoating",
         icon: <FaGithub/>,
@@ -25,6 +28,7 @@ export const Socials = [
         for: ['zack', 'stoating'],
     },
     {
+        id: 4,
         text: "Facebook",
         ref: "https://github.com/stoating",
         icon: <FaGithub/>,
@@ -32,6 +36,7 @@ export const Socials = [
         for: ['zack'],
     },
     {
+        id: 5,
         text: "Instagram - Personal",
         ref: "https://github.com/stoating",
         icon: <FaGithub/>,
@@ -39,6 +44,7 @@ export const Socials = [
         for: ['zack'],
     },
     {
+        id: 6,
         text: "Instagram - Professional",
         ref: "https://github.com/stoating",
         icon: <FaGithub/>,
@@ -46,6 +52,7 @@ export const Socials = [
         for: ['stoating'],
     },
     {
+        id: 7,
         text: "GitHub",
         ref: "https://github.com/stoating",
         icon: <FaGithub/>,

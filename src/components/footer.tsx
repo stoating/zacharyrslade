@@ -15,7 +15,7 @@ export const Footer = () => {
       <div className="mx-auto ring ring-red-500">left</div>
       <div className="mx-auto ring ring-green-500">
         {InternalLinkItems.map((item) => (
-          <div className="mx-auto ring">
+          <div key={item.id} className="mx-auto ring">
             <a href={item.ref}>{item.text}</a>
           </div>
         ))}
@@ -30,7 +30,7 @@ export const Footer = () => {
           </i>
         </div>
         {ExternalLinkItems.map((item) => (
-          <div className="mx-auto ring">
+          <div key={item.id} className="mx-auto ring">
             <a href={item.ref}>{item.icon}</a>
           </div>
         ))}
