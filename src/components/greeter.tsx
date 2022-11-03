@@ -59,6 +59,7 @@ export const Greeter = () => {
                 id={"menu-item-" + item.id}
                 className="m-1 inline-block p-1 font-sans text-5xl text-white opacity-80 ring ring-green-900 group-hover/item:opacity-100"
                 target="_blank"
+                rel="noreferrer"
                 href={item.ref}
                 onMouseOver={handleMenuItemMouseOver}
               >
