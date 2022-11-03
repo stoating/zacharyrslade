@@ -51,11 +51,12 @@ export const Greeter = () => {
         >
           {HomeSocials.map((item) => (
             <div
-              id={"menu-item-div-"}
+              key={item.id}
+              id={"menu-item-div-" + item.id}
               className="group/item inline-block opacity-70 ring ring-red-900 hover:opacity-100"
             >
               <a
-                id={"menu-item-"}
+                id={"menu-item-" + item.id}
                 className="m-1 inline-block p-1 font-sans text-5xl text-white opacity-80 ring ring-green-900 group-hover/item:opacity-100"
                 target="_blank"
                 href={item.ref}
