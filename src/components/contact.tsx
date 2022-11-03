@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+//import { useCallback, useState } from "react";
 import { MdEmail } from "react-icons/md";
 
 // interface FormData {
@@ -60,14 +60,14 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="bg-slate-400">
-      <div className="container mx-auto">
+      <div className="mx-auto max-w-screen-lg py-10">
         {/* Contact Me */}
-        <div className="flex flex-col pt-2 text-4xl">
-          <div className="flex">
+        <div className="flex flex-col text-4xl">
+          <div className="flex pb-2">
             <i className="pt-1 pr-2">
               <MdEmail />
             </i>
-            Get in Touch
+            Reach Out
           </div>
         </div>
 

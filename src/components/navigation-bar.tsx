@@ -1,8 +1,8 @@
-import { NavigationItems } from "../data/navigation-items";
+import { Socials } from "../data/socials";
 
 export const NavigationBar = () => {
-  const NavigationBarItems = NavigationItems.filter(function (NavigationItems) {
-    return NavigationItems.target !== "_blank";
+  const NavigationBarItems = Socials.filter(function (Socials) {
+    return Socials.target !== "_blank";
   });
 
   return (

@@ -1,27 +1,35 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { NavigationItems } from "../data/navigation-items";
+import { Socials } from "../data/socials";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 
 export const Greeter = () => {
   //const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
-  const HomeNavigationItems = NavigationItems.filter(function (NavigationItems) {
-    return NavigationItems.ref !=="/";
+  const HomeSocials = Socials.filter(function (Socials) {
+    return Socials.ref !== "/";
   });
 
-  const handleMenuItemMouseOver = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const selectedAnchorNumber = parseInt(event.currentTarget.id.split("-").pop() as string);
-    const myOffsetStepSize = 100/NavigationItems.length;
+  const handleMenuItemMouseOver = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    const selectedAnchorNumber = parseInt(
+      event.currentTarget.id.split("-").pop() as string
+    );
+    const myOffsetStepSize = 100 / Socials.length;
     const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
-    const menuBackgroundPattern = document.getElementById("menu-background-pattern");
-    menuBackgroundPattern!.style.backgroundPositionX = -1*myOffset + "%";
+    const menuBackgroundPattern = document.getElementById(
+      "menu-background-pattern"
+    );
+    menuBackgroundPattern!.style.backgroundPositionX = -1 * myOffset + "%";
 
-    const menuBackgroundImage = document.getElementById("menu-background-image");
+    const menuBackgroundImage = document.getElementById(
+      "menu-background-image"
+    );
     menuBackgroundImage!.style.backgroundPositionX = myOffset + "%";
-  }
+  };
 
   return (
     <>
@@ -33,16 +41,40 @@ export const Greeter = () => {
         <AuthShowcase />
       </main>
       */}
-      <div id="menu" className="mx-auto flex min-h-screen items-center bg-gray-900 ring ring-red-700">
-        <div id="menu-items" className="mx-auto peer/menu-item hover:opacity-100 z-10 ring ring-black">
-          {HomeNavigationItems.map(item => (
-            <div key={item.id} id={"menu-item-div-"+item.id} className="inline-block group/item opacity-70 hover:opacity-100 ring ring-red-900">
-              <a id={"menu-item-"+item.id} className="text-white text-5xl font-sans inline-block opacity-80 group-hover/item:opacity-100 p-1 m-1 ring ring-green-900" target={item.target} href={item.ref} onMouseOver={handleMenuItemMouseOver}>{item.text}</a>
+      <div
+        id="menu"
+        className="mx-auto flex min-h-screen items-center bg-gray-900 ring ring-red-700"
+      >
+        <div
+          id="menu-items"
+          className="peer/menu-item z-10 mx-auto ring ring-black hover:opacity-100"
+        >
+          {HomeSocials.map((item) => (
+            <div
+              key={item.id}
+              id={"menu-item-div-" + item.id}
+              className="group/item inline-block opacity-70 ring ring-red-900 hover:opacity-100"
+            >
+              <a
+                id={"menu-item-" + item.id}
+                className="m-1 inline-block p-1 font-sans text-5xl text-white opacity-80 ring ring-green-900 group-hover/item:opacity-100"
+                target="_blank"
+                href={item.ref}
+                onMouseOver={handleMenuItemMouseOver}
+              >
+                {item.text}
+              </a>
             </div>
           ))}
         </div>
-        <div id="menu-background-pattern" className="h-screen w-screen bg-12vmin bg-circle absolute z-0 peer-hover/menu-item:bg-9vmin peer-hover/menu-item:opacity-100 transition-all ease-out duration-700"></div>
-        <div id="menu-background-image" className="h-screen w-screen bg-cover bg-image absolute z-0 peer-hover/menu-item:opacity-20 transition-all ease-out duration-700"></div>
+        <div
+          id="menu-background-pattern"
+          className="absolute z-0 h-screen w-screen bg-circle bg-12vmin transition-all duration-700 ease-out peer-hover/menu-item:bg-9vmin peer-hover/menu-item:opacity-100"
+        ></div>
+        <div
+          id="menu-background-image"
+          className="absolute z-0 h-screen w-screen bg-image bg-cover transition-all duration-700 ease-out peer-hover/menu-item:opacity-20"
+        ></div>
       </div>
     </>
   );

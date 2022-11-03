@@ -1,13 +1,13 @@
-import { NavigationItems } from "../data/navigation-items";
+import { Socials } from "../data/socials";
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
-  const InternalLinkItems = NavigationItems.filter(function (NavigationItems) {
-    return NavigationItems.icon === undefined;
+  const InternalLinkItems = Socials.filter(function (Socials) {
+    return Socials.icon === undefined;
   });
 
-  const ExternalLinkItems = NavigationItems.filter(function (NavigationItems) {
-    return NavigationItems.icon !== undefined;
+  const ExternalLinkItems = Socials.filter(function (Socials) {
+    return Socials.icon !== undefined;
   });
 
   return (
