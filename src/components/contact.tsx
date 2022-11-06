@@ -20,10 +20,10 @@ export const Contact = () => {
         </div>
 
         {/* Make Two Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 py-2">
+        <div className="grid grid-cols-1 py-2 md:grid-cols-2">
           {/* Contact Form */}
           {/* Left Side */}
-          <div className="order-2 md:order-1 px-2">
+          <div className="order-2 px-2 md:order-1">
             <form
               className="grid grid-cols-1 gap-2"
               method="POST"
@@ -72,7 +72,7 @@ export const Contact = () => {
           </div>
           {/* Contact Info */}
           {/* Right Side */}
-          <div className="order-1 md:order-2 px-2 pb-8">
+          <div className="order-1 px-2 pb-8 md:order-2">
             {/* Email */}
             <div key="email" className="flex flex-col py-1">
               <a className="flex text-4xl" href="mailto:zack.slade@gmail.com">
@@ -85,7 +85,12 @@ export const Contact = () => {
             {/* Professional Links */}
             {ProfessionalLinks.map((item) => (
               <div key={item.id} className="mx-auto py-1">
-                <a className="flex text-4xl" href={item.ref} target="_blank">
+                <a
+                  className="flex text-4xl"
+                  href={item.ref}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <i className="pt-1 pr-2">{item.icon}</i>
                   {item.text}
                 </a>
