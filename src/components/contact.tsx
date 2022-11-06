@@ -1,69 +1,17 @@
-//import { useCallback, useState } from "react";
+import { Links } from "../data/links";
 import { MdEmail } from "react-icons/md";
 
-// interface FormData {
-//   name: string;
-//   email: string;
-//   message: string;
-// }
-
 export const Contact = () => {
-  //   const defaultForm = {
-  //     name: "",
-  //     email: "",
-  //     message: "",
-  //   };
-
-  //   // data is the state of the form
-  //   // every time the form is updated, the data state is updated
-  //   const [data, setData] = useState<FormData>(defaultForm);
-
-  //   // This calls back on every keystroke in any of the form fields
-  //   // T, or type, is the type of the event target
-  //   // In this case, it can be an HTMLInputElement or an HTMLTextAreaElement
-  //   // Because onChange is attached to the input and textarea elements
-  //   const onChange = useCallback(
-  //     <T extends HTMLInputElement | HTMLTextAreaElement>(
-  //       event: React.ChangeEvent<T>
-  //     ): void => {
-  //       // The target is the HTML element that triggered the event.
-  //       // Here we grab the name and value attributes from the target
-  //       // name is the name attribute of the input or textarea element
-  //       // value is the text input by the user
-  //       const { name, value } = event.target;
-
-  //       // fieldData is the key/value pair of the HTML name tag and user input
-  //       // partial makes the properties of FormData optional
-  //       // this means we can update a part of the form without updating the whole thing
-  //       const fieldData: Partial<FormData> = { [name]: value };
-
-  //       // setData is a function that updates the data state
-  //       // ...data is the current state of the form
-  //       // ...fieldData is the new data from the form
-  //       setData({ ...data, ...fieldData });
-  //     },
-  //     [data]
-  //   );
-
-  //   const handleSendMessage = useCallback(
-  //     async (event: React.FormEvent<HTMLFormElement>) => {
-  //       //onSubmit refreshes the page, so we prevent that
-  //       event.preventDefault();
-  //       /**
-  //        * This is a good starting point to wire up your form submission logic
-  //        * */
-
-  //       console.log("Data to send: ", data);
-  //     },
-  //     [data]
-  //   );
+  const ProfessionalLinks = Links.filter(function (Links) {
+    return Links.type === "professional" && Links.for.includes("zachary");
+  });
 
   return (
     <section id="contact" className="bg-slate-400">
       <div className="mx-auto max-w-screen-lg py-10">
         {/* Contact Me */}
-        <div className="flex flex-col text-4xl">
-          <div className="flex pb-2">
+        <div className="flex flex-col px-2 pb-2">
+          <div className="flex text-4xl">
             <i className="pt-1 pr-2">
               <MdEmail />
             </i>
@@ -72,10 +20,10 @@ export const Contact = () => {
         </div>
 
         {/* Make Two Columns */}
-        <div className="grid grid-cols-2 py-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 py-2">
           {/* Contact Form */}
           {/* Left Side */}
-          <div className="pr-2">
+          <div className="order-2 md:order-1 px-2">
             <form
               className="grid grid-cols-1 gap-2"
               method="POST"
@@ -124,10 +72,25 @@ export const Contact = () => {
           </div>
           {/* Contact Info */}
           {/* Right Side */}
-          <div className="pl-2">
-            <div>Im on the right side</div>
-            <div>Im on the right side</div>
-            <div>Im on the right side</div>
+          <div className="order-1 md:order-2 px-2 pb-8">
+            {/* Email */}
+            <div key="email" className="flex flex-col py-1">
+              <a className="flex text-4xl" href="mailto:zack.slade@gmail.com">
+                <i className="pt-1 pr-2">
+                  <MdEmail />
+                </i>
+                Email
+              </a>
+            </div>
+            {/* Professional Links */}
+            {ProfessionalLinks.map((item) => (
+              <div key={item.id} className="mx-auto py-1">
+                <a className="flex text-4xl" href={item.ref} target="_blank">
+                  <i className="pt-1 pr-2">{item.icon}</i>
+                  {item.text}
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
