@@ -75,7 +75,7 @@ export const Contact = () => {
           <div className="order-1 px-2 pb-8 md:order-2">
             {/* Email */}
             <div key="email" className="flex flex-col py-1">
-              <a className="flex text-4xl" href="mailto:zack.slade@gmail.com">
+              <a className="flex text-3xl" href="mailto:zack.slade@gmail.com">
                 <i className="pt-1 pr-2">
                   <MdEmail />
                 </i>
@@ -86,7 +86,7 @@ export const Contact = () => {
             {ProfessionalLinks.map((item) => (
               <div key={item.id} className="mx-auto py-1">
                 <a
-                  className="flex text-4xl"
+                  className="flex text-3xl"
                   href={item.ref}
                   target="_blank"
                   rel="noreferrer"
