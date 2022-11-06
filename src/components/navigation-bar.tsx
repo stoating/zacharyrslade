@@ -1,8 +1,8 @@
-import { Socials } from "../data/socials";
+import { Links } from "../data/links";
 
 export const NavigationBar = () => {
-  const NavigationBarItems = Socials.filter(function (Socials) {
-    return Socials.type !== "social";
+  const NavigationBarItems = Links.filter(function (Links) {
+    return Links.type !== "social";
   });
 
   return (

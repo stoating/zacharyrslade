@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Socials } from "../data/socials";
+import { Links } from "../data/links";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 
 export const Greeter = () => {
   //const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
-  const HomeSocials = Socials.filter(function (Socials) {
-    return Socials.ref !== "/";
+  const HomeLinks = Links.filter(function (Links) {
+    return Links.ref !== "/";
   });
 
   const handleMenuItemMouseOver = (
@@ -17,7 +17,7 @@ export const Greeter = () => {
     const selectedAnchorNumber = parseInt(
       event.currentTarget.id.split("-").pop() as string
     );
-    const myOffsetStepSize = 100 / Socials.length;
+    const myOffsetStepSize = 100 / Links.length;
     const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
     const menuBackgroundPattern = document.getElementById(
@@ -49,7 +49,7 @@ export const Greeter = () => {
           id="menu-items"
           className="peer/menu-item z-10 mx-auto ring ring-black hover:opacity-100"
         >
-          {HomeSocials.map((item) => (
+          {HomeLinks.map((item) => (
             <div
               key={item.id}
               id={"menu-item-div-" + item.id}

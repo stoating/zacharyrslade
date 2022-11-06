@@ -1,13 +1,13 @@
-import { Socials } from "../data/socials";
+import { Links } from "../data/links";
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
-  const InternalLinkItems = Socials.filter(function (Socials) {
-    return Socials.icon === undefined;
+  const InternalLinkItems = Links.filter(function (Links) {
+    return Links.icon === undefined;
   });
 
-  const ExternalLinkItems = Socials.filter(function (Socials) {
-    return Socials.icon !== undefined;
+  const ExternalLinkItems = Links.filter(function (Links) {
+    return Links.icon !== undefined;
   });
 
   return (
