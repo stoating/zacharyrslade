@@ -10,8 +10,8 @@ export const Contact = () => {
     <section id="contact" className="bg-slate-400">
       <div className="mx-auto max-w-screen-lg py-10">
         {/* Contact Me */}
-        <div className="flex flex-col px-2 pb-2">
-          <div className="flex text-4xl">
+        <div className="flex flex-col px-2 md:pl-1 pb-2">
+          <div className="flex text-4xl md:pl-60">
             <i className="pt-1 pr-2">
               <MdEmail />
             </i>
@@ -20,7 +20,7 @@ export const Contact = () => {
         </div>
 
         {/* Make Two Columns */}
-        <div className="grid grid-cols-1 py-2 md:grid-cols-2">
+        <div className="grid grid-cols-1 py-2 md:grid-cols-2 md:pl-60">
           {/* Contact Form */}
           {/* Left Side */}
           <div className="order-2 px-2 md:order-1">

@@ -11,7 +11,7 @@ module.exports = {
         '12vmin': '12vmin',
         '9vmin': '9vmin',
         '110vmax': '110vmax',
-      }
+      },
     },
   },
   plugins: [],
