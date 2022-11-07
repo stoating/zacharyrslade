@@ -21,7 +21,7 @@ export const Footer = () => {
             ></img>
           </div>
           <div className="order-3 col-span-1 h-40 rounded-full bg-aeb3bc shadow-2xl">
-            <div className="pt-7 pl-9">
+            <div className="pt-8 pl-10">
               <div key="email" className="flex flex-col">
                 <a className="flex" href="mailto:zack.slade@gmail.com">
                   <i className="pt-1 pr-2">
