@@ -12,7 +12,10 @@ module.exports = {
         '9vmin': '9vmin',
         '110vmax': '110vmax',
       },
+      backgroundColor: {
+        'aeb3bc' : '#aeb3bc',
+      },
     },
   },
   plugins: [],
-};
+}
