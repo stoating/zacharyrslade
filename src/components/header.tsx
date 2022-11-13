@@ -3,7 +3,12 @@ import Head from "next/head";
 export const Header = () => {
   return (
     <Head>
+      <meta content="im the og title" property="og:title" />
+      <meta content="im the og description" property="og:description" />
+      <meta content="https://zacharyrslade.com" property="og:url" />
+
       <title>Zachary Slade</title>
+
       <meta name="description" content="Welcome to my personal page" />
       <link
         rel="apple-touch-icon"
@@ -23,10 +28,6 @@ export const Header = () => {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-
-      <meta content="im the og title" property="og:title" />
-      <meta content="im the og description" property="og:description" />
-      <meta content="https://zacharyrslade.com" property="og:url" />
     </Head>
   );
 };
