@@ -1,4 +1,5 @@
 import { Links } from "../data/links";
+import Link from "next/link";
 
 export const Greeter = () => {
   const GreeterLinks = Links.filter(function (Links) {
@@ -47,16 +48,17 @@ export const Greeter = () => {
               id={"menu-item-div-" + item.id}
               className="group/item inline-block opacity-70 hover:opacity-100"
             >
-              <a
-                id={"menu-item-" + item.id}
-                className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 group-hover/item:opacity-100"
-                target="_blank"
-                rel="noreferrer"
-                href={item.ref}
-                onMouseOver={handleMenuItemMouseOver}
-              >
-                {item.icon}
-              </a>
+              <Link href={item.ref}>
+                <a
+                  id={"menu-item-" + item.id}
+                  className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 group-hover/item:opacity-100"
+                  target="_blank"
+                  rel="noreferrer"
+                  onMouseOver={handleMenuItemMouseOver}
+                >
+                  {item.icon}
+                </a>
+              </Link>
             </div>
           ))}
         </div>
