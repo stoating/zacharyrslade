@@ -1,20 +1,17 @@
-import { Links } from "../data/links";
 
 export const NavigationBar = () => {
-  const NavigationBarItems = Links.filter(function (Links) {
-    return Links.type !== "social";
-  });
 
   return (
-    <div className="fixed top-0 z-20 flex w-full bg-slate-500 ring ring-black">
-      {NavigationBarItems.map((item) => (
+    <div className="fixed top-0 z-20 flex w-full text-opacity-100 bg-opacity-50 bg-slate-900">
         <div
-          key={item.id}
-          className="mx-auto block bg-red-500 ring ring-red-600"
+          className="mx-auto flex"
         >
-          <a href={item.ref}>{item.text}</a>
+          <a className="p-2 px-4" href="/#about">About</a>
+          <a className="p-2 px-4" href="/#resume">Resume</a>
+          <a className="p-2 px-4" href="/#profiles">Profiles</a>
+          <a className="p-2 px-4" href="/#stoating">Stoating</a>
+          <a className="p-2 px-4" href="/#contact">Contact</a>
         </div>
-      ))}
     </div>
   );
 };
