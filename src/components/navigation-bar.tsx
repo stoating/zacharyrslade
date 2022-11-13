@@ -30,7 +30,7 @@ export const NavigationBar = () => {
           </a>
         </Link>
         <Link href="/#contact">
-          <a className="w-0 sm-w-auto p-2 px-4 hover:text-white hover:transition-colors hover:duration-300 invisible md:visible">
+          <a className="w-0 sm:w-auto p-2 px-4 hover:text-white hover:transition-colors hover:duration-300 invisible md:visible">
             Contact
           </a>
         </Link>
