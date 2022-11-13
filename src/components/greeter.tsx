@@ -1,6 +1,10 @@
 import { Links } from "../data/links";
 import Link from "next/link";
-import { fromTo } from "kute.js";
+
+const blob1 =
+  "M149.3 -108.8C183.4 -76.3 194.1 -14.8 178.5 35.7C163 86.1 121.2 125.5 74.1 144.6C27 163.7 -25.3 162.5 -70.2 142.2C-115.1 122 -152.6 82.7 -170.6 31.1C-188.6 -20.4 -187.2 -84.3 -155.5 -116.2C-123.8 -148.2 -61.9 -148.3 -2.2 -146.6C57.6 -144.9 115.2 -141.3 149.3 -108.8";
+const blob2 =
+  "M131.7 -104.6C168.6 -58.8 195 -4.2 188.4 50.4C181.9 105 142.5 159.5 94.7 173.6C47 187.7 -9 161.4 -51.2 131.5C-93.4 101.5 -121.8 67.9 -130.3 29.9C-138.8 -8 -127.4 -50.3 -102.4 -93.3C-77.4 -136.4 -38.7 -180.2 4.4 -183.7C47.4 -187.2 94.9 -150.3 131.7 -104.6";
 
 export const Greeter = () => {
   const GreeterLinks = Links.filter(function (Links) {
@@ -18,7 +22,7 @@ export const Greeter = () => {
   ) => {
     const selectedAnchorNumber = parseInt(
       event.currentTarget.id.split("-").pop() as string
-    );
+    ) as number;
     const myOffsetStepSize = 100 / GreeterLinks.length;
     const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
@@ -37,7 +41,7 @@ export const Greeter = () => {
     <>
       <div
         id="menu"
-        className="mx-auto flex min-h-screen items-center bg-gray-900"
+        className="mx-auto flex min-h-screen items-center bg-slate-900"
       >
         <div
           id="menu-items"
@@ -48,29 +52,27 @@ export const Greeter = () => {
               src="/images/zack-look-right-color-02.webp"
               className="col-span-1 rounded-full opacity-100 shadow-2xl shadow-black"
             ></img>
-            <svg
-              id="visual"
-              viewBox="0 0 380 380"
-              width="380"
-              height="380"
-              version="1.1"
-              className="absolute -z-10 opacity-30 -translate-x-1/2 -translate-y-56 left-1/2 top-1/2"
-            >
-              <g transform="translate(188.34498259648836 184.48114065125225)">
-                <path
-                  id="blob-1"
-                  d="M149.3 -108.8C183.4 -76.3 194.1 -14.8 178.5 35.7C163 86.1 121.2 125.5 74.1 144.6C27 163.7 -25.3 162.5 -70.2 142.2C-115.1 122 -152.6 82.7 -170.6 31.1C-188.6 -20.4 -187.2 -84.3 -155.5 -116.2C-123.8 -148.2 -61.9 -148.3 -2.2 -146.6C57.6 -144.9 115.2 -141.3 149.3 -108.8"
-                  fill="#000000"
-                ></path>
-              </g>
-              <g transform="translate(161.83698175065334 193.2079133667543)">
-                <path
-                  id="blob-2"
-                  d="M131.7 -104.6C168.6 -58.8 195 -4.2 188.4 50.4C181.9 105 142.5 159.5 94.7 173.6C47 187.7 -9 161.4 -51.2 131.5C-93.4 101.5 -121.8 67.9 -130.3 29.9C-138.8 -8 -127.4 -50.3 -102.4 -93.3C-77.4 -136.4 -38.7 -180.2 4.4 -183.7C47.4 -187.2 94.9 -150.3 131.7 -104.6"
-                  fill="#000000"
-                ></path>
-              </g>
-            </svg>
+            <div className="invisible col-span-1 m-0 box-border p-0 md:visible">
+              <svg
+                id="visual"
+                viewBox="0 0 380 380"
+                width="380"
+                height="380"
+                version="1.1"
+                className="absolute left-1/2 top-1/2 -z-10 -translate-x-52 -translate-y-56 opacity-30"
+              >
+                <g transform="translate(188.34498259648836 184.48114065125225)">
+                  <path id="blob1" d={blob1} fill="#000000">
+                    <animate
+                      attributeName="d"
+                      dur="12000ms"
+                      repeatCount="indefinite"
+                      values={blob1 + ";" + blob2 + ";" + blob1}
+                    ></animate>
+                  </path>
+                </g>
+              </svg>
+            </div>
           </div>
           {GreeterLinks.map((item, index) => (
             <div
@@ -81,7 +83,7 @@ export const Greeter = () => {
               <Link href={item.ref}>
                 <a
                   id={"menu-item-" + index}
-                  className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 group-hover/item:text-white group-hover/item:opacity-100"
+                  className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 transition-all duration-300 ease-linear group-hover/item:text-white group-hover/item:opacity-100"
                   target="_blank"
                   rel="noreferrer"
                   onMouseOver={handleMenuItemMouseOver}
@@ -92,6 +94,8 @@ export const Greeter = () => {
             </div>
           ))}
         </div>
+        <div className="absolute w-screen peer-hover/menu-item:text-white transition-all duration-700 ease-out z-50 text-center -translate-y-72 font-bold text-6xl">Zachary Slade</div>
+        <div className="absolute w-screen peer-hover/menu-item:text-white transition-all duration-700 ease-out z-50 text-center -translate-y-56 font-bold text-xl">Lifelong learner. Chronically curious.</div>
         <div
           id="menu-background-pattern"
           className="absolute z-0 h-screen w-screen bg-image-circle bg-12vmin transition-all duration-700 ease-out peer-hover/menu-item:bg-9vmin peer-hover/menu-item:opacity-100"
