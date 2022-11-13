@@ -19,7 +19,7 @@ export const Greeter = () => {
     const selectedAnchorNumber = parseInt(
       event.currentTarget.id.split("-").pop() as string
     );
-    const myOffsetStepSize = 100 / Links.length;
+    const myOffsetStepSize = 100 / GreeterLinks.length;
     const myOffset = selectedAnchorNumber * myOffsetStepSize;
 
     const menuBackgroundPattern = document.getElementById(
@@ -46,41 +46,41 @@ export const Greeter = () => {
           <div className="grid max-w-xs grid-cols-1 flex-col p-10 text-center">
             <img
               src="/images/zack-look-right-color-02.webp"
-              className="1 col-span-1 rounded-full opacity-100 shadow-2xl shadow-black"
+              className="col-span-1 rounded-full opacity-100 shadow-2xl shadow-black"
             ></img>
             <svg
               id="visual"
-              viewBox="0 0 900 600"
-              width="900"
-              height="600"
+              viewBox="0 0 380 380"
+              width="380"
+              height="380"
               version="1.1"
-              className="absolute max-w-2xl opacity-30 transform -translate-x-1/3 -translate-y-1/3 pl-4 pt-6 -z-10"
+              className="absolute -z-10 opacity-30 -translate-x-1/2 -translate-y-56 left-1/2 top-1/2"
             >
-              <g transform="translate(435.4588841190614 291.41087169617697)">
+              <g transform="translate(188.34498259648836 184.48114065125225)">
                 <path
                   id="blob-1"
-                  d="M137.4 -128.9C186.4 -88.4 240.2 -44.2 244.1 3.9C248.1 52.1 202.2 104.2 153.2 144.7C104.2 185.2 52.1 214.1 -9.3 223.4C-70.7 232.7 -141.4 222.4 -178.9 181.9C-216.4 141.4 -220.7 70.7 -210.5 10.3C-200.2 -50.2 -175.4 -100.4 -137.9 -140.9C-100.4 -181.4 -50.2 -212.2 -3 -209.2C44.2 -206.2 88.4 -169.4 137.4 -128.9"
+                  d="M149.3 -108.8C183.4 -76.3 194.1 -14.8 178.5 35.7C163 86.1 121.2 125.5 74.1 144.6C27 163.7 -25.3 162.5 -70.2 142.2C-115.1 122 -152.6 82.7 -170.6 31.1C-188.6 -20.4 -187.2 -84.3 -155.5 -116.2C-123.8 -148.2 -61.9 -148.3 -2.2 -146.6C57.6 -144.9 115.2 -141.3 149.3 -108.8"
                   fill="#000000"
                 ></path>
               </g>
-              <g transform="translate(453.30330544796027 325.668903869308)">
+              <g transform="translate(161.83698175065334 193.2079133667543)">
                 <path
                   id="blob-2"
-                  d="M165.9 -174.3C204.6 -127.3 218.3 -63.6 215.2 -3.1C212.2 57.5 192.4 115 153.7 146.3C115 177.5 57.5 182.5 -6.6 189.1C-70.7 195.7 -141.4 203.9 -180.8 172.7C-220.1 141.4 -228 70.7 -218.7 9.3C-209.4 -52.1 -182.8 -104.2 -143.5 -151.2C-104.2 -198.2 -52.1 -240.1 5.8 -245.9C63.6 -251.6 127.3 -221.3 165.9 -174.3"
+                  d="M131.7 -104.6C168.6 -58.8 195 -4.2 188.4 50.4C181.9 105 142.5 159.5 94.7 173.6C47 187.7 -9 161.4 -51.2 131.5C-93.4 101.5 -121.8 67.9 -130.3 29.9C-138.8 -8 -127.4 -50.3 -102.4 -93.3C-77.4 -136.4 -38.7 -180.2 4.4 -183.7C47.4 -187.2 94.9 -150.3 131.7 -104.6"
                   fill="#000000"
                 ></path>
               </g>
             </svg>
           </div>
-          {GreeterLinks.map((item) => (
+          {GreeterLinks.map((item, index) => (
             <div
               key={item.id}
-              id={"menu-item-div-" + item.id}
+              id={"menu-item-div-" + index}
               className="group/item inline-block opacity-70 hover:opacity-100"
             >
               <Link href={item.ref}>
                 <a
-                  id={"menu-item-" + item.id}
+                  id={"menu-item-" + index}
                   className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 group-hover/item:text-white group-hover/item:opacity-100"
                   target="_blank"
                   rel="noreferrer"

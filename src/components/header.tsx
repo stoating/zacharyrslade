@@ -3,13 +3,13 @@ import Head from "next/head";
 export const Header = () => {
   return (
     <Head>
+      <title>Zachary Slade</title>
+      <meta name="description" content="Welcome to my personal page" />
+
       <meta content="im the og title" property="og:title" />
       <meta content="im the og description" property="og:description" />
       <meta content="https://zacharyrslade.com" property="og:url" />
 
-      <title>Zachary Slade</title>
-
-      <meta name="description" content="Welcome to my personal page" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
