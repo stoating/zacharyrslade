@@ -94,10 +94,10 @@ export const Greeter = () => {
             </div>
           ))}
         </div>
-        <div className="absolute z-50 w-screen -translate-y-72 text-center text-4xl md:text-6xl font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white">
+        <div className="absolute z-50 w-screen -translate-y-60 md:-translate-y-72 text-center text-4xl md:text-6xl font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white">
           Zachary Slade
         </div>
-        <div className="absolute z-50 w-screen -translate-y-56 text-center md:text-xl font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white">
+        <div className="absolute z-50 w-screen -translate-y-52 md:-translate-y-56 text-center md:text-xl font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white">
           Lifelong learner. Chronically curious.
         </div>
         <div
