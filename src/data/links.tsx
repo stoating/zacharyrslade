@@ -3,6 +3,7 @@ import {FaLinkedin} from 'react-icons/fa';
 import {FaGithub} from 'react-icons/fa';
 import {FaFacebookSquare} from 'react-icons/fa';
 import {FaInstagramSquare} from 'react-icons/fa';
+import {FaFilePdf} from 'react-icons/fa';
 import {FaTwitterSquare} from 'react-icons/fa';
 import {FaTiktok} from 'react-icons/fa';
 import {FaYoutube} from 'react-icons/fa';
@@ -112,6 +113,22 @@ export const Links = [
         ref: "https://www.youtube.com/channel/UCFIig6ZKsJhRnpIw0MOmL-Q",
         icon: <FaYoutube/>,
         type: 'media',
+        for: ['zachary'],
+    },
+    {
+        id: 14,
+        text: "Resume - DE",
+        ref: "/documents/Zachary_Slade_Resume_DE.pdf",
+        icon: <FaFilePdf/>,
+        type: 'pdf',
+        for: ['zachary'],
+    },
+    {
+        id: 15,
+        text: "Resume - EN",
+        ref: "/documents/Zachary_Slade_Resume_EN.pdf",
+        icon: <FaFilePdf/>,
+        type: 'pdf',
         for: ['zachary'],
     },
 ]

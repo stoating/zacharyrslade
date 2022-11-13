@@ -1,8 +1,14 @@
 import { Links } from "../data/links";
 
 export const Greeter = () => {
-  const HomeLinks = Links.filter(function (Links) {
-    return Links.ref !== "/";
+  const GreeterLinks = Links.filter(function (Links) {
+    return (
+      Links.text === "LinkedIn" ||
+      Links.text === "Xing" ||
+      Links.text === "GitHub" ||
+      Links.text === "Resume - EN" ||
+      Links.text === "Resume - DE"
+    );
   });
 
   const handleMenuItemMouseOver = (
@@ -35,7 +41,7 @@ export const Greeter = () => {
           id="menu-items"
           className="peer/menu-item z-10 mx-auto hover:opacity-100"
         >
-          {HomeLinks.map((item) => (
+          {GreeterLinks.map((item) => (
             <div
               key={item.id}
               id={"menu-item-div-" + item.id}
@@ -43,13 +49,13 @@ export const Greeter = () => {
             >
               <a
                 id={"menu-item-" + item.id}
-                className="m-1 inline-block p-1 font-sans text-5xl text-white opacity-80 group-hover/item:opacity-100"
+                className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 group-hover/item:opacity-100"
                 target="_blank"
                 rel="noreferrer"
                 href={item.ref}
                 onMouseOver={handleMenuItemMouseOver}
               >
-                {item.text}
+                {item.icon}
               </a>
             </div>
           ))}
