@@ -42,6 +42,12 @@ export const Greeter = () => {
           id="menu-items"
           className="peer/menu-item z-10 mx-auto hover:opacity-100"
         >
+          <div className="flex-col text-center grid max-w-xs p-10 grid-cols-1">
+          <img
+              src="/images/zack-look-right-color-02.webp"
+              className="opacity-100 rounded-full 1 col-span-1 shadow-2xl shadow-black"
+            ></img>
+          </div>
           {GreeterLinks.map((item) => (
             <div
               key={item.id}
