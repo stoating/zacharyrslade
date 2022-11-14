@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         'image-circle': "url('/images/circle.png')",
         'image-sunset' : "url('/images/image.webp')",
+        'image-sky' : "url('/images/sky.webp')",
       },
       backgroundSize: {
         '12vmin': '12vmin',

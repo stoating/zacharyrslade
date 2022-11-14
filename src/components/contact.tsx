@@ -7,10 +7,10 @@ export const Contact = () => {
   });
 
   return (
-    <section id="contact" className="bg-slate-400">
+    <section id="contact" className=" bg-rose-200">
       <div className="mx-auto max-w-screen-lg py-10">
         {/* Contact Me */}
-        <div className="flex flex-col px-2 md:pl-1 pb-2">
+        <div className="flex flex-col px-2 pb-2 md:pl-1">
           <div className="flex text-4xl md:pl-60">
             <i className="pt-1 pr-2">
               <MdEmail />
@@ -31,7 +31,7 @@ export const Contact = () => {
             >
               {/* Name Field */}
               <input
-                className="focus:border-1 rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+                className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 name="name"
                 placeholder="Name"
                 required
@@ -40,7 +40,7 @@ export const Contact = () => {
               {/* Email Field */}
               <input
                 autoComplete="email"
-                className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:outline-none focus:ring-2 focus:ring-white"
+                className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 name="email"
                 placeholder="Email"
                 required
@@ -48,7 +48,7 @@ export const Contact = () => {
               />
               {/* Message Field */}
               <textarea
-                className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:outline-none focus:ring-2 focus:ring-white"
+                className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 maxLength={250}
                 name="message"
                 placeholder="Message"
@@ -63,7 +63,7 @@ export const Contact = () => {
               {/* Submit Button */}
               <button
                 aria-label="Submit contact form"
-                className="w-max rounded-md border-2 bg-slate-900 p-2 text-white hover:bg-slate-700"
+                className="w-max rounded-md border-2 bg-slate-900 p-2 text-white duration-300 ease-in-out hover:bg-sky-500"
                 type="submit"
               >
                 Send Message
@@ -74,7 +74,10 @@ export const Contact = () => {
           {/* Right Side */}
           <div className="order-1 px-2 pb-8 md:order-2">
             {/* Email */}
-            <div key="email" className="flex flex-col py-1">
+            <div
+              key="email"
+              className="flex flex-col py-1 transition-all duration-300 ease-in-out hover:text-sky-500"
+            >
               <a className="flex text-3xl" href="mailto:zack.slade@gmail.com">
                 <i className="pt-1 pr-2">
                   <MdEmail />
@@ -84,7 +87,10 @@ export const Contact = () => {
             </div>
             {/* Professional Links */}
             {ProfessionalLinks.map((item) => (
-              <div key={item.id} className="mx-auto py-1">
+              <div
+                key={item.id}
+                className="mx-auto py-1 transition-all duration-300 ease-in-out hover:text-sky-500"
+              >
                 <a
                   className="flex text-3xl"
                   href={item.ref}
