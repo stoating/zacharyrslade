@@ -12,17 +12,17 @@ export const Footer = () => {
         <div className="grid w-screen grid-cols-1 flex-col items-center md:grid-cols-6">
           <img
             src="/images/zack-look-down-bw-02.webp"
-            className="order-1 col-span-1 rounded-full opacity-60 shadow-2xl shadow-black"
+            className="order-1 col-span-1 rounded-full opacity-60 hover:opacity-100 transition-all duration-300 ease-in-out shadow-2xl shadow-black"
           ></img>
           <div className="order-2 col-span-4">
             <img
               src="/images/signature-white-black-fade-01.webp"
-              className="opacity-70"
+              className="opacity-70 hover:opacity-100 transition-all duration-300 ease-in-out"
             ></img>
           </div>
-          <div className="order-3 col-span-1 h-40 rounded-full bg-aeb3bc shadow-2xl shadow-slate-900">
+          <div className="order-3 col-span-1 h-40 rounded-full bg-aeb3bc hover:bg-white transition-all duration-300 ease-in-out shadow-2xl shadow-slate-900">
             <div className="pt-8 pl-10">
-              <div key="email" className="flex flex-col">
+              <div key="email" className="flex flex-col hover:text-rose-300 transition-all duration-300 ease-in-out">
                 <a className="flex" href="mailto:zack.slade@gmail.com">
                   <i className="pt-1 pr-2">
                     <MdEmail />
@@ -31,7 +31,7 @@ export const Footer = () => {
                 </a>
               </div>
               {ProfessionalLinks.map((item) => (
-                <div key={item.id} className="mx-auto">
+                <div key={item.id} className="mx-auto hover:text-rose-300 transition-all duration-300 ease-in-out">
                   <a
                     className="flex"
                     href={item.ref}
