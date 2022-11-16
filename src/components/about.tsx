@@ -107,7 +107,7 @@ export const About = () => {
           <div className="mx-auto max-w-screen-lg">
             <div className=" grid grid-cols-6">
               <div className="invisible col-span-6 lg:visible lg:col-span-2 lg:row-span-6">
-                <div className="animate-spin-slow-reverse absolute z-10 p-16">
+                <div className="animate-slowSpinReverse absolute z-10 p-16">
                   <svg
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +125,7 @@ export const About = () => {
                     </g>
                   </svg>
                 </div>
-                <div className="animate-spin-slow absolute">
+                <div className="animate-slowSpin absolute">
                   <svg
                     version="1.0"
                     xmlns="http://www.w3.org/2000/svg"
