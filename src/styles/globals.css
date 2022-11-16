@@ -7,9 +7,9 @@
 }
 
 .animate-spin-slow-reverse {
-  animation: spin 60s linear infinite reverse;
+  animation: spin 60s linear infinite reverse !important;
 }
 
 .animate-spin-slow {
-  animation: spin 60s linear infinite;
+  animation: spin 60s linear infinite !important;
 }
