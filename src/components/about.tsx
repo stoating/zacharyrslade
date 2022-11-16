@@ -171,11 +171,11 @@ export const About = () => {
                   About me:
                 </h2>
                 {Description.map((item) => (
-                  <p className="pb-8">{item.value}</p>
+                  <p key={item.label} className="pb-8">{item.value}</p>
                 ))}
               </div>
               {AboutMe.map((item) => (
-                <div className="col-span-6 px-2 py-2 sm:col-span-3 lg:col-span-2">
+                <div key={item.label} className="col-span-6 px-2 py-2 sm:col-span-3 lg:col-span-2">
                   <div className="flex">
                     <i className="pt-1 pr-2">{item.icon}</i>
                     <p className="pr-2 font-bold text-slate-400 first-letter:uppercase">
