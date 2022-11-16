@@ -4,7 +4,7 @@ import { FaFlagUsa } from "react-icons/fa";
 import { GoCircuitBoard } from "react-icons/go";
 import { GiBatMask } from "react-icons/gi";
 
-export const aboutData = [
+export const AboutData = [
   {
     label: "title",
     value: "Software Engineer",
@@ -13,7 +13,13 @@ export const aboutData = [
   {
     label: "description",
     value:
-      "I am a software engineer with a passion for learning and creating. My professional career has been in embedded systems development, but my technical interests span all areas of software development. In my free time I enjoy learning new things, traveling and dabbling in art.",
+      `My name is Zachary (but most people just call me Zack). I am a software engineer
+      with a passion for learning and creating. My professional career has
+      focused on embedded systems development but my technical interests
+      span many areas of software development. I have experience in software
+      project management, education, and hardware test systems scaling and design.
+      In my free time I enjoy programming personal projects, camping, traveling
+      and dabbling in art.`,
     icon: <GoCircuitBoard />,
   },
   {

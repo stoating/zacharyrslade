@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.white-stroke {
+  -webkit-text-stroke: 1px white;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin 60s linear infinite reverse;
+}
+
+.animate-spin-slow {
+  animation: spin 60s linear infinite;
+}
