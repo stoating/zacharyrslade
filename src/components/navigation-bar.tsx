@@ -7,38 +7,47 @@ export const NavigationBar = () => {
   const handleChangeLanguageClick = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
-    const language = document.getElementById("language");
+    const language = document.getElementById("language") as HTMLElement;
 
-    if (language?.innerHTML === "DE") {
+    if (language.innerHTML === "DE") {
       language.innerHTML = "EN";
       for (const [key, value] of Object.entries(TextNavigationBar)) {
-        document.getElementById("nav-" + key).innerHTML = value.de;
+        const navText = document.getElementById('nav-' + key) as HTMLElement;
+        navText.innerHTML = value.de;
       }
       for (const [key, value] of Object.entries(TextGreeter)) {
-        document.getElementById("greeter-" + key).innerHTML = value.de;
+        const greeterText = document.getElementById('greeter-' + key) as HTMLElement;
+        greeterText.innerHTML = value.de;
       }
       for (const [key, value] of Object.entries(aboutText)) {
-        document.getElementById("about-" + key).innerHTML = value.de;
+        const aboutText = document.getElementById('about-' + key) as HTMLElement;
+        aboutText.innerHTML = value.de;
       }
       for (const [key, value] of Object.entries(aboutItems)) {
-        console.log (value.title.en);
-        document.getElementById("about-title-" + value.title.en).innerHTML = value.title.de + ':';
-        document.getElementById("about-value-" + value.title.en).innerHTML = value.value.de;
+        const aboutItemTitle = document.getElementById('about-title-' + value.title.en) as HTMLElement;
+        const aboutItemValue = document.getElementById('about-value-' + value.title.en) as HTMLElement;
+        aboutItemTitle.innerHTML = value.title.de + ':';
+        aboutItemValue.innerHTML = value.value.de;
       }
     } else {
       language.innerHTML = "DE";
       for (const [key, value] of Object.entries(TextNavigationBar)) {
-        document.getElementById("nav-" + key).innerHTML = value.en;
+        const navText = document.getElementById('nav-' + key) as HTMLElement;
+        navText.innerHTML = value.en;
       }
       for (const [key, value] of Object.entries(TextGreeter)) {
-        document.getElementById("greeter-" + key).innerHTML = value.en;
+        const greeterText = document.getElementById('greeter-' + key) as HTMLElement;
+        greeterText.innerHTML = value.en;
       }
       for (const [key, value] of Object.entries(aboutText)) {
-        document.getElementById("about-" + key).innerHTML = value.en;
+        const aboutText = document.getElementById('about-' + key) as HTMLElement;
+        aboutText.innerHTML = value.en;
       }
       for (const [key, value] of Object.entries(aboutItems)) {
-        document.getElementById("about-title-" + value.title.en).innerHTML = value.title.en + ':';
-        document.getElementById("about-value-" + value.title.en).innerHTML = value.value.en;
+        const aboutItemTitle = document.getElementById('about-title-' + value.title.en) as HTMLElement;
+        const aboutItemValue = document.getElementById('about-value-' + value.title.en) as HTMLElement;
+        aboutItemTitle.innerHTML = value.title.en + ':';
+        aboutItemValue.innerHTML = value.value.en;
       }
     }
   };
