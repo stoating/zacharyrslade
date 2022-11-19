@@ -1,4 +1,4 @@
-import { AboutData } from "../data/about";
+import { aboutText, aboutItems } from "../data/about";
 
 const wave_1_1 =
   "M0 173L18.8 184.5C37.7 196 75.3 219 112.8 231C150.3 243 187.7 244 225.2 234.3C262.7 224.7 300.3 204.3 337.8 198.2C375.3 192 412.7 200 450.2 208.8C487.7 217.7 525.3 227.3 562.8 223.8C600.3 220.3 637.7 203.7 675.2 206.5C712.7 209.3 750.3 231.7 787.8 239.7C825.3 247.7 862.7 241.3 881.3 238.2L900 235L900 0L881.3 0C862.7 0 825.3 0 787.8 0C750.3 0 712.7 0 675.2 0C637.7 0 600.3 0 562.8 0C525.3 0 487.7 0 450.2 0C412.7 0 375.3 0 337.8 0C300.3 0 262.7 0 225.2 0C187.7 0 150.3 0 112.8 0C75.3 0 37.7 0 18.8 0L0 0Z";
@@ -92,14 +92,6 @@ const code_3 = `M3115 2375 c-57 -20 -121 -93 -134 -153 -11 -53 -2 -108 24 -148 9
 18 -100 19 -153 0z`;
 
 export const About = () => {
-  const AboutMe = AboutData.filter(function (AboutData) {
-    return AboutData.label !== "description";
-  });
-
-  const Description = AboutData.filter(function (AboutData) {
-    return AboutData.label === "description";
-  });
-
   return (
     <section id="about">
       <div className="bg-slate-900 text-slate-100">
@@ -167,21 +159,19 @@ export const About = () => {
                 </div>
               </div>
               <div className="col-span-6 px-2 lg:col-span-4">
-                <h2 className="pb-8 text-3xl font-bold text-slate-400">
-                  About me:
+                <h2 id='about-about' className="pb-8 text-3xl font-bold text-slate-400 first-letter:uppercase">
+                {aboutText.about.en}:
                 </h2>
-                {Description.map((item) => (
-                  <p key={item.label} className="pb-8">{item.value}</p>
-                ))}
+                  <p id='about-description' className="pb-8">{aboutText.description.en}</p>
               </div>
-              {AboutMe.map((item) => (
-                <div key={item.label} className="col-span-6 px-2 py-2 sm:col-span-3 lg:col-span-2">
+              {aboutItems.map((item) => (
+                <div key={item.title.en} className="col-span-6 px-2 py-2 sm:col-span-3 lg:col-span-2">
                   <div className="flex">
                     <i className="pt-1 pr-2">{item.icon}</i>
-                    <p className="pr-2 font-bold text-slate-400 first-letter:uppercase">
-                      {item.label}:
+                    <p id={'about-title-' + item.title.en} className="pr-2 font-bold text-slate-400 first-letter:uppercase">
+                      {item.title.en}:
                     </p>
-                    <p>{item.value}</p>
+                    <p id={'about-value-' + item.title.en}>{item.value.en}</p>
                   </div>
                 </div>
               ))}
