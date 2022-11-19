@@ -89,9 +89,9 @@ export const Contact = () => {
               </a>
             </div>
             {/* Professional Links */}
-            {ProfessionalLinks.map((item) => (
+            {ProfessionalLinks.map((item, index) => (
               <div
-                key={item.id}
+                key={index}
                 className="mx-auto py-1 transition-all duration-300 ease-in-out hover:text-sky-500"
               >
                 <a

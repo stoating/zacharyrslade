@@ -30,8 +30,8 @@ export const Footer = () => {
                   Email
                 </a>
               </div>
-              {ProfessionalLinks.map((item) => (
-                <div key={item.id} className="mx-auto hover:text-rose-300 transition-all duration-300 ease-in-out">
+              {ProfessionalLinks.map((item, index) => (
+                <div key={index} className="mx-auto hover:text-rose-300 transition-all duration-300 ease-in-out">
                   <a
                     className="flex"
                     href={item.ref}
