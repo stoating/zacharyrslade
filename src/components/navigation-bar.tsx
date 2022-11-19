@@ -9,7 +9,7 @@ export const NavigationBar = () => {
   ) => {
     const language = document.getElementById("language");
 
-    if (language.innerHTML === "DE") {
+    if (language?.innerHTML === "DE") {
       language.innerHTML = "EN";
       for (const [key, value] of Object.entries(TextNavigationBar)) {
         document.getElementById("nav-" + key).innerHTML = value.de;
