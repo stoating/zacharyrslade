@@ -62,13 +62,28 @@ export const Resume = () => {
             <div className="bg-slate-200 p-1 ring">education</div>
             {/* right interests */}
             <div className="grid grid-cols-2 bg-slate-300 p-1 ring">
-              <h2 id={'resume-' + resumeText.skills_section.key} className='col-span-2 row-span-full'>{resumeText.skills_section.en}:</h2>
-              {resumeText.skills_section.skills.map((skill, index) => (
-                <div className="col-span-1 ring text-center" key={index}>
-                  <h3 id={'resume-skill-' + skill.key}className="font-bold text-lg">{skill.en}</h3>
-                  {skill.examples.map((example, index2) => (
-                    <div className="text-left">
-                      <p id={'resume-skill-' + skill.key + '-' + example.key} className="text-sm">{example.en}</p>
+              <h2
+                id={"resume-" + resumeText.skills_section.key}
+                className="col-span-2 row-span-full"
+              >
+                {resumeText.skills_section.en}:
+              </h2>
+              {resumeText.skills_section.skills.map((skill, skill_index) => (
+                <div className="col-span-1 text-center ring" key={skill_index}>
+                  <h3
+                    id={"resume-skill-" + skill.key}
+                    className="text-lg font-bold"
+                  >
+                    {skill.en}
+                  </h3>
+                  {skill.examples.map((example, example_index) => (
+                    <div className="text-left" key={example_index}>
+                      <p
+                        id={"resume-skill-" + skill.key + "-" + example.key}
+                        className="text-sm"
+                      >
+                        {example.en}
+                      </p>
                       <div>{example.rank}</div>
                     </div>
                   ))}
