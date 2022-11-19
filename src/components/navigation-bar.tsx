@@ -28,7 +28,7 @@ export const NavigationBar = () => {
         const aboutText = document.getElementById('about-' + key) as HTMLElement;
         aboutText.innerHTML = value.de;
       }
-      for (const [key, value] of Object.entries(aboutItems)) {
+      for (const [, value] of Object.entries(aboutItems)) {
         const aboutItemTitle = document.getElementById('about-title-' + value.title.en) as HTMLElement;
         const aboutItemValue = document.getElementById('about-value-' + value.title.en) as HTMLElement;
         aboutItemTitle.innerHTML = value.title.de + ':';
@@ -39,13 +39,13 @@ export const NavigationBar = () => {
       // Resume - Skills
       const skillsSection = document.getElementById('resume-' + resumeText.skills_section.key) as HTMLElement;
       skillsSection.innerHTML = resumeText.skills_section.de;
-      for (const [key, skill] of Object.entries(resumeText.skills_section.skills)) {
+      for (const [, skill] of Object.entries(resumeText.skills_section.skills)) {
         console.log (skill);
         const currentSkill = document.getElementById('resume-skill-' + skill.key) as HTMLElement;
         currentSkill.innerHTML = skill.de + ':';
 
         // Resume - Skills - Examples
-        for (const [key, example] of Object.entries(skill.examples)) {
+        for (const [, example] of Object.entries(skill.examples)) {
           const currentExample = document.getElementById('resume-skill-' + skill.key + '-' + example.key) as HTMLElement;
           currentExample.innerHTML = example.de;
         }
@@ -70,7 +70,7 @@ export const NavigationBar = () => {
         const aboutText = document.getElementById('about-' + key) as HTMLElement;
         aboutText.innerHTML = value.en;
       }
-      for (const [key, value] of Object.entries(aboutItems)) {
+      for (const [, value] of Object.entries(aboutItems)) {
         const aboutItemTitle = document.getElementById('about-title-' + value.title.en) as HTMLElement;
         const aboutItemValue = document.getElementById('about-value-' + value.title.en) as HTMLElement;
         aboutItemTitle.innerHTML = value.title.en + ':';
@@ -81,13 +81,13 @@ export const NavigationBar = () => {
       // Resume - Skills
       const skillsSection = document.getElementById('resume-' + resumeText.skills_section.key) as HTMLElement;
       skillsSection.innerHTML = resumeText.skills_section.en;
-      for (const [key, skill] of Object.entries(resumeText.skills_section.skills)) {
+      for (const [, skill] of Object.entries(resumeText.skills_section.skills)) {
         console.log (skill);
         const currentSkill = document.getElementById('resume-skill-' + skill.key) as HTMLElement;
         currentSkill.innerHTML = skill.en + ':';
 
         // Resume - Skills - Examples
-        for (const [key, example] of Object.entries(skill.examples)) {
+        for (const [, example] of Object.entries(skill.examples)) {
           const currentExample = document.getElementById('resume-skill-' + skill.key + '-' + example.key) as HTMLElement;
           currentExample.innerHTML = example.en;
         }
