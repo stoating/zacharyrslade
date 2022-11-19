@@ -4,9 +4,7 @@ import { aboutText, aboutItems } from "../data/about";
 import Link from "next/link";
 
 export const NavigationBar = () => {
-  const handleChangeLanguageClick = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  const handleChangeLanguageClick = () => {
     const language = document.getElementById("language") as HTMLElement;
 
     if (language.innerHTML === "DE") {
