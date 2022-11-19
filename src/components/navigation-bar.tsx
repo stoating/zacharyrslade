@@ -1,6 +1,7 @@
-import { TextNavigationBar } from "../data/text-navigation-bar";
-import { TextGreeter } from "../data/text-greeter";
+import { navigationBarText } from "../data/navigation-bar";
+import { greeterText } from "../data/greeter";
 import { aboutText, aboutItems } from "../data/about";
+import { resumeText } from "../data/resume";
 import Link from "next/link";
 
 export const NavigationBar = () => {
@@ -9,14 +10,20 @@ export const NavigationBar = () => {
 
     if (language.innerHTML === "DE") {
       language.innerHTML = "EN";
-      for (const [key, value] of Object.entries(TextNavigationBar)) {
+
+      // Navigation Bar
+      for (const [key, value] of Object.entries(navigationBarText)) {
         const navText = document.getElementById('nav-' + key) as HTMLElement;
         navText.innerHTML = value.de;
       }
-      for (const [key, value] of Object.entries(TextGreeter)) {
+
+      // Greeter
+      for (const [key, value] of Object.entries(greeterText)) {
         const greeterText = document.getElementById('greeter-' + key) as HTMLElement;
         greeterText.innerHTML = value.de;
       }
+
+      // About
       for (const [key, value] of Object.entries(aboutText)) {
         const aboutText = document.getElementById('about-' + key) as HTMLElement;
         aboutText.innerHTML = value.de;
@@ -27,16 +34,38 @@ export const NavigationBar = () => {
         aboutItemTitle.innerHTML = value.title.de + ':';
         aboutItemValue.innerHTML = value.value.de;
       }
+
+      // Resume
+      // Resume - Skills
+      const skillsSection = document.getElementById('resume-' + resumeText.skills_section.key) as HTMLElement;
+      skillsSection.innerHTML = resumeText.skills_section.de;
+      for (const [key, skill] of Object.entries(resumeText.skills_section.skills)) {
+        console.log (skill);
+        const currentSkill = document.getElementById('resume-skill-' + skill.key) as HTMLElement;
+        currentSkill.innerHTML = skill.de + ':';
+
+        // Resume - Skills - Examples
+        for (const [key, example] of Object.entries(skill.examples)) {
+          const currentExample = document.getElementById('resume-skill-' + skill.key + '-' + example.key) as HTMLElement;
+          currentExample.innerHTML = example.de;
+        }
+      }
     } else {
       language.innerHTML = "DE";
-      for (const [key, value] of Object.entries(TextNavigationBar)) {
+
+      // Navigation Bar
+      for (const [key, value] of Object.entries(navigationBarText)) {
         const navText = document.getElementById('nav-' + key) as HTMLElement;
         navText.innerHTML = value.en;
       }
-      for (const [key, value] of Object.entries(TextGreeter)) {
+
+      // Greeter
+      for (const [key, value] of Object.entries(greeterText)) {
         const greeterText = document.getElementById('greeter-' + key) as HTMLElement;
         greeterText.innerHTML = value.en;
       }
+
+      // About
       for (const [key, value] of Object.entries(aboutText)) {
         const aboutText = document.getElementById('about-' + key) as HTMLElement;
         aboutText.innerHTML = value.en;
@@ -46,6 +75,22 @@ export const NavigationBar = () => {
         const aboutItemValue = document.getElementById('about-value-' + value.title.en) as HTMLElement;
         aboutItemTitle.innerHTML = value.title.en + ':';
         aboutItemValue.innerHTML = value.value.en;
+      }
+
+      // Resume
+      // Resume - Skills
+      const skillsSection = document.getElementById('resume-' + resumeText.skills_section.key) as HTMLElement;
+      skillsSection.innerHTML = resumeText.skills_section.en;
+      for (const [key, skill] of Object.entries(resumeText.skills_section.skills)) {
+        console.log (skill);
+        const currentSkill = document.getElementById('resume-skill-' + skill.key) as HTMLElement;
+        currentSkill.innerHTML = skill.en + ':';
+
+        // Resume - Skills - Examples
+        for (const [key, example] of Object.entries(skill.examples)) {
+          const currentExample = document.getElementById('resume-skill-' + skill.key + '-' + example.key) as HTMLElement;
+          currentExample.innerHTML = example.en;
+        }
       }
     }
   };
@@ -58,7 +103,7 @@ export const NavigationBar = () => {
             id="nav-home"
             className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4"
           >
-            {TextNavigationBar.home.en}
+            {navigationBarText.home.en}
           </a>
         </Link>
         <Link href="/#about">
@@ -66,7 +111,7 @@ export const NavigationBar = () => {
             id="nav-about"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {TextNavigationBar.about.en}
+            {navigationBarText.about.en}
           </a>
         </Link>
         <Link href="/#resume">
@@ -74,7 +119,7 @@ export const NavigationBar = () => {
             id="nav-resume"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {TextNavigationBar.resume.en}
+            {navigationBarText.resume.en}
           </a>
         </Link>
         <Link href="/#profiles">
@@ -82,7 +127,7 @@ export const NavigationBar = () => {
             id="nav-profiles"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {TextNavigationBar.profiles.en}
+            {navigationBarText.profiles.en}
           </a>
         </Link>
         <Link href="/#stoating">
@@ -90,7 +135,7 @@ export const NavigationBar = () => {
             id="nav-stoating"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {TextNavigationBar.stoating.en}
+            {navigationBarText.stoating.en}
           </a>
         </Link>
         <Link href="/#contact">
@@ -98,7 +143,7 @@ export const NavigationBar = () => {
             id="nav-contact"
             className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible"
           >
-            {TextNavigationBar.contact.en}
+            {navigationBarText.contact.en}
           </a>
         </Link>
         <button

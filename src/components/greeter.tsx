@@ -1,4 +1,4 @@
-import { TextGreeter } from "../data/text-greeter";
+import { greeterText } from "../data/greeter";
 import { Links } from "../data/links";
 import Link from "next/link";
 
@@ -123,7 +123,7 @@ export const Greeter = () => {
             id='greeter-snippet'
             className="absolute z-10 w-screen -translate-y-52 text-center font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white md:-translate-y-56 md:text-xl"
           >
-            {TextGreeter.snippet.en}
+            {greeterText.snippet.en}
           </div>
         <div
           id="menu-background-pattern"

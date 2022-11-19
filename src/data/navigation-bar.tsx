@@ -1,4 +1,4 @@
-export const TextNavigationBar = {
+export const navigationBarText = {
   home: {
     en: "Home",
     de: "Heim",

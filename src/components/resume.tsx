@@ -1,3 +1,6 @@
+import { resumeText } from "../data/resume";
+import Image from "next/image";
+
 const peak_1_1 =
   "M0 34L82 44L164 46L245 31L327 33L409 29L491 32L573 25L655 48L736 47L818 21L900 39L900 151L818 151L736 151L655 151L573 151L491 151L409 151L327 151L245 151L164 151L82 151L0 151Z";
 const peak_1_2 =
@@ -29,30 +32,49 @@ export const Resume = () => {
           {/* left column */}
           <div className="col-span-3 row-span-full grid bg-slate-700 p-1 text-white ring">
             {/* left image */}
-            <div className="lang-en p-1 ring">image</div>
+            <div className="p-4 ring">
+              <Image
+                src="/images/zack-resume-profile.webp"
+                className="rounded-full ring"
+                alt="Berlin"
+                width={300}
+                height={300}
+              />
+            </div>
             {/* left contact */}
-            <div className="lang-en p-1 ring">contact</div>
+            <div className="p-1 ring">contact</div>
             {/* left links */}
-            <div className="lang-en p-1 ring">links</div>
+            <div className="p-1 ring">links</div>
+            {/* left languages */}
+            <div className="p-1 ring">languages</div>
             {/* left skills */}
-            <div className="lang-en p-1 ring">skills</div>
+            <div className="p-1 ring">interests</div>
           </div>
           {/* right column */}
-          <div className="col-span-9 row-span-full grid p-1 ring">
+          <div className="col-span-10 row-span-full grid p-1 ring">
             {/* right header */}
-            <div className="lang-en bg-slate-600 p-1 text-white ring">
-              header
-            </div>
+            <div className="bg-slate-600 p-1 text-white ring">header</div>
             {/* right about */}
-            <div className="lang-en bg-slate-500 p-1 text-white ring">
-              about
-            </div>
+            <div className="bg-slate-500 p-1 text-white ring">about</div>
             {/* right experience */}
-            <div className="lang-en bg-slate-100 p-1 ring">experience</div>
+            <div className="bg-slate-100 p-1 ring">experience</div>
             {/* right education */}
-            <div className="lang-en bg-slate-200 p-1 ring">eucation</div>
+            <div className="bg-slate-200 p-1 ring">education</div>
             {/* right interests */}
-            <div className="lang-en bg-slate-300 p-1 ring">insterests</div>
+            <div className="grid grid-cols-2 bg-slate-300 p-1 ring">
+              <h2 id={'resume-' + resumeText.skills_section.key} className='col-span-2 row-span-full'>{resumeText.skills_section.en}:</h2>
+              {resumeText.skills_section.skills.map((skill, index) => (
+                <div className="col-span-1 ring text-center" key={index}>
+                  <h3 id={'resume-skill-' + skill.key}className="font-bold text-lg">{skill.en}</h3>
+                  {skill.examples.map((example, index2) => (
+                    <div className="text-left">
+                      <p id={'resume-skill-' + skill.key + '-' + example.key} className="text-sm">{example.en}</p>
+                      <div>{example.rank}</div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
