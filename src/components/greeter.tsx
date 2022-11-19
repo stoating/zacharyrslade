@@ -98,7 +98,7 @@ export const Greeter = () => {
           </div>
           {GreeterLinks.map((item, index) => (
             <div
-              key={item.id}
+              key={index}
               id={"menu-item-div-" + index}
               className="group/item inline-block opacity-70 hover:opacity-100"
             >
