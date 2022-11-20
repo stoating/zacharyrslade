@@ -1,3 +1,4 @@
+import { ContextLanguage } from "../context/language";
 export const Stoating = () => {
   return (
     <section>

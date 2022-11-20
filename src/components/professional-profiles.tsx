@@ -1,3 +1,4 @@
+import { ContextLanguage } from "../context/language";
 export const ProfessionalProfiles = () => {
   return (
     <section id="profiles">

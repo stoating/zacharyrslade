@@ -8,7 +8,6 @@ import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact";
 import { Footer } from "../components/footer";
 import { NavigationBar } from "../components/navigation-bar";
-import { TestComponent1, TestComponent2 } from "../components/test-components";
 import { ContextLanguageProvider } from "../context/language";
 import React from "react";
 
@@ -17,8 +16,6 @@ const App: NextPage = () => {
   return (
     <>
       <ContextLanguageProvider>
-        <TestComponent1 />
-        <TestComponent2 />
         <Header />
         <NavigationBar />
         <Greeter />

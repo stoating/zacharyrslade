@@ -1,3 +1,4 @@
+import { ContextLanguage } from "../context/language";
 import { aboutText, aboutItems } from "../data/about";
 
 const wave_1_1 =

@@ -1,3 +1,4 @@
+import { ContextLanguage } from "../context/language";
 import { greeterText } from "../data/greeter";
 import { Links } from "../data/links";
 import Link from "next/link";

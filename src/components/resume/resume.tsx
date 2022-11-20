@@ -1,6 +1,9 @@
+import React from "react";
+import { ContextLanguage } from "../../context/language";
 import { resumeText } from "../../data/resume";
 import * as transition from "./transition";
 import Image from "next/image";
+import { TypeOf } from "zod";
 
 export const Resume = () => {
   return (
@@ -22,7 +25,7 @@ export const Resume = () => {
           <div className="col-span-3 row-span-full grid p-1 ring">
             <ResumeHeader />
             <ResumeAbout />
-            <ResumeExperience />
+            <ResumeExperience/>
             <ResumeSkills />
           </div>
         </div>
@@ -67,13 +70,14 @@ const ResumeAbout = () => {
   return <div className="bg-slate-500 p-1 text-white ring">about</div>;
 };
 const ResumeExperience = () => {
+  const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1 ring">
       <h2
         id={"resume-" + resumeText.experiences_section.key}
         className="col-span-full"
       >
-        {resumeText.experiences_section.en}
+        {resumeText.experiences_section[language as keyof typeof resumeText.experiences_section]}
       </h2>
       {resumeText.experiences_section.companies.map((company) => (
         <ResumeExperienceCompany key={company.key} company={company} />

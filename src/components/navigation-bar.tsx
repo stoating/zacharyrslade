@@ -1,8 +1,5 @@
 import React from "react";
 import { navigationBarText } from "../data/navigation-bar";
-import { greeterText } from "../data/greeter";
-import { aboutText, aboutItems } from "../data/about";
-import { resumeText } from "../data/resume";
 import { ContextLanguage } from "../context/language";
 import Link from "next/link";
 
