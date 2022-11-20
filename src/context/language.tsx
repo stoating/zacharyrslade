@@ -12,7 +12,8 @@ const defaultState = {
   },
 };
 
-export const ContextLanguage = React.createContext<ILangaugeContext>(defaultState);
+export const ContextLanguage =
+  React.createContext<ILangaugeContext>(defaultState);
 
 export const ContextLanguageProvider = (props: {
   children: React.ReactNode;

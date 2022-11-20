@@ -9,7 +9,7 @@ import { Contact } from "../components/contact";
 import { Footer } from "../components/footer";
 import { NavigationBar } from "../components/navigation-bar";
 import { TestComponent1, TestComponent2 } from "../components/test-components";
-import { ContextLanguage, ContextLanguageProvider } from "../context/language";
+import { ContextLanguageProvider } from "../context/language";
 import React from "react";
 
 
