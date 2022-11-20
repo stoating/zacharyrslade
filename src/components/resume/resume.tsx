@@ -76,12 +76,13 @@ const ResumeExperience = () => {
         {resumeText.experiences_section.en}
       </h2>
       {resumeText.experiences_section.companies.map((company) => (
-        <ResumeExperienceCompany company={company} />
+        <ResumeExperienceCompany key={company.key} company={company} />
       ))}
     </div>
   );
 };
 const ResumeExperienceCompany = (props: {
+  key: string;
   company: typeof resumeText.experiences_section.companies[0];
 }) => {
   return (
@@ -89,7 +90,7 @@ const ResumeExperienceCompany = (props: {
           id={
             "resume-" + resumeText.experiences_section.key + "-" + props.company.key
           }
-          key={props.company.key}
+          key={props.key}
           className="col-span-12 font-bold ring"
         >
           {props.company.name}
