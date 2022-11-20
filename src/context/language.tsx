@@ -1,14 +1,24 @@
 import React from "react";
 
-export const ContextLanguage = React.createContext<String>("en");
+interface ILangaugeContext {
+  language: string;
+  setLanguage: (language: string) => void;
+}
+
+const defaultState = {
+  language: "en",
+  setLanguage: () => {},
+};
+
+export const ContextLanguage = React.createContext<ILangaugeContext>(defaultState);
 
 export const ContextLanguageProvider = (props: {
   children: React.ReactNode;
 }) => {
-  const [appLanguage, setAppLanguage] = React.useState("en");
+  const [language, setLanguage] = React.useState("en");
 
   return (
-    <ContextLanguage.Provider value={{ appLanguage, setAppLanguage }}>
+    <ContextLanguage.Provider value={{ language, setLanguage }}>
       {props.children}
     </ContextLanguage.Provider>
   );

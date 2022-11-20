@@ -2,11 +2,11 @@ import React from "react";
 import { ContextLanguage } from "../context/language";
 
 export const TestComponent1 = () => {
-    const { appLanguage, setAppLanguage } = React.useContext(ContextLanguage);
+    const { language, setLanguage } = React.useContext(ContextLanguage);
     return (
       <>
-      <div>{appLanguage}</div>
-        <button onClick={() => setAppLanguage('de')}>
+      <div>{language}</div>
+        <button onClick={() => setLanguage('de')}>
           Update context
         </button>
       </>
@@ -14,11 +14,11 @@ export const TestComponent1 = () => {
   };
 
 export const TestComponent2 = () => {
-    const { appLanguage, setAppLanguage } = React.useContext(ContextLanguage);
+    const { language, setLanguage } = React.useContext(ContextLanguage);
     return (
       <>
-      <div>{appLanguage}</div>
-        <button onClick={() => setAppLanguage('en')}>
+      <div>{language}</div>
+        <button onClick={() => setLanguage('en')}>
           Update context
         </button>
       </>
