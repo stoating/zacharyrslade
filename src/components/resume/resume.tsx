@@ -95,12 +95,13 @@ const ResumeExperienceCompany = (props: {
         >
           {props.company.name}
           {props.company.positions.map((position) => (
-            <ResumeExperienceCompanyPosition company={props.company} position={position} />
+            <ResumeExperienceCompanyPosition key={position.key} company={props.company} position={position} />
           ))}
         </div>
   )
 };
 const ResumeExperienceCompanyPosition = (props: {
+  key: string;
   company: typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
 }) => {
@@ -114,12 +115,13 @@ const ResumeExperienceCompanyPosition = (props: {
         "-" +
         props.position.key
       }
-      key={props.position.key}
+      key={props.key}
       className="col-span-12 text-sm font-medium ring"
     >
       {props.position.en}, {props.position.location.en}, {props.position.dates.en}
       {props.position.bullets.map((bullet) => (
         <ResumeExperienceCompanyPositionBullet
+          key={bullet.key}
           company={props.company}
           position={props.position}
           bullet={bullet}
@@ -129,6 +131,7 @@ const ResumeExperienceCompanyPosition = (props: {
   );
 };
 const ResumeExperienceCompanyPositionBullet = (props: {
+  key: string;
   company:  typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
   bullet:   typeof resumeText.experiences_section.companies[0]["positions"][0]["bullets"][0];}) => {
@@ -144,7 +147,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
         "-" +
         props.bullet.key
       }
-      key={props.bullet.key}
+      key={props.key}
       className="col-span-12 text-xs font-light ring"
     >
       {props.bullet.en}

@@ -7,7 +7,7 @@ interface ILangaugeContext {
 
 const defaultState = {
   language: "en",
-  setLanguage: () => {},
+  setLanguage: (language: string) => {},
 };
 
 export const ContextLanguage = React.createContext<ILangaugeContext>(defaultState);
