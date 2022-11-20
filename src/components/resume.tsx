@@ -57,14 +57,41 @@ export const Resume = () => {
             {/* right about */}
             <div className="bg-slate-500 p-1 text-white ring">about</div>
             {/* right experience */}
-            <div className="bg-slate-100 p-1 ring">experience</div>
+            <div className="grid grid-cols-12 bg-slate-100 p-1 ring">
+              <h2
+                id={"resume-" + resumeText.experiences_section.key}
+                className="col-span-full"
+              >
+                {resumeText.experiences_section.en}
+              </h2>
+              {resumeText.experiences_section.companies.map(
+                (company, company_index) => (
+                  <div key={company.key} className="col-span-12 ring font-bold"> {company.name}
+                    {company.positions.map((position, position_index) => (
+                      <div key={position.key} className="col-span-12 ring text-sm font-medium"> {position.en}
+                        {position.bullets.map((bullet, bullet_index) => (
+                          <div key={bullet.key} className="col-span-12 ring text-xs font-light">
+                            {bullet.en}
+                            {/* company */
+                            /* locations */}
+                            {/* position */
+                            /* date */}
+                            {/* description */}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
             {/* right education */}
             <div className="bg-slate-200 p-1 ring">education</div>
             {/* right interests */}
             <div className="grid grid-cols-2 bg-slate-300 p-1 ring">
               <h2
                 id={"resume-" + resumeText.skills_section.key}
-                className="col-span-2 row-span-full"
+                className="col-span-full"
               >
                 {resumeText.skills_section.en}:
               </h2>

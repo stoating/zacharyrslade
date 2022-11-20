@@ -148,7 +148,7 @@ export const resumeText = {
     companies: [
       {
         key: "company-1",
-        company: "Bosch Engineering GmbH",
+        name: "Bosch Engineering GmbH",
         positions: [
           {
             key: "position-1",
@@ -216,7 +216,7 @@ export const resumeText = {
       },
       {
         key: "company-2",
-        company: "White Tie Games LLC",
+        name: "White Tie Games LLC",
         positions: [
           {
             key: "position-1",
@@ -258,7 +258,7 @@ export const resumeText = {
       },
       {
         key: "company-3",
-        company: "Bosch Engineering Group",
+        name: "Bosch Engineering Group",
         positions: [
           {
             key: "position-1",
@@ -294,7 +294,7 @@ export const resumeText = {
       },
       {
         key: "company-4",
-        company: "Robert Bosch LLC",
+        name: "Robert Bosch LLC",
         positions: [
           {
             key: "position-1",
