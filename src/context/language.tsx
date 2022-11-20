@@ -2,12 +2,14 @@ import React from "react";
 
 interface ILangaugeContext {
   language: string;
-  setLanguage?: (language: string) => void;
+  setLanguage: (language: string) => void;
 }
 
 const defaultState = {
   language: "en",
-  setLanguage: (language: string) => {},
+  setLanguage: (language: string) => {
+    console.log("setLanguage", language);
+  },
 };
 
 export const ContextLanguage = React.createContext<ILangaugeContext>(defaultState);
