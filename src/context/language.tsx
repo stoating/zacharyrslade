@@ -2,7 +2,7 @@ import React from "react";
 
 interface ILangaugeContext {
   language: string;
-  setLanguage: (language: string) => void;
+  setLanguage?: (language: string) => void;
 }
 
 const defaultState = {
