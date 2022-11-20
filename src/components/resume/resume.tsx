@@ -77,7 +77,7 @@ const ResumeExperience = () => {
         id={"resume-" + resumeText.experiences_section.key}
         className="col-span-full"
       >
-        {resumeText.experiences_section[language as keyof typeof resumeText.experiences_section]}
+        {resumeText.experiences_section.display[language as keyof typeof resumeText.experiences_section.display]}
       </h2>
       {resumeText.experiences_section.companies.map((company) => (
         <ResumeExperienceCompany key={company.key} company={company} />

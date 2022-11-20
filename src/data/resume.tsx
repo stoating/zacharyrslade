@@ -143,8 +143,10 @@ export const resumeText = {
   },
   experiences_section: {
     key: "experiences",
-    en: "Experience",
-    de: "Erfahrung",
+    display: {
+      en: "Experience",
+      de: "Erfahrung",
+    },
     companies: [
       {
         key: "company-1",
