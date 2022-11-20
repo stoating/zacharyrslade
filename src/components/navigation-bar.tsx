@@ -7,11 +7,11 @@ import Link from "next/link";
 export const NavigationBar = () => {
   const handleChangeLanguageClick = () => {
 
-    if(language === "en") {
-      setAppLanguage("de");
-    } else {
-      setAppLanguage("en");
-    }
+    // if(language === "en") {
+    //   setAppLanguage("de");
+    // } else {
+    //   setAppLanguage("en");
+    // }
 
     const language = document.getElementById("language") as HTMLElement;
 
