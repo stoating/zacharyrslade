@@ -17,7 +17,7 @@ export const NavigationBar = () => {
             id="nav-home"
             className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4"
           >
-            {navigationBarText.home[language as string as keyof typeof navigationBarText.home]}
+            {navigationBarText.home[language as keyof typeof navigationBarText.home]}
           </a>
         </Link>
         <Link href="/#about">
@@ -25,7 +25,7 @@ export const NavigationBar = () => {
             id="nav-about"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {navigationBarText.about[language as string as keyof typeof navigationBarText.about]}
+            {navigationBarText.about[language as keyof typeof navigationBarText.about]}
           </a>
         </Link>
         <Link href="/#resume">
@@ -33,7 +33,7 @@ export const NavigationBar = () => {
             id="nav-resume"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {navigationBarText.resume[language as string as keyof typeof navigationBarText.resume]}
+            {navigationBarText.resume[language as keyof typeof navigationBarText.resume]}
           </a>
         </Link>
         <Link href="/#profiles">
@@ -41,7 +41,7 @@ export const NavigationBar = () => {
             id="nav-profiles"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {navigationBarText.profiles[language as string as keyof typeof navigationBarText.profiles]}
+            {navigationBarText.profiles[language as keyof typeof navigationBarText.profiles]}
           </a>
         </Link>
         <Link href="/#stoating">
@@ -49,7 +49,7 @@ export const NavigationBar = () => {
             id="nav-stoating"
             className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
           >
-            {navigationBarText.stoating[language as string as keyof typeof navigationBarText.stoating]}
+            {navigationBarText.stoating[language as keyof typeof navigationBarText.stoating]}
           </a>
         </Link>
         <Link href="/#contact">
@@ -57,7 +57,7 @@ export const NavigationBar = () => {
             id="nav-contact"
             className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible"
           >
-            {navigationBarText.contact[language as string as keyof typeof navigationBarText.contact]}
+            {navigationBarText.contact[language as keyof typeof navigationBarText.contact]}
           </a>
         </Link>
         <button
