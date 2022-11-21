@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Header } from "../components/header";
 import { Greeter } from "../components/greeter";
-import { About } from "../components/about";
+import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
 import { ProfessionalProfiles } from "../components/professional-profiles";
 import { Stoating } from "../components/stoating";

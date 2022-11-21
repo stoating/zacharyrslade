@@ -1,9 +1,9 @@
 import React from "react";
 import { ContextLanguage } from "../../context/language";
 import { resumeText } from "../../data/resume";
-import * as transition from "./transition";
+import * as svg from "./svg";
 import Image from "next/image";
-import { TypeOf } from "zod";
+import { FaLanguage } from "react-icons/fa";
 
 export const Resume = () => {
   return (
@@ -25,7 +25,7 @@ export const Resume = () => {
           <div className="col-span-3 row-span-full grid p-1 ring">
             <ResumeHeader />
             <ResumeAbout />
-            <ResumeExperience/>
+            <ResumeExperience />
             <ResumeSkills />
           </div>
         </div>
@@ -77,7 +77,11 @@ const ResumeExperience = () => {
         id={"resume-" + resumeText.experiences_section.key}
         className="col-span-full"
       >
-        {resumeText.experiences_section.display[language as keyof typeof resumeText.experiences_section.display]}
+        {
+          resumeText.experiences_section.text[
+            language as keyof typeof resumeText.experiences_section.text
+          ]
+        }
       </h2>
       {resumeText.experiences_section.companies.map((company) => (
         <ResumeExperienceCompany key={company.key} company={company} />
@@ -91,24 +95,29 @@ const ResumeExperienceCompany = (props: {
 }) => {
   return (
     <div
-          id={
-            "resume-" + resumeText.experiences_section.key + "-" + props.company.key
-          }
-          key={props.key}
-          className="col-span-12 font-bold ring"
-        >
-          {props.company.name}
-          {props.company.positions.map((position) => (
-            <ResumeExperienceCompanyPosition key={position.key} company={props.company} position={position} />
-          ))}
-        </div>
-  )
+      id={
+        "resume-" + resumeText.experiences_section.key + "-" + props.company.key
+      }
+      key={props.key}
+      className="col-span-12 font-bold ring"
+    >
+      {props.company.name}
+      {props.company.positions.map((position) => (
+        <ResumeExperienceCompanyPosition
+          key={position.key}
+          company={props.company}
+          position={position}
+        />
+      ))}
+    </div>
+  );
 };
 const ResumeExperienceCompanyPosition = (props: {
   key: string;
   company: typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
 }) => {
+  const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div
       id={
@@ -122,7 +131,13 @@ const ResumeExperienceCompanyPosition = (props: {
       key={props.key}
       className="col-span-12 text-sm font-medium ring"
     >
-      {props.position.en}, {props.position.location.en}, {props.position.dates.en}
+      {props.position.text[language as keyof typeof props.position.text]},{" "}
+      {
+        props.position.location[
+          language as keyof typeof props.position.location
+        ]
+      }
+      , {props.position.dates[language as keyof typeof props.position.dates]}
       {props.position.bullets.map((bullet) => (
         <ResumeExperienceCompanyPositionBullet
           key={bullet.key}
@@ -136,9 +151,11 @@ const ResumeExperienceCompanyPosition = (props: {
 };
 const ResumeExperienceCompanyPositionBullet = (props: {
   key: string;
-  company:  typeof resumeText.experiences_section.companies[0];
+  company: typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
-  bullet:   typeof resumeText.experiences_section.companies[0]["positions"][0]["bullets"][0];}) => {
+  bullet: typeof resumeText.experiences_section.companies[0]["positions"][0]["bullets"][0];
+}) => {
+  const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div
       id={
@@ -154,23 +171,24 @@ const ResumeExperienceCompanyPositionBullet = (props: {
       key={props.key}
       className="col-span-12 text-xs font-light ring"
     >
-      {props.bullet.en}
+      {props.bullet.text[language as keyof typeof props.bullet.text]}
     </div>
   );
 };
 const ResumeSkills = () => {
+  const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-2 bg-slate-300 p-1 ring">
       <h2
         id={"resume-" + resumeText.skills_section.key}
         className="col-span-full"
       >
-        {resumeText.skills_section.en}:
+        {resumeText.skills_section.text[language as keyof typeof resumeText.skills_section.text]}:
       </h2>
       {resumeText.skills_section.skills.map((skill, skill_index) => (
         <div className="col-span-1 text-center ring" key={skill_index}>
           <h3 id={"resume-skill-" + skill.key} className="text-lg font-bold">
-            {skill.en}
+            {skill.text[language as keyof typeof skill.text]}
           </h3>
           {skill.examples.map((example, example_index) => (
             <div className="text-left" key={example_index}>
@@ -178,7 +196,7 @@ const ResumeSkills = () => {
                 id={"resume-skill-" + skill.key + "-" + example.key}
                 className="text-sm"
               >
-                {example.en}
+                {example.text[language as keyof typeof example.text]}
               </p>
               <div>{example.rank}</div>
             </div>
@@ -198,73 +216,73 @@ const ResumeTransitionBottom = () => {
         height="100%"
         version="1.1"
       >
-        <path d={transition.peak_1_1} fill="#e0f0fe">
+        <path d={svg.peak_1_1} fill="#e0f0fe">
           <animate
             attributeName="d"
             dur="10000ms"
             repeatCount="indefinite"
             values={
-              transition.peak_1_1 +
+              svg.peak_1_1 +
               ";" +
-              transition.peak_1_2 +
+              svg.peak_1_2 +
               ";" +
-              transition.peak_1_1
+              svg.peak_1_1
             }
           ></animate>
         </path>
-        <path d={transition.peak_2_1} fill="#cce8fe">
+        <path d={svg.peak_2_1} fill="#cce8fe">
           <animate
             attributeName="d"
             dur="11000ms"
             repeatCount="indefinite"
             values={
-              transition.peak_2_1 +
+              svg.peak_2_1 +
               ";" +
-              transition.peak_2_2 +
+              svg.peak_2_2 +
               ";" +
-              transition.peak_2_1
+              svg.peak_2_1
             }
           ></animate>
         </path>
-        <path d={transition.peak_3_1} fill="#b5e1fe">
+        <path d={svg.peak_3_1} fill="#b5e1fe">
           <animate
             attributeName="d"
             dur="12000ms"
             repeatCount="indefinite"
             values={
-              transition.peak_3_1 +
+              svg.peak_3_1 +
               ";" +
-              transition.peak_3_2 +
+              svg.peak_3_2 +
               ";" +
-              transition.peak_3_1
+              svg.peak_3_1
             }
           ></animate>
         </path>
-        <path d={transition.peak_4_1} fill="#9bdafd">
+        <path d={svg.peak_4_1} fill="#9bdafd">
           <animate
             attributeName="d"
             dur="13000ms"
             repeatCount="indefinite"
             values={
-              transition.peak_4_1 +
+              svg.peak_4_1 +
               ";" +
-              transition.peak_4_2 +
+              svg.peak_4_2 +
               ";" +
-              transition.peak_4_1
+              svg.peak_4_1
             }
           ></animate>
         </path>
-        <path d={transition.peak_5_1} fill="#7dd3fc">
+        <path d={svg.peak_5_1} fill="#7dd3fc">
           <animate
             attributeName="d"
             dur="6000ms"
             repeatCount="indefinite"
             values={
-              transition.peak_5_1 +
+              svg.peak_5_1 +
               ";" +
-              transition.peak_5_2 +
+              svg.peak_5_2 +
               ";" +
-              transition.peak_5_1
+              svg.peak_5_1
             }
           ></animate>
         </path>
