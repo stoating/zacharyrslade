@@ -11,9 +11,9 @@ export const Resume = () => {
       {/* resume container */}
       <div className="container mx-auto max-w-6xl bg-white">
         {/* resume grid */}
-        <div className="grid grid-cols-4 ring">
+        <div className="grid grid-cols-4">
           {/* left column */}
-          <div className="col-span-1 row-span-full grid bg-slate-700 p-1 text-white ring">
+          <div className="col-span-1 row-span-full grid bg-slate-700 p-1 text-white">
             <ResumeProfileImage />
             <ResumeContacts />
             <ResumeLinks />
@@ -22,7 +22,7 @@ export const Resume = () => {
             <ResumeInterests />
           </div>
           {/* right column */}
-          <div className="col-span-3 row-span-full grid p-1 ring">
+          <div className="col-span-3 row-span-full grid px-1">
             <ResumeHeader />
             <ResumeAbout />
             <ResumeExperience />
@@ -40,7 +40,7 @@ const ResumeProfileImage = () => {
     <div className="p-4 ring">
       <Image
         src="/images/zack-resume-profile.webp"
-        className="rounded-full ring"
+        className="rounded-full"
         alt="Berlin"
         width={300}
         height={300}
@@ -64,15 +64,15 @@ const ResumeInterests = () => {
   return <div className="p-1 ring">interests</div>;
 };
 const ResumeHeader = () => {
-  return <div className="bg-slate-600 p-1 text-white ring">header</div>;
+  return <div className="bg-slate-600 p-1 text-white">header</div>;
 };
 const ResumeAbout = () => {
-  return <div className="bg-slate-500 p-1 text-white ring">about</div>;
+  return <div className="bg-slate-500 p-1 text-white">about</div>;
 };
 const ResumeExperience = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
-    <div className="grid grid-cols-12 bg-slate-200 p-1 ring">
+    <div className="grid grid-cols-12 bg-slate-200 p-1">
       <h2
         id={"resume-" + resumeText.experiences_section.key}
         className="col-span-full"
@@ -99,7 +99,7 @@ const ResumeExperienceCompany = (props: {
         "resume-" + resumeText.experiences_section.key + "-" + props.company.key
       }
       key={props.key}
-      className="col-span-12 font-bold ring"
+      className="col-span-12 font-bold"
     >
       {props.company.name}
       {props.company.positions.map((position) => (
@@ -129,7 +129,7 @@ const ResumeExperienceCompanyPosition = (props: {
         props.position.key
       }
       key={props.key}
-      className="col-span-12 text-sm font-medium ring"
+      className="col-span-12 text-sm font-medium"
     >
       {props.position.text[language as keyof typeof props.position.text]},{" "}
       {
@@ -169,7 +169,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
         props.bullet.key
       }
       key={props.key}
-      className="col-span-12 text-xs font-light ring"
+      className="col-span-12 text-xs font-light"
     >
       {props.bullet.text[language as keyof typeof props.bullet.text]}
     </div>
@@ -178,7 +178,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
 const ResumeSkills = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
-    <div className="grid grid-cols-2 bg-slate-300 p-1 ring">
+    <div className="grid grid-cols-2 bg-slate-300 p-1">
       <h2
         id={"resume-" + resumeText.skills_section.key}
         className="col-span-full"
@@ -186,7 +186,7 @@ const ResumeSkills = () => {
         {resumeText.skills_section.text[language as keyof typeof resumeText.skills_section.text]}:
       </h2>
       {resumeText.skills_section.skills.map((skill, skill_index) => (
-        <div className="col-span-1 text-center ring" key={skill_index}>
+        <div className="col-span-1 text-center" key={skill_index}>
           <h3 id={"resume-skill-" + skill.key} className="text-lg font-bold">
             {skill.text[language as keyof typeof skill.text]}
           </h3>
