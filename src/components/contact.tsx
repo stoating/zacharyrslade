@@ -111,7 +111,6 @@ export const Contact = () => {
       </div>
       <div className="w-screen bg-rose-200 bg-cover bg-center bg-no-repeat">
         <svg
-          id="visual"
           viewBox="0 0 900 30"
           width="100%"
           height="100%"

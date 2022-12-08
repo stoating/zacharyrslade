@@ -67,7 +67,6 @@ export const Greeter = () => {
         className="mx-auto flex min-h-screen items-center bg-slate-900"
       >
         <div
-          id="menu-items"
           className="peer/menu-item z-10 mx-auto hover:opacity-100"
         >
           <div className="grid max-w-xs grid-cols-1 flex-col p-10 text-center">
@@ -77,7 +76,6 @@ export const Greeter = () => {
             ></img>
             <div className="invisible col-span-1 m-0 box-border p-0 md:visible">
               <svg
-                id="visual"
                 viewBox="0 0 380 380"
                 width="380"
                 height="380"
@@ -85,7 +83,7 @@ export const Greeter = () => {
                 className="absolute left-1/2 top-1/2 -z-10 -translate-x-52 -translate-y-56 opacity-30"
               >
                 <g transform="translate(188.34498259648836 184.48114065125225)">
-                  <path id="blob1" d={blob1} fill="#000000">
+                  <path d={blob1} fill="#000000">
                     <animate
                       attributeName="d"
                       dur="12000ms"
@@ -106,7 +104,7 @@ export const Greeter = () => {
               <Link href={item.ref}>
                 <a
                   id={"menu-item-" + index}
-                  className="m-1 inline-block p-1 font-sans text-5xl text-black opacity-100 transition-all duration-300 ease-linear group-hover/item:text-white group-hover/item:opacity-100"
+                  className="m-1 inline-block p-1 text-5xl text-black opacity-100 transition-all duration-300 ease-linear group-hover/item:text-white group-hover/item:opacity-100"
                   target="_blank"
                   rel="noreferrer"
                   onMouseOver={handleMenuItemMouseOver}
@@ -121,7 +119,6 @@ export const Greeter = () => {
           Zachary Slade
         </div>
           <div
-            id='greeter-snippet'
             className="absolute z-10 w-screen -translate-y-52 text-center font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white md:-translate-y-56 md:text-xl"
           >
             {greeterText.snippet.en}
@@ -141,7 +138,6 @@ export const Greeter = () => {
       </div>
       <div className="w-screen bg-slate-900 bg-cover bg-center bg-no-repeat">
         <svg
-          id="visual"
           viewBox="0 0 900 200"
           width="100%"
           height="100%"

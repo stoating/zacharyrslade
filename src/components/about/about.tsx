@@ -109,7 +109,6 @@ const AboutHeader = () => {
 
   return (
     <h2
-      id="about-about"
       className="pb-8 text-3xl font-bold text-slate-400 first-letter:uppercase"
     >
       {aboutText.about[language as keyof typeof aboutText.about]}:
@@ -121,7 +120,7 @@ const AboutDescription = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
 
   return (
-    <p id="about-description" className="pb-8">
+    <p className="pb-8">
       {aboutText.description[language as keyof typeof aboutText.description]}
     </p>
   );
@@ -138,20 +137,11 @@ const AboutItem = (props: { key: string; item: typeof aboutItems[0] }) => {
       <div className="flex">
         <i className="pt-1 pr-2">{props.item.icon}</i>
         <p
-          id={
-            "about-title-" +
-            props.item.title[language as keyof typeof props.item.title]
-          }
           className="pr-2 font-bold text-slate-400 first-letter:uppercase"
         >
           {props.item.title[language as keyof typeof props.item.title]}:
         </p>
-        <p
-          id={
-            "about-value-" +
-            props.item.title[language as keyof typeof props.item.title]
-          }
-        >
+        <p>
           {props.item.value[language as keyof typeof props.item.title]}
         </p>
       </div>
@@ -163,7 +153,6 @@ const AboutTransitionBottom = () => {
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
       <svg
-        id="visual"
         viewBox="0 0 900 200"
         width="100%"
         height="100%"

@@ -4,6 +4,8 @@ import { resumeText } from "../../data/resume";
 import * as svg from "./svg";
 import Image from "next/image";
 import { FaLanguage } from "react-icons/fa";
+import { Links } from "../../data/links";
+import Link from "next/link";
 
 export const Resume = () => {
   return (
@@ -13,7 +15,7 @@ export const Resume = () => {
         {/* resume grid */}
         <div className="grid grid-cols-4">
           {/* left column */}
-          <div className="col-span-1 row-span-full grid bg-slate-700 p-1 text-white">
+          <div className="col-span-1 row-span-full grid bg-slate-700 text-white">
             <ResumeProfileImage />
             <ResumeContacts />
             <ResumeLinks />
@@ -22,7 +24,7 @@ export const Resume = () => {
             <ResumeInterests />
           </div>
           {/* right column */}
-          <div className="col-span-3 row-span-full grid px-1">
+          <div className="col-span-3 row-span-full grid">
             <ResumeHeader />
             <ResumeAbout />
             <ResumeExperience />
@@ -52,7 +54,35 @@ const ResumeContacts = () => {
   return <div className="p-1 ring">contact</div>;
 };
 const ResumeLinks = () => {
-  return <div className="p-1 ring">links</div>;
+  const MyResumeLinks = Links.filter(function (Links) {
+    return (
+      Links.text === "LinkedIn" ||
+      Links.text === "Xing" ||
+      Links.text === "GitHub"
+    );
+  });
+
+  return (
+    <div className="p-1 ring">
+      <h3>Links</h3>
+      {MyResumeLinks.map((item, index) => (
+        <div
+          key={index}
+        >
+          <Link href={item.ref}>
+            <a
+              className="inline-block text-3xl -mb-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {item.icon}
+            </a>
+          </Link>
+          <div className="inline-block text-xl p-1">{item.text}</div>
+        </div>
+      ))}
+    </div>
+  );
 };
 const ResumeLanguages = () => {
   return <div className="p-1 ring">languages</div>;
@@ -74,7 +104,6 @@ const ResumeExperience = () => {
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1">
       <h2
-        id={"resume-" + resumeText.experiences_section.key}
         className="col-span-full"
       >
         {
@@ -95,9 +124,7 @@ const ResumeExperienceCompany = (props: {
 }) => {
   return (
     <div
-      id={
-        "resume-" + resumeText.experiences_section.key + "-" + props.company.key
-      }
+
       key={props.key}
       className="col-span-12 font-bold"
     >
@@ -120,14 +147,6 @@ const ResumeExperienceCompanyPosition = (props: {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div
-      id={
-        "resume-" +
-        resumeText.experiences_section.key +
-        "-" +
-        props.company.key +
-        "-" +
-        props.position.key
-      }
       key={props.key}
       className="col-span-12 text-sm font-medium"
     >
@@ -158,16 +177,6 @@ const ResumeExperienceCompanyPositionBullet = (props: {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div
-      id={
-        "resume-" +
-        resumeText.experiences_section.key +
-        "-" +
-        props.company.key +
-        "-" +
-        props.position.key +
-        "-" +
-        props.bullet.key
-      }
       key={props.key}
       className="col-span-12 text-xs font-light"
     >
@@ -180,20 +189,23 @@ const ResumeSkills = () => {
   return (
     <div className="grid grid-cols-2 bg-slate-300 p-1">
       <h2
-        id={"resume-" + resumeText.skills_section.key}
         className="col-span-full"
       >
-        {resumeText.skills_section.text[language as keyof typeof resumeText.skills_section.text]}:
+        {
+          resumeText.skills_section.text[
+            language as keyof typeof resumeText.skills_section.text
+          ]
+        }
+        :
       </h2>
       {resumeText.skills_section.skills.map((skill, skill_index) => (
         <div className="col-span-1 text-center" key={skill_index}>
-          <h3 id={"resume-skill-" + skill.key} className="text-lg font-bold">
+          <h3 className="text-lg font-bold">
             {skill.text[language as keyof typeof skill.text]}
           </h3>
           {skill.examples.map((example, example_index) => (
             <div className="text-left" key={example_index}>
               <p
-                id={"resume-skill-" + skill.key + "-" + example.key}
                 className="text-sm"
               >
                 {example.text[language as keyof typeof example.text]}
@@ -210,7 +222,6 @@ const ResumeTransitionBottom = () => {
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
       <svg
-        id="visual"
         viewBox="0 0 900 150"
         width="100%"
         height="100%"
@@ -221,13 +232,7 @@ const ResumeTransitionBottom = () => {
             attributeName="d"
             dur="10000ms"
             repeatCount="indefinite"
-            values={
-              svg.peak_1_1 +
-              ";" +
-              svg.peak_1_2 +
-              ";" +
-              svg.peak_1_1
-            }
+            values={svg.peak_1_1 + ";" + svg.peak_1_2 + ";" + svg.peak_1_1}
           ></animate>
         </path>
         <path d={svg.peak_2_1} fill="#cce8fe">
@@ -235,13 +240,7 @@ const ResumeTransitionBottom = () => {
             attributeName="d"
             dur="11000ms"
             repeatCount="indefinite"
-            values={
-              svg.peak_2_1 +
-              ";" +
-              svg.peak_2_2 +
-              ";" +
-              svg.peak_2_1
-            }
+            values={svg.peak_2_1 + ";" + svg.peak_2_2 + ";" + svg.peak_2_1}
           ></animate>
         </path>
         <path d={svg.peak_3_1} fill="#b5e1fe">
@@ -249,13 +248,7 @@ const ResumeTransitionBottom = () => {
             attributeName="d"
             dur="12000ms"
             repeatCount="indefinite"
-            values={
-              svg.peak_3_1 +
-              ";" +
-              svg.peak_3_2 +
-              ";" +
-              svg.peak_3_1
-            }
+            values={svg.peak_3_1 + ";" + svg.peak_3_2 + ";" + svg.peak_3_1}
           ></animate>
         </path>
         <path d={svg.peak_4_1} fill="#9bdafd">
@@ -263,13 +256,7 @@ const ResumeTransitionBottom = () => {
             attributeName="d"
             dur="13000ms"
             repeatCount="indefinite"
-            values={
-              svg.peak_4_1 +
-              ";" +
-              svg.peak_4_2 +
-              ";" +
-              svg.peak_4_1
-            }
+            values={svg.peak_4_1 + ";" + svg.peak_4_2 + ";" + svg.peak_4_1}
           ></animate>
         </path>
         <path d={svg.peak_5_1} fill="#7dd3fc">
@@ -277,13 +264,7 @@ const ResumeTransitionBottom = () => {
             attributeName="d"
             dur="6000ms"
             repeatCount="indefinite"
-            values={
-              svg.peak_5_1 +
-              ";" +
-              svg.peak_5_2 +
-              ";" +
-              svg.peak_5_1
-            }
+            values={svg.peak_5_1 + ";" + svg.peak_5_2 + ";" + svg.peak_5_1}
           ></animate>
         </path>
       </svg>
