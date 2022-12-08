@@ -1,9 +1,14 @@
 import { ContextLanguage } from "../../context/language";
 import { Links } from "../../data/links";
+import { contactText } from "../../data/contact";
 import { MdEmail } from "react-icons/md";
 import * as svg from "./svg";
+import React from "react";
 
 export const Contact = () => {
+
+  const { language } = React.useContext(ContextLanguage);
+
   const ProfessionalLinks = Links.filter(function (Links) {
     return Links.type === "professional" && Links.for.includes("zachary");
   });
@@ -17,7 +22,7 @@ export const Contact = () => {
             <i className="pt-1 pr-2">
               <MdEmail />
             </i>
-            Reach Out
+            {contactText.title[language as keyof typeof contactText.title]}
           </div>
         </div>
 
@@ -35,7 +40,7 @@ export const Contact = () => {
               <input
                 className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 name="name"
-                placeholder="Name"
+                placeholder={contactText.name[language as keyof typeof contactText.name]}
                 required
                 type="text"
               />
@@ -44,7 +49,7 @@ export const Contact = () => {
                 autoComplete="email"
                 className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 name="email"
-                placeholder="Email"
+                placeholder={contactText.email[language as keyof typeof contactText.title]}
                 required
                 type="email"
               />
@@ -53,7 +58,7 @@ export const Contact = () => {
                 className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
                 maxLength={250}
                 name="message"
-                placeholder="Message"
+                placeholder={contactText.message[language as keyof typeof contactText.title]}
                 required
                 rows={6}
               />
@@ -68,7 +73,7 @@ export const Contact = () => {
                 className="w-max rounded-md border-2 bg-slate-900 p-2 text-white duration-300 ease-in-out hover:bg-sky-500"
                 type="submit"
               >
-                Send Message
+                {contactText.submit[language as keyof typeof contactText.submit]}
               </button>
             </form>
           </div>
