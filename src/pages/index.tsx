@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { Header } from "../components/header";
-import { Greeter } from "../components/greeter";
+import { Greeter } from "../components/greeter/greeter";
 import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
 import { ProfessionalProfiles } from "../components/professional-profiles";
 import { Stoating } from "../components/stoating";
-import { Contact } from "../components/contact";
+import { Contact } from "../components/contact/contact";
 import { Footer } from "../components/footer";
 import { NavigationBar } from "../components/navigation-bar";
 import { ContextLanguageProvider } from "../context/language";

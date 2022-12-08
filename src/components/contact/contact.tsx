@@ -1,9 +1,7 @@
-import { ContextLanguage } from "../context/language";
-import { Links } from "../data/links";
+import { ContextLanguage } from "../../context/language";
+import { Links } from "../../data/links";
 import { MdEmail } from "react-icons/md";
-
-const wave1 =
-  "M0 9L75 12.2C150 15.3 300 21.7 450 21.8C600 22 750 16 825 13L900 10L900 31L825 31C750 31 600 31 450 31C300 31 150 31 75 31L0 31Z";
+import * as svg from "./svg";
 
 export const Contact = () => {
   const ProfessionalLinks = Links.filter(function (Links) {
@@ -111,12 +109,12 @@ export const Contact = () => {
       </div>
       <div className="w-screen bg-rose-200 bg-cover bg-center bg-no-repeat">
         <svg viewBox="0 0 900 30" width="100%" height="100%" version="1.1">
-          <path d={wave1} fill="#334155">
+          <path d={svg.wave1} fill="#334155">
             <animate
               attributeName="d"
               dur="50000ms"
               repeatCount="indefinite"
-              values={wave1}
+              values={svg.wave1}
             ></animate>
           </path>
         </svg>

@@ -55,11 +55,7 @@ const ResumeContacts = () => {
 };
 const ResumeLinks = () => {
   const MyResumeLinks = Links.filter(function (Links) {
-    return (
-      Links.text === "LinkedIn" ||
-      Links.text === "Xing" ||
-      Links.text === "GitHub"
-    );
+    return Links.type === "professional" && Links.for.includes("zachary");
   });
 
   return (
@@ -98,7 +94,7 @@ const ResumeAbout = () => {
   return <div className="bg-slate-500 p-1 text-white">about</div>;
 };
 const ResumeExperience = () => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1">
       <h2 className="col-span-full">
@@ -136,7 +132,7 @@ const ResumeExperienceCompanyPosition = (props: {
   company: typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
 }) => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
   return (
     <div key={props.key} className="col-span-12 text-sm font-medium">
       {props.position.text[language as keyof typeof props.position.text]},{" "}
@@ -163,7 +159,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
   bullet: typeof resumeText.experiences_section.companies[0]["positions"][0]["bullets"][0];
 }) => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
   return (
     <div key={props.key} className="col-span-12 text-xs font-light">
       {props.bullet.text[language as keyof typeof props.bullet.text]}
@@ -171,7 +167,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
   );
 };
 const ResumeSkills = () => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-2 bg-slate-300 p-1">
       <h2 className="col-span-full">

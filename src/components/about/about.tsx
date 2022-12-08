@@ -105,7 +105,7 @@ const AboutSVGGear = () => {
 };
 
 const AboutHeader = () => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
 
   return (
     <h2 className="pb-8 text-3xl font-bold text-slate-400 first-letter:uppercase">
@@ -115,7 +115,7 @@ const AboutHeader = () => {
 };
 
 const AboutDescription = () => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
 
   return (
     <p className="pb-8">
@@ -125,7 +125,7 @@ const AboutDescription = () => {
 };
 
 const AboutItem = (props: { key: string; item: typeof aboutItems[0] }) => {
-  const { language, setLanguage } = React.useContext(ContextLanguage);
+  const { language } = React.useContext(ContextLanguage);
 
   return (
     <div
