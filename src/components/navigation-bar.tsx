@@ -10,45 +10,57 @@ export const NavigationBar = () => {
     <div className="fixed top-0 z-50 flex w-full bg-slate-900 bg-opacity-70 text-lg font-semibold text-white text-opacity-100">
       <div className="mx-auto flex">
         <Link href="/#menu">
-          <a
-            className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4"
-          >
-            {navigationBarText.home[language as keyof typeof navigationBarText.home]}
+          <a className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4">
+            {
+              navigationBarText.home[
+                language as keyof typeof navigationBarText.home
+              ]
+            }
           </a>
         </Link>
         <Link href="/#about">
-          <a
-            className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
-          >
-            {navigationBarText.about[language as keyof typeof navigationBarText.about]}
+          <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+            {
+              navigationBarText.about[
+                language as keyof typeof navigationBarText.about
+              ]
+            }
           </a>
         </Link>
         <Link href="/#resume">
-          <a
-            className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
-          >
-            {navigationBarText.resume[language as keyof typeof navigationBarText.resume]}
+          <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+            {
+              navigationBarText.resume[
+                language as keyof typeof navigationBarText.resume
+              ]
+            }
           </a>
         </Link>
         <Link href="/#profiles">
-          <a
-            className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
-          >
-            {navigationBarText.profiles[language as keyof typeof navigationBarText.profiles]}
+          <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+            {
+              navigationBarText.profiles[
+                language as keyof typeof navigationBarText.profiles
+              ]
+            }
           </a>
         </Link>
         <Link href="/#stoating">
-          <a
-            className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
-          >
-            {navigationBarText.stoating[language as keyof typeof navigationBarText.stoating]}
+          <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+            {
+              navigationBarText.stoating[
+                language as keyof typeof navigationBarText.stoating
+              ]
+            }
           </a>
         </Link>
         <Link href="/#contact">
-          <a
-            className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible"
-          >
-            {navigationBarText.contact[language as keyof typeof navigationBarText.contact]}
+          <a className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible">
+            {
+              navigationBarText.contact[
+                language as keyof typeof navigationBarText.contact
+              ]
+            }
           </a>
         </Link>
         <button

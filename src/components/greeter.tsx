@@ -66,9 +66,7 @@ export const Greeter = () => {
         id="menu"
         className="mx-auto flex min-h-screen items-center bg-slate-900"
       >
-        <div
-          className="peer/menu-item z-10 mx-auto hover:opacity-100"
-        >
+        <div className="peer/menu-item z-10 mx-auto hover:opacity-100">
           <div className="grid max-w-xs grid-cols-1 flex-col p-10 text-center">
             <img
               src="/images/zack-look-right-color-02.webp"
@@ -118,11 +116,9 @@ export const Greeter = () => {
         <div className="absolute z-10 w-screen -translate-y-60 text-center text-4xl font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white md:-translate-y-72 md:text-6xl">
           Zachary Slade
         </div>
-          <div
-            className="absolute z-10 w-screen -translate-y-52 text-center font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white md:-translate-y-56 md:text-xl"
-          >
-            {greeterText.snippet.en}
-          </div>
+        <div className="absolute z-10 w-screen -translate-y-52 text-center font-bold transition-all duration-700 ease-out peer-hover/menu-item:text-white md:-translate-y-56 md:text-xl">
+          {greeterText.snippet.en}
+        </div>
         <div
           id="menu-background-pattern"
           className="absolute h-screen w-screen bg-image-circle bg-12vmin transition-all duration-700 ease-out peer-hover/menu-item:bg-9vmin peer-hover/menu-item:opacity-100"
@@ -137,12 +133,7 @@ export const Greeter = () => {
         </div>
       </div>
       <div className="w-screen bg-slate-900 bg-cover bg-center bg-no-repeat">
-        <svg
-          viewBox="0 0 900 200"
-          width="100%"
-          height="100%"
-          version="1.1"
-        >
+        <svg viewBox="0 0 900 200" width="100%" height="100%" version="1.1">
           <path d={wave_1_1} fill="#102030">
             <animate
               attributeName="d"

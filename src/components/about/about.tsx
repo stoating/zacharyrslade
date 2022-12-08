@@ -108,9 +108,7 @@ const AboutHeader = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
 
   return (
-    <h2
-      className="pb-8 text-3xl font-bold text-slate-400 first-letter:uppercase"
-    >
+    <h2 className="pb-8 text-3xl font-bold text-slate-400 first-letter:uppercase">
       {aboutText.about[language as keyof typeof aboutText.about]}:
     </h2>
   );
@@ -136,14 +134,10 @@ const AboutItem = (props: { key: string; item: typeof aboutItems[0] }) => {
     >
       <div className="flex">
         <i className="pt-1 pr-2">{props.item.icon}</i>
-        <p
-          className="pr-2 font-bold text-slate-400 first-letter:uppercase"
-        >
+        <p className="pr-2 font-bold text-slate-400 first-letter:uppercase">
           {props.item.title[language as keyof typeof props.item.title]}:
         </p>
-        <p>
-          {props.item.value[language as keyof typeof props.item.title]}
-        </p>
+        <p>{props.item.value[language as keyof typeof props.item.title]}</p>
       </div>
     </div>
   );
@@ -152,12 +146,7 @@ const AboutItem = (props: { key: string; item: typeof aboutItems[0] }) => {
 const AboutTransitionBottom = () => {
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
-      <svg
-        viewBox="0 0 900 200"
-        width="100%"
-        height="100%"
-        version="1.1"
-      >
+      <svg viewBox="0 0 900 200" width="100%" height="100%" version="1.1">
         <path d={svg.wave_1_1} fill="#ffffff">
           <animate
             attributeName="d"

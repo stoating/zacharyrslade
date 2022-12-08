@@ -66,19 +66,17 @@ const ResumeLinks = () => {
     <div className="p-1 ring">
       <h3>Links</h3>
       {MyResumeLinks.map((item, index) => (
-        <div
-          key={index}
-        >
+        <div key={index}>
           <Link href={item.ref}>
             <a
-              className="inline-block text-3xl -mb-2"
+              className="-mb-2 inline-block text-3xl"
               target="_blank"
               rel="noreferrer"
             >
               {item.icon}
             </a>
           </Link>
-          <div className="inline-block text-xl p-1">{item.text}</div>
+          <div className="inline-block p-1 text-xl">{item.text}</div>
         </div>
       ))}
     </div>
@@ -103,9 +101,7 @@ const ResumeExperience = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1">
-      <h2
-        className="col-span-full"
-      >
+      <h2 className="col-span-full">
         {
           resumeText.experiences_section.text[
             language as keyof typeof resumeText.experiences_section.text
@@ -123,11 +119,7 @@ const ResumeExperienceCompany = (props: {
   company: typeof resumeText.experiences_section.companies[0];
 }) => {
   return (
-    <div
-
-      key={props.key}
-      className="col-span-12 font-bold"
-    >
+    <div key={props.key} className="col-span-12 font-bold">
       {props.company.name}
       {props.company.positions.map((position) => (
         <ResumeExperienceCompanyPosition
@@ -146,10 +138,7 @@ const ResumeExperienceCompanyPosition = (props: {
 }) => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
-    <div
-      key={props.key}
-      className="col-span-12 text-sm font-medium"
-    >
+    <div key={props.key} className="col-span-12 text-sm font-medium">
       {props.position.text[language as keyof typeof props.position.text]},{" "}
       {
         props.position.location[
@@ -176,10 +165,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
 }) => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
-    <div
-      key={props.key}
-      className="col-span-12 text-xs font-light"
-    >
+    <div key={props.key} className="col-span-12 text-xs font-light">
       {props.bullet.text[language as keyof typeof props.bullet.text]}
     </div>
   );
@@ -188,9 +174,7 @@ const ResumeSkills = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
   return (
     <div className="grid grid-cols-2 bg-slate-300 p-1">
-      <h2
-        className="col-span-full"
-      >
+      <h2 className="col-span-full">
         {
           resumeText.skills_section.text[
             language as keyof typeof resumeText.skills_section.text
@@ -205,9 +189,7 @@ const ResumeSkills = () => {
           </h3>
           {skill.examples.map((example, example_index) => (
             <div className="text-left" key={example_index}>
-              <p
-                className="text-sm"
-              >
+              <p className="text-sm">
                 {example.text[language as keyof typeof example.text]}
               </p>
               <div>{example.rank}</div>
@@ -221,12 +203,7 @@ const ResumeSkills = () => {
 const ResumeTransitionBottom = () => {
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
-      <svg
-        viewBox="0 0 900 150"
-        width="100%"
-        height="100%"
-        version="1.1"
-      >
+      <svg viewBox="0 0 900 150" width="100%" height="100%" version="1.1">
         <path d={svg.peak_1_1} fill="#e0f0fe">
           <animate
             attributeName="d"
