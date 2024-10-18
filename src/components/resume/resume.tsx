@@ -50,9 +50,25 @@ const ResumeProfileImage = () => {
     </div>
   );
 };
+
 const ResumeContacts = () => {
-  return <div className="p-1 ring">contact</div>;
+  const { language } = React.useContext(ContextLanguage);
+
+  const address = resumeText.contact_section.address;
+  const phone_text =
+    resumeText.contact_section.phone.text[
+      language as keyof typeof resumeText.contact_section.phone.text
+    ];
+  const phone_number = resumeText.contact_section.phone.value;
+  const email = resumeText.contact_section.email;
+
+  return (
+    <div className="p-1 ring">
+      {address} {phone_text} {phone_number} {email}
+    </div>
+  );
 };
+
 const ResumeLinks = () => {
   const MyResumeLinks = Links.filter(function (Links) {
     return Links.type === "professional" && Links.for.includes("zachary");
@@ -78,23 +94,89 @@ const ResumeLinks = () => {
     </div>
   );
 };
+
 const ResumeLanguages = () => {
-  return <div className="p-1 ring">languages</div>;
+  const { language } = React.useContext(ContextLanguage);
+  const title =
+    resumeText.languages_section.text[
+      language as keyof typeof resumeText.languages_section.text
+    ];
+  const language_sections = resumeText.languages_section.languages.map(
+    (language) => (
+      <ResumeLanguagesLanguage key={language.key} language={language} />
+    )
+  );
+
+  return (
+    <div className="p-1 ring">
+      <h3>{title}</h3>
+      {language_sections}
+    </div>
+  );
 };
+
+const ResumeLanguagesLanguage = (props: {
+  key: string;
+  language: typeof resumeText.languages_section.languages[0];
+}) => {
+  const { language } = React.useContext(ContextLanguage);
+  const lang =
+    props.language.text[language as keyof typeof props.language.text];
+  const rank =
+    props.language.rank[language as keyof typeof props.language.rank];
+
+  return (
+    <div key={props.key} className="col-span-12 font-bold">
+      {lang}: {rank}
+    </div>
+  );
+};
+
 const ResumeEducation = () => {
-  return <div className="p-1 ring">education</div>;
+  const { language } = React.useContext(ContextLanguage);
+
+  const name = resumeText.education_section.university.name;
+  const location = resumeText.education_section.university.location;
+  const gpa = resumeText.education_section.university.gpa;
+  const gre = resumeText.education_section.university.gre;
+  const major = resumeText.education_section.university.major;
+  const date =
+    resumeText.education_section.university.date[
+      language as keyof typeof resumeText.education_section.university.date
+    ];
+  const minors = resumeText.education_section.university.minors
+    .map((minor) => (minor[language as keyof typeof minor]))
+    .join(", ");
+
+  return (
+    <div className="p-1 ring">
+      {name} {location} {gpa} {gre} {major} {date} {minors}
+    </div>
+  );
 };
+
 const ResumeInterests = () => {
   return <div className="p-1 ring">interests</div>;
 };
+
 const ResumeHeader = () => {
-  return <div className="bg-slate-600 p-1 text-white">header</div>;
+  const name = resumeText.header_section.name;
+
+  return <div className="bg-slate-600 p-1 text-white">{name}</div>;
 };
+
 const ResumeAbout = () => {
-  return <div className="bg-slate-500 p-1 text-white">about</div>;
+  const { language } = React.useContext(ContextLanguage);
+
+  const about =
+    resumeText.about_section[language as keyof typeof resumeText.about_section];
+
+  return <div className="bg-slate-500 p-1 text-white">{about}</div>;
 };
+
 const ResumeExperience = () => {
   const { language } = React.useContext(ContextLanguage);
+
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1">
       <h2 className="col-span-full">
@@ -110,6 +192,7 @@ const ResumeExperience = () => {
     </div>
   );
 };
+
 const ResumeExperienceCompany = (props: {
   key: string;
   company: typeof resumeText.experiences_section.companies[0];
@@ -127,12 +210,14 @@ const ResumeExperienceCompany = (props: {
     </div>
   );
 };
+
 const ResumeExperienceCompanyPosition = (props: {
   key: string;
   company: typeof resumeText.experiences_section.companies[0];
   position: typeof resumeText.experiences_section.companies[0]["positions"][0];
 }) => {
   const { language } = React.useContext(ContextLanguage);
+
   return (
     <div key={props.key} className="col-span-12 text-sm font-medium">
       {props.position.text[language as keyof typeof props.position.text]},{" "}
@@ -153,6 +238,7 @@ const ResumeExperienceCompanyPosition = (props: {
     </div>
   );
 };
+
 const ResumeExperienceCompanyPositionBullet = (props: {
   key: string;
   company: typeof resumeText.experiences_section.companies[0];
@@ -166,6 +252,7 @@ const ResumeExperienceCompanyPositionBullet = (props: {
     </div>
   );
 };
+
 const ResumeSkills = () => {
   const { language } = React.useContext(ContextLanguage);
   return (
@@ -196,6 +283,7 @@ const ResumeSkills = () => {
     </div>
   );
 };
+
 const ResumeTransitionBottom = () => {
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
