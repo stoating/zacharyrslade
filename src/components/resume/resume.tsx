@@ -1,9 +1,8 @@
 import React from "react";
 import { ContextLanguage } from "../../context/language";
-import { resumeText } from "../../data/resume";
+import { resumeText, interests, Language } from "../../data/resume";
 import * as svg from "./svg";
 import Image from "next/image";
-import { FaLanguage } from "react-icons/fa";
 import { Links } from "../../data/links";
 import Link from "next/link";
 
@@ -54,6 +53,7 @@ const ResumeProfileImage = () => {
 const ResumeContacts = () => {
   const { language } = React.useContext(ContextLanguage);
 
+  const title = resumeText.contact_section.title[language as keyof typeof resumeText.contact_section.title];
   const address = resumeText.contact_section.address;
   const phone_text =
     resumeText.contact_section.phone.text[
@@ -64,7 +64,7 @@ const ResumeContacts = () => {
 
   return (
     <div className="p-1 ring">
-      {address} {phone_text} {phone_number} {email}
+      {title} {address} {phone_text} {phone_number} {email}
     </div>
   );
 };
@@ -156,7 +156,19 @@ const ResumeEducation = () => {
 };
 
 const ResumeInterests = () => {
-  return <div className="p-1 ring">interests</div>;
+  const { language } = React.useContext(ContextLanguage);
+
+  const title = interests.title[language as Language];
+  const items = interests.items[language as Language];
+
+  return (
+    <div className="p-1 ring">
+      <div>{title}:</div>
+      {items.map((item, index) => (
+        <div key={index}>{item}</div>
+      ))}
+    </div>
+  );
 };
 
 const ResumeHeader = () => {

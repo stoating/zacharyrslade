@@ -1,18 +1,40 @@
+export type Language = 'en' | 'de';
+
+export interface Interests {
+  title: Record<Language, string>;
+  items: Record<Language, string[]>;
+}
+
+export const interests: Interests = {
+    title: {
+      en: "Interests",
+      de: "Interessen",
+    },
+    items: {
+      en: ["Camping", "Traveling", "Art"],
+      de: ["Zelten", "Reisen", "Kunst"],
+    },
+}
+
 export const resumeText = {
   about_section: {
     en: "A dedicated software engineer who takes pride in his work and finds joy in helping others. An optimistic teamplayer who is not afraid to tackle difficult problems and get the job done.",
-    de: "Ein engagierter Software-Ingenieur, der stolz auf seine Arbeit ist und Freude daran hat, anderen zu helfen. Ein optimistischer Teamplayer, der sich nicht scheut, schwierige Probleme anzugehen und die Arbeit zu erledigen."
+    de: "Ein engagierter Software-Ingenieur, der stolz auf seine Arbeit ist und Freude daran hat, anderen zu helfen. Ein optimistischer Teamplayer, der sich nicht scheut, schwierige Probleme anzugehen und die Arbeit zu erledigen.",
   },
   contact_section: {
+    title: {
+      en: "Contact",
+      de: "Kontakt",
+    },
     address: "Langenburger Straße 51, 70435 Stuttgart",
     phone: {
       text: {
         en: "Cell",
-        de: "Handy"
+        de: "Handy",
       },
       value: "+49 172 189 3085",
     },
-    email: "zack.slade@gmail.com"
+    email: "zack.slade@gmail.com",
   },
   education_section: {
     university: {
@@ -23,12 +45,10 @@ export const resumeText = {
       major: "Bachelor of Science in Computer Engineering",
       minors: [
         {
-          key: "minor-1",
           en: "Math Minor",
           de: "Nebenfach Mathe",
         },
         {
-          key: "minor-2",
           en: "Chinese Minor",
           de: "Nebenfach Chinesisch",
         },
@@ -366,7 +386,7 @@ export const resumeText = {
     ],
   },
   header_section: {
-    name: "Zachary R. Slade"
+    name: "Zachary R. Slade",
   },
   languages_section: {
     key: "languages",
@@ -379,7 +399,7 @@ export const resumeText = {
         key: "english",
         text: {
           en: "English",
-          de: "Englisch"
+          de: "Englisch",
         },
         rank: {
           en: "Native",
