@@ -107,8 +107,8 @@ const ResumeLanguages = () => {
   return (
     <div className="p-1 ring">
       <h3>{title}</h3>
-      {languages.map((cur_lang) => (
-        <div>
+      {languages.map((cur_lang, index) => (
+        <div key={index}>
           <div>{cur_lang.name[language as Language]}</div>
           <div>{cur_lang.proficiency[language as Language]}</div>
         </div>
@@ -257,13 +257,13 @@ const ResumeSkills = () => {
   return (
     <div className="grid grid-cols-2 bg-slate-300 p-1">
       <h2 className="col-span-full">{title}:</h2>
-      {skills.map((skill) => (
-        <div className="col-span-1 text-center">
+      {skills.map((skill, index) => (
+        <div key={index} className="col-span-1 text-center">
           <h3 className="text-lg font-bold">
             {skill.name[language as Language]}
           </h3>
-          {skill.examples.map((example) => (
-            <div className="text-left">
+          {skill.examples.map((example, index) => (
+            <div key={index} className="text-left">
               <p className="text-sm">{example.name[language as Language]}</p>
               <div>{example.rank}</div>
             </div>
