@@ -7,23 +7,19 @@ export const About = () => {
   return (
     <section id="about">
       <div className="bg-slate-900 text-slate-100">
-        <div className="container mx-auto">
-          <div className="mx-auto max-w-screen-lg">
-            <div className=" grid grid-cols-6">
-              <div className="invisible col-span-6 -my-64 lg:visible lg:col-span-2 lg:row-span-6 lg:m-0">
-                <AboutSVGGear />
-                <AboutSVGArrow />
-                <AboutSVGCode />
-              </div>
-              <div className="col-span-6 px-2 lg:col-span-4">
-                <AboutHeader />
-                <AboutDescription />
-              </div>
-              {aboutItems.map((item) => (
-                <AboutItem key={item.title.en} item={item} />
-              ))}
-            </div>
+        <div className="container mx-auto grid max-w-screen-lg grid-cols-6">
+          <div className="invisible col-span-6 -my-64 lg:visible lg:col-span-2 lg:row-span-6 lg:m-0">
+            <AboutSVGGear />
+            <AboutSVGArrow />
+            <AboutSVGCode />
           </div>
+          <div className="col-span-6 px-2 lg:col-span-4">
+            <AboutHeader />
+            <AboutDescription />
+          </div>
+          {aboutItems.map((item) => (
+            <AboutItem key={item.title.en} item={item} />
+          ))}
         </div>
       </div>
       <AboutTransitionBottom />
