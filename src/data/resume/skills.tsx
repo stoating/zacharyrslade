@@ -1,7 +1,7 @@
 import { Language } from "../_types";
 
 export interface Skills {
-  text: Record<Language, string>;
+  title: Record<Language, string>;
   skills: {
     name: Record<Language, string>;
     examples: {
@@ -12,7 +12,7 @@ export interface Skills {
 }
 
 export const skills: Skills = {
-  text: {
+  title: {
     en: "Skills",
     de: "Fähigkeiten",
   },

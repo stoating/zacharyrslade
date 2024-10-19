@@ -3,9 +3,8 @@ import Link from "next/link";
 import React from "react";
 
 import { ContextLanguage } from "../../context/language";
-import { resumeText } from "../../data/resume";
 import { Language } from "../../data/_types";
-import { resume } from "../../data/resume/_data";
+import { resume } from "../../data/resume/_resume";
 import { Links } from "../../data/links";
 
 import * as svg from "./svg";
@@ -101,7 +100,7 @@ const ResumeLanguages = () => {
   const { language } = React.useContext(ContextLanguage);
 
   const languages_data = resume.languages;
-  const title = languages_data.text[language as Language];
+  const title = languages_data.title[language as Language];
   const languages = languages_data.languages;
 
   return (
@@ -171,78 +170,30 @@ const ResumeAbout = () => {
 const ResumeExperience = () => {
   const { language } = React.useContext(ContextLanguage);
 
+  const experiences_data = resume.experiences;
+  const title = experiences_data.title[language as Language];
+  const experiences = experiences_data.experiences;
+
   return (
     <div className="grid grid-cols-12 bg-slate-200 p-1">
-      <h2 className="col-span-full">
-        {
-          resumeText.experiences_section.text[
-            language as keyof typeof resumeText.experiences_section.text
-          ]
-        }
-      </h2>
-      {resumeText.experiences_section.companies.map((company) => (
-        <ResumeExperienceCompany key={company.key} company={company} />
+      <h2 className="col-span-full">{title}</h2>
+      {experiences.map((experience, index) => (
+        <div key={index} className="col-span-12 font-bold">
+          {experience.company}
+          {experience.positions.map((position, index) => (
+            <div key={index} className="col-span-12 text-sm font-medium">
+              {position.title[language as Language]},{" "}
+              {position.location[language as Language]},{" "}
+              {position.dates[language as Language]}
+              {position.highlights.map((highlight, index) => (
+                <div key={index} className="col-span-12 text-xs font-light">
+                  {highlight[language as Language]}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       ))}
-    </div>
-  );
-};
-
-const ResumeExperienceCompany = (props: {
-  key: string;
-  company: typeof resumeText.experiences_section.companies[0];
-}) => {
-  return (
-    <div key={props.key} className="col-span-12 font-bold">
-      {props.company.name}
-      {props.company.positions.map((position) => (
-        <ResumeExperienceCompanyPosition
-          key={position.key}
-          company={props.company}
-          position={position}
-        />
-      ))}
-    </div>
-  );
-};
-
-const ResumeExperienceCompanyPosition = (props: {
-  key: string;
-  company: typeof resumeText.experiences_section.companies[0];
-  position: typeof resumeText.experiences_section.companies[0]["positions"][0];
-}) => {
-  const { language } = React.useContext(ContextLanguage);
-
-  return (
-    <div key={props.key} className="col-span-12 text-sm font-medium">
-      {props.position.text[language as keyof typeof props.position.text]},{" "}
-      {
-        props.position.location[
-          language as keyof typeof props.position.location
-        ]
-      }
-      , {props.position.dates[language as keyof typeof props.position.dates]}
-      {props.position.bullets.map((bullet) => (
-        <ResumeExperienceCompanyPositionBullet
-          key={bullet.key}
-          company={props.company}
-          position={props.position}
-          bullet={bullet}
-        />
-      ))}
-    </div>
-  );
-};
-
-const ResumeExperienceCompanyPositionBullet = (props: {
-  key: string;
-  company: typeof resumeText.experiences_section.companies[0];
-  position: typeof resumeText.experiences_section.companies[0]["positions"][0];
-  bullet: typeof resumeText.experiences_section.companies[0]["positions"][0]["bullets"][0];
-}) => {
-  const { language } = React.useContext(ContextLanguage);
-  return (
-    <div key={props.key} className="col-span-12 text-xs font-light">
-      {props.bullet.text[language as keyof typeof props.bullet.text]}
     </div>
   );
 };
@@ -251,7 +202,7 @@ const ResumeSkills = () => {
   const { language } = React.useContext(ContextLanguage);
 
   const skills_data = resume.skills;
-  const title = skills_data.text[language as Language];
+  const title = skills_data.title[language as Language];
   const skills = skills_data.skills;
 
   return (

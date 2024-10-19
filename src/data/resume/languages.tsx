@@ -1,7 +1,7 @@
 import { Language } from "../_types";
 
 export interface Languages {
-  text: Record<Language, string>;
+  title: Record<Language, string>;
   languages: {
     proficiency: Record<Language, string>;
     name: Record<Language, string>;
@@ -9,7 +9,7 @@ export interface Languages {
 }
 
 export const languages: Languages = {
-  text: {
+  title: {
     en: "Languages",
     de: "Sprachen",
   },
