@@ -1,17 +1,13 @@
+import { Language } from "./_types";
+
 import { FaCar } from "react-icons/fa";
 import { MdPinDrop } from "react-icons/md";
 import { FaFlagUsa } from "react-icons/fa";
 import { GiBatMask } from "react-icons/gi";
 
 interface AboutItem {
-  title: {
-    en: string;
-    de: string;
-  };
-  value: {
-    en: string;
-    de: string;
-  };
+  title: Record<Language, string>;
+  value: Record<Language, string>;
   icon: JSX.Element;
 }
 
