@@ -1,5 +1,5 @@
 import { ContextLanguage } from "../../context/language";
-import { Links } from "../../data/links";
+import { links } from "../../data/links";
 import { contactText } from "../../data/contact";
 import { MdEmail } from "react-icons/md";
 import * as svg from "./svg";
@@ -9,8 +9,8 @@ export const Contact = () => {
 
   const { language } = React.useContext(ContextLanguage);
 
-  const ProfessionalLinks = Links.filter(function (Links) {
-    return Links.type === "professional" && Links.for.includes("zachary");
+  const professional_links = links.filter(function (links) {
+    return links.type === "professional" && links.for.includes("zachary");
   });
 
   return (
@@ -93,7 +93,7 @@ export const Contact = () => {
               </a>
             </div>
             {/* Professional Links */}
-            {ProfessionalLinks.map((item, index) => (
+            {professional_links.map((item, index) => (
               <div
                 key={index}
                 className="mx-auto py-1 transition-all duration-300 ease-in-out hover:text-sky-500"

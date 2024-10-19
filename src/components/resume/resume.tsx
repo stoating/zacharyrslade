@@ -5,7 +5,7 @@ import React from "react";
 import { ContextLanguage } from "../../context/language";
 import { Language } from "../../data/_types";
 import { resume } from "../../data/resume/_resume";
-import { Links } from "../../data/links";
+import { links } from "../../data/links";
 
 import * as svg from "./svg";
 
@@ -71,14 +71,14 @@ const ResumeContacts = () => {
 };
 
 const ResumeLinks = () => {
-  const MyResumeLinks = Links.filter(function (Links) {
-    return Links.type === "professional" && Links.for.includes("zachary");
+  const resume_links = links.filter(function (links) {
+    return links.type === "professional" && links.for.includes("zachary");
   });
 
   return (
     <div className="p-1 ring">
       <h3>Links</h3>
-      {MyResumeLinks.map((item, index) => (
+      {resume_links.map((item, index) => (
         <div key={index}>
           <Link href={item.ref}>
             <a

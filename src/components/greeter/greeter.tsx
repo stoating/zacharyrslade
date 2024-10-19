@@ -1,6 +1,6 @@
 import { ContextLanguage } from "../../context/language";
 import { greeterText } from "../../data/greeter";
-import { Links } from "../../data/links";
+import { links } from "../../data/links";
 import Link from "next/link";
 import * as svg from "./svg";
 import React from "react";
@@ -8,13 +8,13 @@ import React from "react";
 export const Greeter = () => {
   const { language } = React.useContext(ContextLanguage);
 
-  const GreeterLinks = Links.filter(function (Links) {
+  const greeter_links = links.filter(function (links) {
     return (
-      Links.text === "LinkedIn" ||
-      Links.text === "Xing" ||
-      Links.text === "GitHub" ||
-      Links.text === "Resume - EN" ||
-      Links.text === "Resume - DE"
+      links.text === "LinkedIn" ||
+      links.text === "Xing" ||
+      links.text === "GitHub" ||
+      links.text === "Resume - EN" ||
+      links.text === "Resume - DE"
     );
   });
 
@@ -24,18 +24,18 @@ export const Greeter = () => {
     const selectedAnchorNumber = parseInt(
       event.currentTarget.id.split("-").pop() as string
     ) as number;
-    const myOffsetStepSize = 100 / GreeterLinks.length;
-    const myOffset = selectedAnchorNumber * myOffsetStepSize;
+    const step_size = 100 / greeter_links.length;
+    const offset = selectedAnchorNumber * step_size;
 
     const menuBackgroundPattern = document.getElementById(
       "menu-background-pattern"
     );
-    menuBackgroundPattern!.style.backgroundPositionX = -1 * myOffset + "%";
+    menuBackgroundPattern!.style.backgroundPositionX = -1 * offset + "%";
 
     const menuBackgroundImage = document.getElementById(
       "menu-background-image"
     );
-    menuBackgroundImage!.style.backgroundPositionX = myOffset + "%";
+    menuBackgroundImage!.style.backgroundPositionX = offset + "%";
   };
 
   return (
@@ -71,7 +71,7 @@ export const Greeter = () => {
               </svg>
             </div>
           </div>
-          {GreeterLinks.map((item, index) => (
+          {greeter_links.map((item, index) => (
             <div
               key={index}
               id={"menu-item-div-" + index}

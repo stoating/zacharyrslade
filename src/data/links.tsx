@@ -10,7 +10,7 @@ import {FaYoutube} from 'react-icons/fa';
 import {FaPatreon} from 'react-icons/fa';
 import {SiKofi} from 'react-icons/si';
 
-export const Links = [
+export const links = [
     {
         text: "LinkedIn",
         ref: "https://www.linkedin.com/in/zacharyslade1",

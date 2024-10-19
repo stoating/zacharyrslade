@@ -1,10 +1,10 @@
 import { ContextLanguage } from "../context/language";
-import { Links } from "../data/links";
+import { links } from "../data/links";
 import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
-  const ProfessionalLinks = Links.filter(function (Links) {
-    return Links.type === "professional" && Links.for.includes("zachary");
+  const professional_links = links.filter(function (links) {
+    return links.type === "professional" && links.for.includes("zachary");
   });
 
   return (
@@ -34,7 +34,7 @@ export const Footer = () => {
                   Email
                 </a>
               </div>
-              {ProfessionalLinks.map((item, index) => (
+              {professional_links.map((item, index) => (
                 <div
                   key={index}
                   className="mx-auto transition-all duration-300 ease-in-out hover:text-rose-300"
