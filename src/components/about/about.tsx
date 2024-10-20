@@ -78,10 +78,10 @@ const AboutIcon = () => {
   return (
     <div className="invisible col-span-6 -my-64 lg:visible lg:col-span-2 lg:row-span-6 lg:m-0">
       <div className="absolute lg:animate-slowSpin">{arrow_svg}</div>
-      <div className="aboslute animate-pulse">{code_svg}</div>
-      <div className="absolute z-10 p-0 lg:animate-slowSpinReverse lg:p-16">
+      <div className="absolute lg:animate-slowSpinReverse lg:p-16">
         {gear_svg}
       </div>
+      <div className="aboslute animate-pulse">{code_svg}</div>
     </div>
   );
 };
