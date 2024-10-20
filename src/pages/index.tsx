@@ -7,7 +7,7 @@ import { ProfessionalProfiles } from "../components/professional-profiles";
 import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact/contact";
 import { Footer } from "../components/footer";
-import { NavigationBar } from "../components/navigation-bar";
+import { NavigationBar } from "../components/navbar";
 import { ContextLanguageProvider } from "../context/language";
 import React from "react";
 

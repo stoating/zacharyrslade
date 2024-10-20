@@ -1,4 +1,3 @@
-import { ContextLanguage } from "../context/language";
 import Head from "next/head";
 
 export const Header = () => {
