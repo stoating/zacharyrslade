@@ -7,7 +7,7 @@ import { Language } from "../../data/_types";
 import { resume } from "../../data/resume/_resume";
 import { links } from "../../data/links";
 
-import * as svg from "./svg";
+import * as svg from "./svgs";
 
 export const Resume = () => {
   return (

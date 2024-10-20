@@ -2,7 +2,7 @@ import { ContextLanguage } from "../../context/language";
 import { greeterText } from "../../data/greeter";
 import { links } from "../../data/links";
 import Link from "next/link";
-import * as svg from "./svg";
+import * as svg from "./svgs";
 import React from "react";
 
 export const Greeter = () => {

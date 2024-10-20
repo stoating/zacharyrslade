@@ -2,7 +2,7 @@ import { ContextLanguage } from "../../context/language";
 import { links } from "../../data/links";
 import { contactText } from "../../data/contact";
 import { MdEmail } from "react-icons/md";
-import * as svg from "./svg";
+import * as svg from "./svgs";
 import React from "react";
 
 export const Contact = () => {
