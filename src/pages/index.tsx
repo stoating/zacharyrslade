@@ -1,5 +1,8 @@
+import React from "react";
 import type { NextPage } from "next";
+import { ContextLanguageProvider } from "../context/language";
 import { Header } from "../components/header";
+import { NavigationBar } from "../components/navigation-bar";
 import { Hero } from "../components/hero/hero";
 import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
@@ -7,10 +10,6 @@ import { ProfessionalProfiles } from "../components/professional-profiles";
 import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact/contact";
 import { Footer } from "../components/footer";
-import { NavigationBar } from "../components/navigation-bar";
-import { ContextLanguageProvider } from "../context/language";
-import React from "react";
-
 
 const App: NextPage = () => {
   return (
