@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "image-circle": "url('/images/circle.png')",
-        "image-sunset": "url('/images/image.webp')",
+        "image-sunset": "url('/images/sunset.webp')",
         "image-sky": "url('/images/sky.webp')",
       },
       backgroundSize: {

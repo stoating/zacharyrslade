@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Header } from "../components/header";
-import { Greeter } from "../components/greeter/greeter";
+import { Hero } from "../components/hero/hero";
 import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
 import { ProfessionalProfiles } from "../components/professional-profiles";
@@ -18,7 +18,7 @@ const App: NextPage = () => {
       <ContextLanguageProvider>
         <Header />
         <NavigationBar />
-        <Greeter />
+        <Hero />
         <About />
         <Resume />
         <ProfessionalProfiles />
