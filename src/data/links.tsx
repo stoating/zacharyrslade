@@ -18,7 +18,7 @@ export interface Links {
     icon: ReactNode;
     type: 'professional' | 'social' | 'media' | 'support' | 'pdf',
     for: string[]
-};
+}
 
 export const links: Links[] = [
     {
