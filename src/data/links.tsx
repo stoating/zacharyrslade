@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import {FaXingSquare} from 'react-icons/fa';
 import {FaLinkedin} from 'react-icons/fa';
 import {FaGithub} from 'react-icons/fa';
@@ -10,7 +12,15 @@ import {FaYoutube} from 'react-icons/fa';
 import {FaPatreon} from 'react-icons/fa';
 import {SiKofi} from 'react-icons/si';
 
-export const links = [
+export interface Links {
+    text: string;
+    ref: string;
+    icon: ReactNode;
+    type: 'professional' | 'social' | 'media' | 'support' | 'pdf',
+    for: string[]
+};
+
+export const links: Links[] = [
     {
         text: "LinkedIn",
         ref: "https://www.linkedin.com/in/zacharyslade1",
