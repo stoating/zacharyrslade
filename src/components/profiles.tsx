@@ -1,5 +1,4 @@
-import { ContextLanguage } from "../context/language";
-export const ProfessionalProfiles = () => {
+export const Profiles = () => {
   return (
     <section id="profiles">
       <div className="mx-auto bg-sky-300">

@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Hero } from "../components/hero/hero";
 import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
-import { ProfessionalProfiles } from "../components/professional-profiles";
+import { Profiles } from "../components/profiles";
 import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact/contact";
 import { Footer } from "../components/footer";
@@ -21,7 +21,7 @@ const App: NextPage = () => {
         <Hero />
         <About />
         <Resume />
-        <ProfessionalProfiles />
+        <Profiles />
         <Stoating />
         <Contact />
         <Footer />
