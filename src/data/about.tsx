@@ -1,20 +1,24 @@
 import { Language } from "./_types";
+import { ReactNode } from 'react';
 
-import { FaCar } from "react-icons/fa";
+import { FaCar, FaFlagUsa } from "react-icons/fa";
 import { MdPinDrop } from "react-icons/md";
-import { FaFlagUsa } from "react-icons/fa";
 import { GiBatMask } from "react-icons/gi";
 
-interface AboutItem {
+export interface About {
   title: Record<Language, string>;
-  value: Record<Language, string>;
-  icon: JSX.Element;
+  description: Record<Language, string>;
+  items: {
+    title: Record<Language, string>;
+    value: Record<Language, string>;
+    icon: ReactNode;
+  }[];
 }
 
-export const aboutText = {
-  about: {
-    en: 'about me',
-    de: 'über mich',
+export const about: About = {
+  title: {
+    en: "about me",
+    de: "über mich",
   },
   description: {
     en: `My name is Zachary (but most people just call me Zack). I am a software engineer
@@ -32,51 +36,50 @@ export const aboutText = {
     In meiner Freizeit programmiere ich gerne persönliche Projekte, gehe campen, reise
     und beschäftige mich mit Kunst.`,
   },
+  items: [
+    {
+      title: {
+        en: "title",
+        de: "titel",
+      },
+      value: {
+        en: "Software Engineer",
+        de: "Softwareentwickler",
+      },
+      icon: <GiBatMask />,
+    },
+    {
+      title: {
+        en: "nationality",
+        de: "nationalität",
+      },
+      value: {
+        en: "American",
+        de: "Amerikaner",
+      },
+      icon: <FaFlagUsa />,
+    },
+    {
+      title: {
+        en: "location",
+        de: "standort",
+      },
+      value: {
+        en: "Stuttagrt, Germany",
+        de: "Stuttagrt, Deutschland",
+      },
+      icon: <MdPinDrop />,
+    },
+    {
+      title: {
+        en: "employer",
+        de: "arbeitgeber",
+      },
+      value: {
+        en: "Bosch Engineering GmbH",
+        de: "Bosch Engineering GmbH",
+      },
+      icon: <FaCar />,
+    },
+  ],
 };
-
-export const aboutItems: AboutItem[] = [
-  {
-    title: {
-      en: "title",
-      de: "titel",
-    },
-    value: {
-      en: "Software Engineer",
-      de: "Softwareentwickler",
-    },
-    icon: <GiBatMask />,
-  },
-  {
-    title: {
-      en: "nationality",
-      de: "nationalität",
-    },
-    value: {
-      en: "American",
-      de: "Amerikaner",
-    },
-    icon: <FaFlagUsa />,
-  },
-  {
-    title: {
-      en: "location",
-      de: "standort",
-    },
-    value: {
-      en: "Stuttagrt, Germany",
-      de: "Stuttagrt, Deutschland",
-    },
-    icon: <MdPinDrop />,
-  },
-  {
-    title: {
-      en: "employer",
-      de: "arbeitgeber",
-    },
-    value: {
-      en: "Bosch Engineering GmbH",
-      de: "Bosch Engineering GmbH",
-    },
-    icon: <FaCar />,
-  },
-];
