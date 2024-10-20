@@ -31,7 +31,7 @@ export const Footer = () => {
                   <i className="pt-1 pr-2">
                     <MdEmail />
                   </i>
-                  Email
+                  Emails
                 </a>
               </div>
               {professional_links.map((item, index) => (
