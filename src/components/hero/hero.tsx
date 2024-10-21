@@ -35,8 +35,10 @@ const HeroSection = () => {
     const bg_pattern = document.getElementById("hero-bg-pattern");
     const bg_image = document.getElementById("hero-bg-image");
 
-    bg_pattern!.style.backgroundPositionX = -1 * offset + "%";
-    bg_image!.style.backgroundPositionX = 0.25 * offset + "%";
+    if (bg_pattern && bg_image) {
+      bg_pattern.style.backgroundPositionX = -1 * offset + "%";
+      bg_image.style.backgroundPositionX = 0.25 * offset + "%";
+    }
   };
 
   const text = hero.text[language as Language];
