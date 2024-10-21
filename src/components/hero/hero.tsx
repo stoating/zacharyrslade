@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ContextLanguage } from "../../context/language";
@@ -92,10 +93,13 @@ const HeroSection = () => {
 
 const HeroProfileImage = () => {
   const profile_image = (
-    <img
+    <Image
       src="/images/zack-look-right-color-02.webp"
-      className="col-span-1 rounded-full opacity-100 shadow-2xl shadow-black"
-    ></img>
+      alt="Imma look right"
+      className="rounded-full opacity-100"
+      layout="fill"
+      objectFit="cover"
+    />
   );
   const blob = (
     <svg
@@ -120,7 +124,9 @@ const HeroProfileImage = () => {
 
   return (
     <div className="grid max-w-xs grid-cols-1 flex-col p-10 text-center">
-      {profile_image}
+      <div className="relative col-span-1 h-60 w-60 rounded-full shadow-xl shadow-black">
+        {profile_image}
+      </div>
       <div className="col-span-1 m-0 box-border p-0 md:visible">{blob}</div>
     </div>
   );
