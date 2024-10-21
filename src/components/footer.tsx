@@ -24,7 +24,7 @@ export const Footer = () => {
 
 const FooterLeftImage = () => {
   return (
-    <div className="order-1 col-span-1 hidden overflow-hidden rounded-full shadow-2xl shadow-black md:block relative w-40 h-40">
+    <div className="relative order-1 col-span-1 hidden w-40 h-40 overflow-hidden rounded-full shadow-2xl shadow-black md:block">
       <Image
         src="/images/zack-look-down-bw-02.webp"
         alt="Imma looking down"
@@ -42,7 +42,7 @@ const FooterMiddleImage = () => {
       <Image
         src="/images/signature-white-black-fade-01.webp"
         alt="Signature"
-        className="opacity-70 w-full max-w-full md:max-w-none"
+        className="w-full max-w-full opacity-70 md:max-w-none"
         layout="responsive"
         width={500}
         height={200}
@@ -57,7 +57,7 @@ const FooterRightImage = () => {
   });
 
   return (
-    <div className="flex justify-center items-center order-3 col-span-1 overflow-hidden rounded-full shadow-2xl shadow-black relative w-40 h-40 bg-slate-100 opacity-60 transition-all duration-300 hover:bg-slate-100 hover:opacity-80 mx-auto">
+    <div className="relative mx-auto flex w-40 h-40 items-center justify-center order-3 col-span-1 overflow-hidden rounded-full bg-slate-100 opacity-60 shadow-2xl shadow-black transition-all duration-300 hover:bg-slate-100 hover:opacity-80">
       <div className="absolute flex flex-col items-start">
         <FooterContactLink
           href="mailto:zack.slade@gmail.com"
