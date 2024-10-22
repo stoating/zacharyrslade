@@ -24,7 +24,7 @@ export const Footer = () => {
 
 const FooterLeftImage = () => {
   return (
-    <div className="relative order-1 col-span-1 hidden w-40 h-40 overflow-hidden rounded-full shadow-2xl shadow-black md:block">
+    <div className="relative order-1 col-span-1 hidden h-40 w-40 overflow-hidden rounded-full shadow-2xl shadow-black md:block">
       <Image
         src="/images/zack-look-down-bw-02.webp"
         alt="Imma looking down"
@@ -57,7 +57,7 @@ const FooterRightImage = () => {
   });
 
   return (
-    <div className="relative mx-auto flex w-40 h-40 items-center justify-center order-3 col-span-1 overflow-hidden rounded-full bg-slate-100 opacity-60 shadow-2xl shadow-black transition-all duration-300 hover:bg-slate-100 hover:opacity-80">
+    <div className="relative order-3 col-span-1 mx-auto flex h-40 w-40 items-center justify-center overflow-hidden rounded-full bg-slate-100 opacity-60 shadow-2xl shadow-black transition-all duration-300 hover:bg-slate-100 hover:opacity-80">
       <div className="absolute flex flex-col items-start">
         <FooterContactLink
           href="mailto:zack.slade@gmail.com"
@@ -77,9 +77,18 @@ const FooterRightImage = () => {
   );
 };
 
-const FooterContactLink: React.FC<FooterContactLinkProps> = ({ href, icon, text }) => (
-  <div className="transition-all duration-300 ease-in-out hover:text-rose-300">
-    <a className="flex items-center" href={href} target="_blank" rel="noreferrer">
+const FooterContactLink: React.FC<FooterContactLinkProps> = ({
+  href,
+  icon,
+  text,
+}) => (
+  <div className="transition-all duration-100 ease-in-out hover:text-rose-300">
+    <a
+      className="flex items-center"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
       <i className="pt-1 pr-2">{icon}</i>
       {text}
     </a>
