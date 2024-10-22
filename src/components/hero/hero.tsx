@@ -11,7 +11,7 @@ import * as svg from "./svgs";
 
 export const Hero = () => {
   return (
-    <section>
+    <section id="hero">
       <div className="mx-auto flex min-h-screen items-center bg-slate-900">
         <HeroSection />
         <HeroBackgroundFade />

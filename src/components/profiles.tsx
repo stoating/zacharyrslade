@@ -1,7 +1,7 @@
 export const Profiles = () => {
   return (
-    <section id="profiles">
-      <div className="mx-auto bg-sky-300">
+    <section id="profiles" className="pt-12 bg-sky-300">
+      <div className="mx-auto">
         <div>profiles</div>
         <div>profiles</div>
         <div>profiles</div>

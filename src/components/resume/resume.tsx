@@ -11,9 +11,9 @@ import * as svg from "./svgs";
 
 export const Resume = () => {
   return (
-    <section id="resume">
+    <section id="resume" className="pt-12 bg-white">
       {/* resume container */}
-      <div className="container mx-auto max-w-6xl bg-white">
+      <div className="container mx-auto max-w-6xl">
         {/* resume grid */}
         <div className="my-10 grid grid-cols-4 rounded-xl shadow-lg shadow-slate-700">
           {/* left column */}

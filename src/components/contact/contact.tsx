@@ -11,7 +11,7 @@ import * as svg from "./svgs";
 export const Contact = () => {
   return (
     <section id="contact" className="bg-rose-200">
-      <div className="mx-auto max-w-screen-lg py-10">
+      <div className="mx-auto max-w-screen-lg py-10 pt-12">
         {/* Contact Me */}
         <ContactTitle />
         {/* Two Columns */}

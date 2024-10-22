@@ -21,14 +21,25 @@ export const NavigationBar = () => {
   );
 };
 
+const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+  e.preventDefault();
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const NavHome = () => {
   const { language } = React.useContext(ContextLanguage);
 
   const home = navbar.home[language as Language];
 
   return (
-    <Link href="/#menu">
-      <a className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4">
+    <Link href="/#hero">
+      <a
+        className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4"
+        onClick={(e) => smoothScroll(e, "#hero")}
+      >
         {home}
       </a>
     </Link>
@@ -42,7 +53,10 @@ const NavAbout = () => {
 
   return (
     <Link href="/#about">
-      <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+      <a
+        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        onClick={(e) => smoothScroll(e, "#about")}
+      >
         {about}
       </a>
     </Link>
@@ -56,7 +70,10 @@ const NavResume = () => {
 
   return (
     <Link href="/#resume">
-      <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+      <a
+        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        onClick={(e) => smoothScroll(e, "#resume")}
+      >
         {resume}
       </a>
     </Link>
@@ -70,7 +87,10 @@ const NavProfiles = () => {
 
   return (
     <Link href="/#profiles">
-      <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+      <a
+        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        onClick={(e) => smoothScroll(e, "#profiles")}
+      >
         {profiles}
       </a>
     </Link>
@@ -84,7 +104,10 @@ const NavStoating = () => {
 
   return (
     <Link href="/#stoating">
-      <a className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4">
+      <a
+        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        onClick={(e) => smoothScroll(e, "#stoating")}
+      >
         {stoating}
       </a>
     </Link>
@@ -98,7 +121,10 @@ const NavContact = () => {
 
   return (
     <Link href="/#contact">
-      <a className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible">
+      <a
+        className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible"
+        onClick={(e) => smoothScroll(e, "#contact")}
+      >
         {contact}
       </a>
     </Link>

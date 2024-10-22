@@ -8,8 +8,8 @@ import * as svg from "./svgs";
 
 export const About = () => {
   return (
-    <section id="about">
-      <div className="bg-slate-900 text-slate-100">
+    <section id="about" className="pt-12 bg-slate-900">
+      <div className="text-slate-100">
         <div className="container mx-auto grid max-w-screen-lg grid-cols-6">
           <AboutIcon />
           <AboutText />
