@@ -10,7 +10,7 @@ import * as svg from "./svgs";
 
 export const Contact = () => {
   return (
-    <section id="contact" className=" bg-rose-200">
+    <section id="contact" className="bg-rose-200">
       <div className="mx-auto max-w-screen-lg py-10">
         {/* Contact Me */}
         <ContactTitle />
@@ -70,7 +70,7 @@ const ContactForm = () => {
         {/* Email Field */}
         <input
           autoComplete="email"
-          className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
           name="email"
           placeholder={email}
           required
@@ -78,7 +78,7 @@ const ContactForm = () => {
         />
         {/* Message Field */}
         <textarea
-          className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:border-0 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          className="rounded-md border-0 bg-slate-700 p-2 text-white placeholder:text-gray-400 focus:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-sky-500"
           maxLength={250}
           name="message"
           placeholder={message}
