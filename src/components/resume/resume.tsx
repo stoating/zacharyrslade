@@ -212,10 +212,10 @@ const ResumeSkills = () => {
   const skills = skills_data.skills;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 rounded-br-xl bg-slate-300 p-1">
+    <div className="grid grid-cols-1 rounded-br-xl bg-slate-300 p-1 md:grid-cols-2">
       {skills.map((skill, index) => (
         <div key={index} className="col-span-1 p-4 text-left">
-          <h3 className=" pl-8 sm:pl-16 text-lg font-bold">
+          <h3 className="pl-8 text-lg font-bold sm:pl-16">
             {skill.name[language as Language]}
           </h3>
           {skill.examples.map((example, index) => (
