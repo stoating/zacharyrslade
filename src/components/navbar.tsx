@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
+
 import { Language } from "../data/_types";
 import { navbar } from "../data/navbar";
 import { ContextLanguage } from "../context/language";
-import Link from "next/link";
 
 export const NavigationBar = () => {
   return (
