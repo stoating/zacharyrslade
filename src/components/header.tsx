@@ -6,9 +6,11 @@ export const Header = () => {
       <title>Zachary Slade</title>
       <meta name="description" content="Welcome to my personal page" />
 
-      <meta content="im the og title" property="og:title" />
-      <meta content="im the og description" property="og:description" />
-      <meta content="https://zacharyrslade.com" property="og:url" />
+      <meta property="og:title" content="Zachary Slade" />
+      <meta property="og:description" content="Welcome to my personal page" />
+      <meta property="og:url" content="https://zacharyrslade.com" />
+      <meta property="og:image" content="http://zacharyrslade.com/_next/image?url=%2Fimages%2Fzack-look-down-bw-02.webp&w=1200&q=75" />
+      <meta property="og:type" content="website" />
 
       <link
         rel="apple-touch-icon"
