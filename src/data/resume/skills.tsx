@@ -28,7 +28,7 @@ export const skills: Skills = {
             en: "Jira",
             de: "Jira",
           },
-          rank: 4,
+          rank: 5,
         },
         {
           name: {
@@ -57,7 +57,7 @@ export const skills: Skills = {
             en: "Git",
             de: "Git",
           },
-          rank: 4,
+          rank: 5,
         },
         {
           name: {
@@ -86,7 +86,7 @@ export const skills: Skills = {
             en: "C",
             de: "C",
           },
-          rank: 4,
+          rank: 5,
         },
         {
           name: {
@@ -115,7 +115,7 @@ export const skills: Skills = {
             en: "Jenkins",
             de: "Jenkins",
           },
-          rank: 4,
+          rank: 5,
         },
         {
           name: {

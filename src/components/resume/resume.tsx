@@ -15,18 +15,18 @@ export const Resume = () => {
       {/* resume container */}
       <div className="container mx-auto max-w-6xl bg-white">
         {/* resume grid */}
-        <div className="grid grid-cols-4">
+        <div className="my-10 grid grid-cols-4 rounded-xl shadow-lg shadow-slate-700">
           {/* left column */}
-          <div className="col-span-1 row-span-full grid bg-slate-700 text-white">
+          <div className="col-span-1 row-span-full grid rounded-l-xl bg-slate-700 text-white">
             <ResumeProfileImage />
             <ResumeContacts />
             <ResumeLinks />
-            <ResumeLanguages />
             <ResumeEducation />
+            <ResumeLanguages />
             <ResumeInterests />
           </div>
           {/* right column */}
-          <div className="col-span-3 row-span-full grid">
+          <div className="col-span-3 row-span-full grid rounded-r-xl">
             <ResumeHeader />
             <ResumeAbout />
             <ResumeExperience />
@@ -41,7 +41,7 @@ export const Resume = () => {
 
 const ResumeProfileImage = () => {
   return (
-    <div className="p-4 ring">
+    <div className="rounded-tl-xl p-4 ring">
       <Image
         src="/images/zack-resume-profile.webp"
         className="rounded-full"
@@ -65,7 +65,7 @@ const ResumeContacts = () => {
 
   return (
     <div className="p-1 ring">
-      {title} {address} {phone_text} {phone_number} {email}
+      {address} {phone_text} {phone_number} {email}
     </div>
   );
 };
@@ -77,7 +77,6 @@ const ResumeLinks = () => {
 
   return (
     <div className="p-1 ring">
-      <h3>Links</h3>
       {resume_links.map((item, index) => (
         <div key={index}>
           <Link href={item.ref}>
@@ -156,7 +155,11 @@ const ResumeInterests = () => {
 const ResumeHeader = () => {
   const name = resume.about.name;
 
-  return <div className="bg-slate-600 p-1 text-white">{name}</div>;
+  return (
+    <div className="rounded-tr-xl bg-slate-600 p-4 text-4xl font-bold text-white">
+      {name}
+    </div>
+  );
 };
 
 const ResumeAbout = () => {
@@ -164,7 +167,11 @@ const ResumeAbout = () => {
 
   const description = resume.about.description[language as Language];
 
-  return <div className="bg-slate-500 p-1 text-white">{description}</div>;
+  return (
+    <div className="bg-slate-500 p-4 text-lg italic text-white">
+      {description}
+    </div>
+  );
 };
 
 const ResumeExperience = () => {
@@ -175,18 +182,17 @@ const ResumeExperience = () => {
   const experiences = experiences_data.experiences;
 
   return (
-    <div className="grid grid-cols-12 bg-slate-200 p-1">
-      <h2 className="col-span-full">{title}</h2>
+    <div className="grid grid-cols-12 bg-slate-200 p-2">
       {experiences.map((experience, index) => (
-        <div key={index} className="col-span-12 font-bold">
-          {experience.company}
+        <div key={index} className="col-span-12 p-2 font-bold">
+          <div className="text-xl">{experience.company}</div>
           {experience.positions.map((position, index) => (
-            <div key={index} className="col-span-12 text-sm font-medium">
+            <div key={index} className="text-md col-span-12 font-medium">
               {position.title[language as Language]},{" "}
               {position.location[language as Language]},{" "}
               {position.dates[language as Language]}
               {position.highlights.map((highlight, index) => (
-                <div key={index} className="col-span-12 text-xs font-light">
+                <div key={index} className="col-span-12 text-sm font-light">
                   {highlight[language as Language]}
                 </div>
               ))}
@@ -206,17 +212,23 @@ const ResumeSkills = () => {
   const skills = skills_data.skills;
 
   return (
-    <div className="grid grid-cols-2 bg-slate-300 p-1">
-      <h2 className="col-span-full">{title}:</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 rounded-br-xl bg-slate-300 p-1">
       {skills.map((skill, index) => (
-        <div key={index} className="col-span-1 text-center">
-          <h3 className="text-lg font-bold">
+        <div key={index} className="col-span-1 p-4 text-left">
+          <h3 className=" pl-8 sm:pl-16 text-lg font-bold">
             {skill.name[language as Language]}
           </h3>
           {skill.examples.map((example, index) => (
             <div key={index} className="text-left">
-              <p className="text-sm">{example.name[language as Language]}</p>
-              <div>{example.rank}</div>
+              <p className="text-md pl-1 font-semibold">
+                {example.name[language as Language]}
+              </p>
+              <div className="h-4 rounded-full">
+                <div
+                  className="h-3 rounded-full bg-slate-500"
+                  style={{ width: `${(example.rank / 5) * 100}%` }}
+                ></div>
+              </div>
             </div>
           ))}
         </div>
