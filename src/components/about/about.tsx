@@ -1,7 +1,9 @@
 import React from "react";
+
 import { ContextLanguage } from "../../context/language";
 import { Language } from "../../data/_types";
 import { about } from "../../data/about";
+
 import * as svg from "./svgs";
 
 export const About = () => {
@@ -81,7 +83,7 @@ const AboutIcon = () => {
       <div className="absolute lg:animate-slowSpinReverse lg:p-16">
         {gear_svg}
       </div>
-      <div className="aboslute animate-pulse">{code_svg}</div>
+      <div className="absolute animate-pulse">{code_svg}</div>
     </div>
   );
 };
