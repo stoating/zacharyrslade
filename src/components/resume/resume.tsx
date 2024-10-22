@@ -1,6 +1,6 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 import { ContextLanguage } from "../../context/language";
 import { Language } from "../../data/_types";
