@@ -23,9 +23,9 @@ export const Resume = () => {
       {/* resume container */}
       <div className="container mx-auto max-w-6xl">
         {/* resume grid */}
-        <div className="my-10 grid grid-cols-4 rounded-xl shadow-lg shadow-slate-700">
+        <div className="my-10 grid grid-cols-12 rounded-xl shadow-lg shadow-slate-700">
           {/* left column */}
-          <div className="col-span-1 row-span-full grid rounded-l-xl bg-slate-700 text-white">
+          <div className="row-span-full hidden rounded-l-xl bg-slate-700 text-white md:col-span-4 md:grid lg:col-span-3">
             <ResumeProfileImage />
             <ResumeContacts />
             <ResumeLinks />
@@ -34,7 +34,7 @@ export const Resume = () => {
             <ResumeInterests />
           </div>
           {/* right column */}
-          <div className="col-span-3 row-span-full grid rounded-r-xl">
+          <div className="col-span-12 row-span-full grid rounded-r-xl md:col-span-8 lg:col-span-9">
             <ResumeHeader />
             <ResumeAbout />
             <ResumeExperience />
@@ -49,7 +49,7 @@ export const Resume = () => {
 
 const ResumeProfileImage = () => {
   return (
-    <div className="rounded-tl-xl p-4">
+    <div className="rounded-tl-xl p-4 pt-10">
       <Image
         src="/images/zack-resume-profile.webp"
         className="rounded-full"
