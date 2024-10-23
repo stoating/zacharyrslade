@@ -15,7 +15,7 @@ export const contact: Contact = {
     en: "Contact",
     de: "Kontakt",
   },
-  address: "Langenburger Straße 51, 70435 Stuttgart",
+  address: "Stuttgart, Germany",
   phone: {
     text: {
       en: "Cell",

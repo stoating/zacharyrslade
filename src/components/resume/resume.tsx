@@ -7,11 +7,19 @@ import { Language } from "../../data/_types";
 import { resume } from "../../data/resume/_resume";
 import { links } from "../../data/links";
 
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaBook,
+  FaCalendarAlt,
+} from "react-icons/fa";
+
 import * as svg from "./svgs";
 
 export const Resume = () => {
   return (
-    <section id="resume" className="pt-12 bg-white">
+    <section id="resume" className="bg-white pt-12">
       {/* resume container */}
       <div className="container mx-auto max-w-6xl">
         {/* resume grid */}
@@ -41,7 +49,7 @@ export const Resume = () => {
 
 const ResumeProfileImage = () => {
   return (
-    <div className="rounded-tl-xl p-4 ring">
+    <div className="rounded-tl-xl p-4">
       <Image
         src="/images/zack-resume-profile.webp"
         className="rounded-full"
@@ -64,8 +72,24 @@ const ResumeContacts = () => {
   const email = contact.email;
 
   return (
-    <div className="p-1 ring">
-      {address} {phone_text} {phone_number} {email}
+    <div className="p-2">
+      <h3 className="p-2 text-xl font-bold">{title}</h3>
+      <div className="flex items-center p-2 text-lg">
+        <FaMapMarkerAlt className="mr-2 text-xl text-slate-400" />
+        <span>{address}</span>
+      </div>
+      <div className="flex items-center p-2 text-lg">
+        <FaPhone className="mr-2 text-xl text-slate-400" />
+        <span>
+          {phone_text}: {phone_number}
+        </span>
+      </div>
+      <Link href={`mailto:${email}`}>
+        <a className="flex items-center p-2 text-xl text-slate-400 transition duration-200 ease-in-out hover:rounded-md hover:bg-slate-900 hover:text-white">
+          <FaEnvelope />
+          <span className="ml-2 text-lg text-white">{email}</span>
+        </a>
+      </Link>
     </div>
   );
 };
@@ -76,40 +100,19 @@ const ResumeLinks = () => {
   });
 
   return (
-    <div className="p-1 ring">
+    <div className="p-2">
+      <h3 className="p-2 text-xl font-bold">Links</h3>
       {resume_links.map((item, index) => (
-        <div key={index}>
-          <Link href={item.ref}>
-            <a
-              className="-mb-2 inline-block text-3xl"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {item.icon}
-            </a>
-          </Link>
-          <div className="inline-block p-1 text-xl">{item.text}</div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-const ResumeLanguages = () => {
-  const { language } = React.useContext(ContextLanguage);
-
-  const languages_data = resume.languages;
-  const title = languages_data.title[language as Language];
-  const languages = languages_data.languages;
-
-  return (
-    <div className="p-1 ring">
-      <h3>{title}</h3>
-      {languages.map((cur_lang, index) => (
-        <div key={index}>
-          <div>{cur_lang.name[language as Language]}</div>
-          <div>{cur_lang.proficiency[language as Language]}</div>
-        </div>
+        <Link href={item.ref} key={index}>
+          <a
+            className="flex items-center p-2 text-2xl text-slate-400 transition duration-200 ease-in-out hover:rounded-md hover:bg-slate-900 hover:text-white"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {item.icon}
+            <span className="ml-2 text-lg text-white">{item.text}</span>
+          </a>
+        </Link>
       ))}
     </div>
   );
@@ -130,8 +133,60 @@ const ResumeEducation = () => {
     .join(", ");
 
   return (
-    <div className="p-1 ring">
-      {name} {location} {gpa} {gre} {major} {graduation_date} {minors}
+    <div className="p-2">
+      <h3 className="p-2 text-xl font-bold">Education</h3>
+      <div className="flex items-center px-2 pb-1">
+        <span className="text-lg">{name}</span>
+      </div>
+      <div className="px-2 pb-2">
+        <div className="flex items-center">
+          <span className="text-md">{major}</span>
+        </div>
+        <div className="pl-4 text-sm italic text-slate-300">{minors}</div>
+      </div>
+      <div className="flex items-center px-2 pb-2">
+        <FaBook className="mr-2 text-slate-400" />
+        <span className="text-md">
+          GPA: {gpa}; GRE: {gre}
+        </span>
+      </div>
+      <div className="flex items-center px-2 pb-2">
+        <FaMapMarkerAlt className="mr-2 text-slate-400" />
+        <span className="text-md">{location}</span>
+      </div>
+      <div className="flex items-center px-2 pb-2">
+        <FaCalendarAlt className="mr-2 text-slate-400" />
+        <span className="text-md">{graduation_date}</span>
+      </div>
+    </div>
+  );
+};
+
+const ResumeLanguages = () => {
+  const { language } = React.useContext(ContextLanguage);
+
+  const languages_data = resume.languages;
+  const title = languages_data.title[language as Language];
+  const languages = languages_data.languages;
+
+  return (
+    <div className="p-2">
+      <h3 className="p-2 text-xl font-bold">{title}</h3>
+      {languages.map((cur_lang, index) => (
+        <div key={index} className="p-2">
+          <div className="flex items-center">
+            <span className="pr-2 text-2xl text-slate-400">
+              {cur_lang.icon}
+            </span>
+            <span className="pr-2 text-lg">
+              {cur_lang.name[language as Language]}
+            </span>
+            <span className="text-md px-2 font-semibold italic text-slate-400">
+              {cur_lang.proficiency[language as Language]}
+            </span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -139,14 +194,18 @@ const ResumeEducation = () => {
 const ResumeInterests = () => {
   const { language } = React.useContext(ContextLanguage);
 
-  const title = resume.interests.title[language as Language];
-  const items = resume.interests.items[language as Language];
+  const interests_data = resume.interests;
+  const title = interests_data.title[language as Language];
+  const interests = interests_data.interests;
 
   return (
-    <div className="p-1 ring">
-      <div>{title}:</div>
-      {items.map((item, index) => (
-        <div key={index}>{item}</div>
+    <div className="p-2">
+      <h3 className="p-2 text-xl font-bold">{title}</h3>
+      {interests.map((interest, index) => (
+        <div key={index} className="flex items-center p-2">
+          <span className="pr-2 text-2xl text-slate-400">{interest.icon}</span>
+          <span className="text-lg">{interest.name[language as Language]}</span>
+        </div>
       ))}
     </div>
   );

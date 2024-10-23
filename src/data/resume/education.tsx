@@ -15,7 +15,7 @@ export const education: Education = {
   location: "Valparaiso, Indiana",
   gpa: "3.53/4.00",
   gre: "1360",
-  major: "Bachelor of Science in Computer Engineering",
+  major: "B.S. Computer Engineering",
   minors: [
     {
       en: "Math Minor",
