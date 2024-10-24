@@ -7,7 +7,7 @@ import { ContextLanguage } from "../context/language";
 
 export const NavigationBar = () => {
   return (
-    <div className="fixed top-0 z-50 flex w-full bg-slate-900 bg-opacity-70 text-lg font-semibold text-white text-opacity-100">
+    <div className="fixed z-50 flex w-full bg-slate-900 bg-opacity-70 p-2 text-lg font-semibold text-white text-opacity-100 ">
       <div className="mx-auto flex">
         <NavHome />
         <NavAbout />
@@ -15,13 +15,16 @@ export const NavigationBar = () => {
         <NavProfiles />
         <NavStoating />
         <NavContact />
-        <NavLanguage />
       </div>
+      <NavLanguage />
     </div>
   );
 };
 
-const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
+const smoothScroll = (
+  e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  targetId: string
+) => {
   e.preventDefault();
   const targetElement = document.querySelector(targetId);
   if (targetElement) {
@@ -37,7 +40,7 @@ const NavHome = () => {
   return (
     <Link href="/#hero">
       <a
-        className="invisible w-6 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible md:p-2 md:px-4"
+        className="invisible w-0 hover:text-sky-300 hover:transition-colors hover:duration-300 md:visible md:w-auto md:px-2 md:pb-1"
         onClick={(e) => smoothScroll(e, "#hero")}
       >
         {home}
@@ -54,7 +57,7 @@ const NavAbout = () => {
   return (
     <Link href="/#about">
       <a
-        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#about")}
       >
         {about}
@@ -71,7 +74,7 @@ const NavResume = () => {
   return (
     <Link href="/#resume">
       <a
-        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#resume")}
       >
         {resume}
@@ -88,7 +91,7 @@ const NavProfiles = () => {
   return (
     <Link href="/#profiles">
       <a
-        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#profiles")}
       >
         {profiles}
@@ -105,7 +108,7 @@ const NavStoating = () => {
   return (
     <Link href="/#stoating">
       <a
-        className="p-1 hover:text-sky-300 hover:transition-colors hover:duration-300 md:p-2 md:px-4"
+        className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#stoating")}
       >
         {stoating}
@@ -122,7 +125,7 @@ const NavContact = () => {
   return (
     <Link href="/#contact">
       <a
-        className="invisible w-0 p-2 px-4 hover:text-sky-300 hover:transition-colors hover:duration-300 sm:w-auto md:visible"
+        className="invisible w-0 hover:text-sky-300 hover:transition-colors hover:duration-300 md:visible md:w-auto md:px-2 md:pb-1"
         onClick={(e) => smoothScroll(e, "#contact")}
       >
         {contact}
@@ -135,11 +138,15 @@ const NavLanguage = () => {
   const { language, setLanguage } = React.useContext(ContextLanguage);
 
   return (
-    <button
-      onClick={() => setLanguage((language as Language) === "en" ? "de" : "en")}
-      className="mx-1 my-2 rounded-full bg-slate-900 px-2 text-sm uppercase transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
-    >
-      {(language as Language) === "en" ? "de" : "en"}
-    </button>
+    <div className="flex justify-end">
+      <button
+        onClick={() =>
+          setLanguage((language as Language) === "en" ? "de" : "en")
+        }
+        className="rounded-full px-2 py-1 text-sm uppercase bg-slate-900 transition-all duration-200 hover:bg-slate-100 hover:text-slate-900"
+      >
+        {(language as Language) === "en" ? "de" : "en"}
+      </button>
+    </div>
   );
 };
