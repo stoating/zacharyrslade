@@ -19,7 +19,7 @@ import * as svg from "./svgs";
 
 export const Resume = () => {
   return (
-    <section id="resume" className="bg-white pt-12">
+    <section id="resume" className="w-screen bg-white pt-12">
       {/* resume container */}
       <div className="container mx-auto max-w-6xl">
         {/* resume grid */}

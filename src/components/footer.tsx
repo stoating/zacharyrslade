@@ -10,7 +10,7 @@ interface FooterContactLinkProps {
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-700">
+    <footer className="w-screen bg-slate-700">
       <div className="mx-auto flex max-w-screen-lg py-10 px-2">
         <div className="grid w-screen grid-cols-1 items-center md:grid-cols-6">
           <FooterLeftImage />
