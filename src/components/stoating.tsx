@@ -31,11 +31,11 @@ export const Stoating = () => {
     init();
 
     function init() {
-      createStoat("badger", 920/400, 100);
-      createStoat("ferret", 920/400, 100);
-      createStoat("stoat-top-hat", 640/350, 110);
-      createStoat("stoat", 350/350, 150);
-      createStoat("weasel", 920/400, 100);
+      createStoat("badger", 920/400, 200);
+      createStoat("ferret", 920/400, 200);
+      createStoat("stoat-top-hat", 640/350, 220);
+      createStoat("stoat", 350/350, 300);
+      createStoat("weasel", 920/400, 200);
 
       animate();
     }
@@ -78,7 +78,7 @@ export const Stoating = () => {
       const context = canvas.getContext("2d");
       const image = document.getElementById(id) as HTMLImageElement;
 
-      const width = ratio * factor;
+      const width = ratio * factor * (window.innerHeight / window.innerWidth);
       const height = ratio * factor;
 
       if (context && image) {
