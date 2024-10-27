@@ -34,7 +34,7 @@ export const Stoating = () => {
       createStoat("badger", 920/400, 200);
       createStoat("ferret", 920/400, 200);
       createStoat("stoat-top-hat", 640/350, 220);
-      createStoat("stoat", 350/350, 300);
+      createStoat("stoat", 350/350, 400);
       createStoat("weasel", 920/400, 200);
 
       animate();
