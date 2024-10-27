@@ -133,36 +133,36 @@ export const Stoating = () => {
             src="/images/stoating-badger.png"
             id="badger"
             alt="badger"
-            width={10000}
-            height={10000}
+            width={300}
+            height={300}
           />
           <Image
             src="/images/stoating-ferret.png"
             id="ferret"
             alt="ferret"
-            width={10000}
-            height={10000}
+            width={300}
+            height={300}
           />
           <Image
             src="/images/stoating-stoat.png"
             id="stoat"
             alt="stoat"
-            width={10000}
-            height={10000}
+            width={300}
+            height={300}
           />
           <Image
             src="/images/stoating-stoat-top-hat.png"
             id="stoat-top-hat"
             alt="stoat-top-hat"
-            width={10000}
-            height={10000}
+            width={300}
+            height={300}
           />
           <Image
             src="/images/stoating-weasel.png"
             id="weasel"
             alt="weasel"
-            width={10000}
-            height={10000}
+            width={300}
+            height={300}
           />
         </div>
       </div>
