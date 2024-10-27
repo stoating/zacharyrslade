@@ -1,4 +1,3 @@
-import { ValueOf } from "next/dist/shared/lib/constants";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -22,8 +21,6 @@ export const Stoating = () => {
     if (!canvasRef.current) return;
 
     const stoats: Stoat[] = [];
-    const canvas = canvasRef.current;
-    const context = canvas.getContext("2d");
     const boundaryX = window.innerWidth;
     const boundaryY = window.innerHeight;
     const vOffset = 0.25;
@@ -119,30 +116,35 @@ export const Stoating = () => {
           <Image
             src="/images/stoating-weasel.png"
             id="weasel"
+            alt="weasel"
             width={10000}
             height={10000}
           />
           <Image
             src="/images/stoating-badger.png"
             id="badger"
+            alt="badger"
             width={10000}
             height={10000}
           />
           <Image
             src="/images/stoating-stoat.png"
             id="stoat"
+            alt="stoat"
             width={10000}
             height={10000}
           />
           <Image
             src="/images/stoating-stoat-top-hat.png"
             id="stoat-top-hat"
+            alt="stoat-top-hat"
             width={10000}
             height={10000}
           />
           <Image
             src="/images/stoating-ferret.png"
             id="ferret"
+            alt="ferret"
             width={10000}
             height={10000}
           />

@@ -237,7 +237,6 @@ const ResumeExperience = () => {
   const { language } = React.useContext(ContextLanguage);
 
   const experiences_data = resume.experiences;
-  const title = experiences_data.title[language as Language];
   const experiences = experiences_data.experiences;
 
   return (
@@ -267,7 +266,6 @@ const ResumeSkills = () => {
   const { language } = React.useContext(ContextLanguage);
 
   const skills_data = resume.skills;
-  const title = skills_data.title[language as Language];
   const skills = skills_data.skills;
 
   return (
