@@ -110,7 +110,7 @@ const ContactForm = () => {
           required
           rows={6}
         />
-        {/* Submit Button */}
+        {/* Submit */}
         <button
           aria-label="Submit contact form"
           className="w-max rounded-md border-2 bg-slate-900 p-2 text-white duration-300 ease-in-out hover:bg-sky-500"
