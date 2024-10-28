@@ -65,8 +65,8 @@ export const about: About = {
         de: "standort",
       },
       value: {
-        en: "Stuttagrt, Germany",
-        de: "Stuttagrt, Deutschland",
+        en: "Stuttgart, Germany",
+        de: "Stuttgart, Deutschland",
       },
       icon: <MdPinDrop />,
     },
