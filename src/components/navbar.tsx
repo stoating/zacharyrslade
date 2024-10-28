@@ -14,8 +14,8 @@ export const NavigationBar = () => {
         <NavResume />
         <NavStoating />
         <NavContact />
+        <NavLanguage />
       </div>
-      <NavLanguage />
     </div>
   );
 };
