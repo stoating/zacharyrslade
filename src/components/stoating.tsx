@@ -1,54 +1,75 @@
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export const Stoating = () => {
+interface Stoat {
+  id: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  lOffset: number;
+  rOffset: number;
+  tOffset: number;
+  bOffset: number;
+  factor: number;
+  vx: number;
+  vy: number;
+}
+
+type Axis = {
+  x: "x";
+  y: "y";
+};
+
+export const Stoating: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  interface Stoat {
-    id: string;
-    x: number;
-    y: number;
-    ratio: number;
-    factor: number;
-    vx: number;
-    vy: number;
-  }
-
-  type Axis = {
-    x: "x";
-    y: "y";
-  };
+  const stoats: Stoat[] = [];
+  const [boundaryX, setBoundaryX] = useState(0);
+  const [boundaryY, setBoundaryY] = useState(0);
+  const vOffset = 0.5;
+  const vFactor = 1.25;
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    setBoundaryX(window.innerWidth);
+    setBoundaryY(window.innerHeight);
 
-    const stoats: Stoat[] = [];
-    const boundaryX = window.innerWidth;
-    const boundaryY = window.innerHeight;
-    const vOffset = 0.25;
-    const vFactor = 1.5;
+    if (!canvasRef.current) return;
 
     init();
 
     function init() {
-      createStoat("badger", 920/400, 200);
-      createStoat("ferret", 920/400, 200);
-      createStoat("stoat-top-hat", 640/350, 220);
-      createStoat("stoat", 350/350, 400);
-      createStoat("weasel", 920/400, 200);
+      createStoat("badger"       , 920, 400, -300, -100, 0, 0, 0.50);
+      createStoat("ferret"       , 920, 400, -200, -180, 0, 0, 0.50);
+      createStoat("stoat-top-hat", 640, 350,  -50,  -60, 0, 0, 0.60);
+      createStoat("stoat"        , 350, 350,  -20,    0, 0, 0, 0.75);
+      createStoat("weasel"       , 920, 400, -200, -100, 0, 0, 0.50);
 
       animate();
     }
 
-    function createStoat(id: string, ratio: number, factor: number) {
+    function createStoat(
+      id: string,
+      width: number,
+      height: number,
+      lOffset: number,
+      rOffset: number,
+      tOffset: number,
+      bOffset: number,
+      factor: number
+    ) {
       const dirX = Math.random() < 0.5 ? -1 : 1;
       const dirY = Math.random() < 0.5 ? -1 : 1;
 
       const stoat = {
         id: id,
-        x: Math.random() * boundaryX,
-        y: Math.random() * boundaryY,
-        ratio: ratio,
+        x: 0,
+        y: 0,
+        width: width,
+        height: height,
+        lOffset: lOffset,
+        rOffset: rOffset,
+        tOffset: tOffset,
+        bOffset: bOffset,
         factor: factor,
         vx: dirX * (Math.random() * vFactor + vOffset),
         vy: dirY * (Math.random() * vFactor + vOffset),
@@ -69,17 +90,14 @@ export const Stoating = () => {
       id: string,
       x: number,
       y: number,
-      ratio: number,
-      factor: number
+      width: number,
+      height: number
     ) {
       const canvas = canvasRef.current;
       if (!canvas) return;
 
       const context = canvas.getContext("2d");
       const image = document.getElementById(id) as HTMLImageElement;
-
-      const width = ratio * factor * (window.innerHeight / window.innerWidth);
-      const height = ratio * factor;
 
       if (context && image) {
         context.drawImage(image, x, y, width, height);
@@ -90,11 +108,23 @@ export const Stoating = () => {
       stoats.forEach((stoat) => {
         stoat.x += stoat.vx;
         stoat.y += stoat.vy;
-        drawStoat(stoat.id, stoat.x, stoat.y, stoat.ratio, stoat.factor);
 
-        if (stoat.x < 0 || stoat.x > boundaryX) {
+        drawStoat(
+          stoat.id,
+          stoat.x,
+          stoat.y,
+          stoat.width * stoat.factor,
+          stoat.height * stoat.factor
+        );
+
+        const lOffset = stoat.lOffset * stoat.factor;
+        const tOffset = stoat.tOffset * stoat.factor;
+        const rOffset = (stoat.width + stoat.rOffset) * stoat.factor;
+        const bOffset = (stoat.height - stoat.bOffset) * stoat.factor;
+
+        if (stoat.x < 0 + lOffset || stoat.x > boundaryX - rOffset) {
           changeDirection(stoat, "x");
-        } else if (stoat.y < 0 || stoat.y > boundaryY) {
+        } else if (stoat.y < 0 + tOffset || stoat.y > boundaryY - bOffset) {
           changeDirection(stoat, "y");
         }
       });
@@ -107,62 +137,64 @@ export const Stoating = () => {
       const context = canvas.getContext("2d");
       if (!context) return;
 
-      context.clearRect(0, 0, 1000, 1000);
+      context.clearRect(0, 0, boundaryX, boundaryY);
       draw();
       requestAnimationFrame(animate);
     }
-  }, []);
+
+    animate();
+  }, [boundaryX, boundaryY]);
 
   return (
     <section>
       <div className="relative h-screen w-screen bg-image-sky bg-cover bg-fixed bg-center">
         <div
           id="stoating"
-          className="absolute top-0 left-0 h-32 w-full bg-gradient-to-b from-sky-300"
+          className="absolute top-0 left-0 h-64 w-full bg-gradient-to-b from-sky-300"
         ></div>
         <div className="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-t from-rose-200"></div>
         <canvas
           ref={canvasRef}
           id="container"
-          width="1000"
-          height="1000"
-          className="absolute top-0 bottom-0 left-0 right-0 m-auto h-4/6 w-5/6"
+          width={boundaryX}
+          height={boundaryY}
+          className="absolute top-0 bottom-0 left-0 right-0 h-full w-full"
         ></canvas>
         <div className="invisible">
           <Image
             src="/images/stoating-badger.png"
             id="badger"
             alt="badger"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
           <Image
             src="/images/stoating-ferret.png"
             id="ferret"
             alt="ferret"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
           <Image
             src="/images/stoating-stoat.png"
             id="stoat"
             alt="stoat"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
           <Image
             src="/images/stoating-stoat-top-hat.png"
             id="stoat-top-hat"
             alt="stoat-top-hat"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
           <Image
             src="/images/stoating-weasel.png"
             id="weasel"
             alt="weasel"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
         </div>
       </div>
