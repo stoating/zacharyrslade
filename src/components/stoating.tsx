@@ -176,36 +176,36 @@ export const Stoating: React.FC = () => {
             src="/images/stoating-badger.png"
             id="badger"
             alt="badger"
-            width={250}
-            height={250}
+            width={500}
+            height={300}
           />
           <Image
             src="/images/stoating-ferret.png"
             id="ferret"
             alt="ferret"
-            width={250}
-            height={250}
+            width={500}
+            height={300}
           />
           <Image
             src="/images/stoating-stoat.png"
             id="stoat"
             alt="stoat"
-            width={250}
-            height={250}
+            width={300}
+            height={300}
           />
           <Image
             src="/images/stoating-stoat-top-hat.png"
             id="stoat-top-hat"
             alt="stoat-top-hat"
-            width={250}
-            height={250}
+            width={400}
+            height={300}
           />
           <Image
             src="/images/stoating-weasel.png"
             id="weasel"
             alt="weasel"
-            width={250}
-            height={250}
+            width={500}
+            height={300}
           />
         </div>
       </div>
