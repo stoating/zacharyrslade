@@ -23,15 +23,14 @@ type Axis = {
 
 export const Stoating: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const stoats: Stoat[] = [];
   const [boundaryX, setBoundaryX] = useState(0);
   const [boundaryY, setBoundaryY] = useState(0);
-  const vOffset = 0.5;
-  const vFactor = 1.25;
 
   useEffect(() => {
     setBoundaryX(window.innerWidth);
     setBoundaryY(window.innerHeight);
+
+    const stoats: Stoat[] = [];
 
     if (!canvasRef.current) return;
 
@@ -57,8 +56,11 @@ export const Stoating: React.FC = () => {
       bOffset: number,
       factor: number
     ) {
+
       const dirX = Math.random() < 0.5 ? -1 : 1;
       const dirY = Math.random() < 0.5 ? -1 : 1;
+      const vOffset = 0.5;
+      const vFactor = 1.25;
 
       const stoat = {
         id: id,
