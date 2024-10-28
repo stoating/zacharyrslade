@@ -24,8 +24,8 @@ export const experiences: Experiences = {
       positions: [
         {
           title: {
-            en: "Automation Engineer - Active Safety",
-            de: "Automatisierungsingeniuer - Active Safety",
+            en: "Senior Automation Engineer - Active Safety",
+            de: "Senior Automatisierungsingeniuer - Active Safety",
           },
           location: {
             en: "Stuttgart, Germany",
