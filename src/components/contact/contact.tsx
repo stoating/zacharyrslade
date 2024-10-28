@@ -52,12 +52,37 @@ const ContactForm = () => {
   const message = contact.message[language as Language];
   const submit = contact.submit[language as Language];
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
+    };
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      alert("Email sent successfully");
+    } else {
+      alert("Error sending email");
+    }
+  };
+
   return (
     <div className="order-2 px-2 md:order-1">
       <form
         className="grid grid-cols-1 gap-2"
         method="POST"
-        action="https://formsubmit.co/zack.slade@gmail.com"
+        onSubmit={handleSubmit}
       >
         {/* Name Field */}
         <input
@@ -85,11 +110,6 @@ const ContactForm = () => {
           required
           rows={6}
         />
-        <input
-          type="hidden"
-          name="_next"
-          value="https://www.zacharyrslade.com"
-        ></input>
         {/* Submit Button */}
         <button
           aria-label="Submit contact form"
