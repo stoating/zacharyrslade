@@ -37,11 +37,11 @@ export const Stoating: React.FC = () => {
     init();
 
     function init() {
-      createStoat("badger"       , 920, 400, -300, -100, 0, 0, 0.50);
-      createStoat("ferret"       , 920, 400, -200, -180, 0, 0, 0.50);
-      createStoat("stoat-top-hat", 640, 350,  -50,  -60, 0, 0, 0.60);
-      createStoat("stoat"        , 350, 350,  -20,    0, 0, 0, 0.75);
-      createStoat("weasel"       , 920, 400, -200, -100, 0, 0, 0.50);
+      createStoat("badger", 920, 400, -300, -100, 0, 0, 0.5);
+      createStoat("ferret", 920, 400, -200, -180, 0, 0, 0.5);
+      createStoat("stoat-top-hat", 640, 350, -50, -60, 0, 0, 0.6);
+      createStoat("stoat", 350, 350, -20, 0, 0, 0, 0.75);
+      createStoat("weasel", 920, 400, -200, -100, 0, 0, 0.5);
 
       animate();
     }
@@ -56,7 +56,6 @@ export const Stoating: React.FC = () => {
       bOffset: number,
       factor: number
     ) {
-
       const dirX = Math.random() < 0.5 ? -1 : 1;
       const dirY = Math.random() < 0.5 ? -1 : 1;
       const vOffset = 0.5;
@@ -162,6 +161,16 @@ export const Stoating: React.FC = () => {
           height={boundaryY}
           className="absolute top-0 bottom-0 left-0 right-0 h-full w-full"
         ></canvas>
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+          <a
+            href="https://www.stoating.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl bg-black bg-opacity-50 p-10 text-2xl text-white hover:text-black hover:bg-white hover:bg-opacity-90 transition-all duration-300"
+          >
+            Visit my Clojure blog and workspace at stoating.com
+          </a>
+        </div>
         <div className="invisible">
           <Image
             src="/images/stoating-badger.png"

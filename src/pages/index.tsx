@@ -3,7 +3,6 @@ import { Header } from "../components/header";
 import { Hero } from "../components/hero/hero";
 import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
-import { Profiles } from "../components/profiles";
 import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact/contact";
 import { Footer } from "../components/footer";
@@ -21,7 +20,6 @@ const App: NextPage = () => {
         <Hero />
         <About />
         <Resume />
-        <Profiles />
         <Stoating />
         <Contact />
         <Footer />

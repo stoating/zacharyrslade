@@ -12,7 +12,6 @@ export const NavigationBar = () => {
         <NavHome />
         <NavAbout />
         <NavResume />
-        <NavProfiles />
         <NavStoating />
         <NavContact />
       </div>
@@ -78,23 +77,6 @@ const NavResume = () => {
         onClick={(e) => smoothScroll(e, "#resume")}
       >
         {resume}
-      </a>
-    </Link>
-  );
-};
-
-const NavProfiles = () => {
-  const { language } = React.useContext(ContextLanguage);
-
-  const profiles = navbar.profiles[language as Language];
-
-  return (
-    <Link href="/#profiles">
-      <a
-        className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
-        onClick={(e) => smoothScroll(e, "#profiles")}
-      >
-        {profiles}
       </a>
     </Link>
   );
