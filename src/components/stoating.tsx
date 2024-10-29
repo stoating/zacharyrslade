@@ -147,7 +147,7 @@ export const Stoating: React.FC = () => {
   }, [boundaryX, boundaryY]);
 
   return (
-    <section>
+    (<section>
       <div className="relative h-screen w-screen bg-image-sky bg-cover bg-fixed bg-center">
         <div
           id="stoating"
@@ -178,37 +178,52 @@ export const Stoating: React.FC = () => {
             alt="badger"
             width={500}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <Image
             src="/images/stoating-ferret.png"
             id="ferret"
             alt="ferret"
             width={500}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <Image
             src="/images/stoating-stoat.png"
             id="stoat"
             alt="stoat"
             width={300}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <Image
             src="/images/stoating-stoat-top-hat.png"
             id="stoat-top-hat"
             alt="stoat-top-hat"
             width={400}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <Image
             src="/images/stoating-weasel.png"
             id="weasel"
             alt="weasel"
             width={500}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
       </div>
-    </section>
+    </section>)
   );
 };

@@ -59,7 +59,7 @@ const HeroSection = () => {
             id={"menu-item-div-" + index}
             className="group inline-block opacity-70 hover:opacity-100"
           >
-            <Link href={item.ref}>
+            <Link legacyBehavior href={item.ref}>
               <a
                 id={"menu-item-" + index}
                 className="m-1 inline-block p-1 text-5xl text-black opacity-100 transition-all duration-300 ease-linear group-hover:text-white group-hover:opacity-100"
@@ -97,9 +97,11 @@ const HeroProfileImage = () => {
       src="/images/zack-look-right-color-02.webp"
       alt="Imma look right"
       className="rounded-full opacity-100"
-      layout="fill"
-      objectFit="cover"
-    />
+      fill
+      sizes="100vw"
+      style={{
+        objectFit: "cover"
+      }} />
   );
   const blob = (
     <svg

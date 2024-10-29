@@ -24,30 +24,35 @@ export const Footer = () => {
 
 const FooterLeftImage = () => {
   return (
-    <div className="relative order-1 col-span-1 hidden h-40 w-40 overflow-hidden rounded-full shadow-2xl shadow-black md:block">
+    (<div className="relative order-1 col-span-1 hidden h-40 w-40 overflow-hidden rounded-full shadow-2xl shadow-black md:block">
       <Image
         src="/images/zack-look-down-bw-02.webp"
         alt="Imma looking down"
         className="rounded-full opacity-60"
-        layout="fill"
-        objectFit="cover"
-      />
-    </div>
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover"
+        }} />
+    </div>)
   );
 };
 
 const FooterMiddleImage = () => {
   return (
-    <div className="order-2 col-span-4 sm:col-span-6 md:col-span-4">
+    (<div className="order-2 col-span-4 sm:col-span-6 md:col-span-4">
       <Image
         src="/images/signature-white-black-fade-01.webp"
         alt="Signature"
         className="w-full max-w-full opacity-70 md:max-w-none"
-        layout="responsive"
         width={500}
         height={200}
-      />
-    </div>
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto"
+        }} />
+    </div>)
   );
 };
 

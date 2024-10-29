@@ -49,15 +49,18 @@ export const Resume = () => {
 
 const ResumeProfileImage = () => {
   return (
-    <div className="rounded-tl-xl p-4 pt-10">
+    (<div className="rounded-tl-xl p-4 pt-10">
       <Image
         src="/images/zack-resume-profile.webp"
         className="rounded-full"
         alt="Berlin"
         width={300}
         height={300}
-      />
-    </div>
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
+    </div>)
   );
 };
 
@@ -84,7 +87,7 @@ const ResumeContacts = () => {
           {phone_text}: {phone_number}
         </span>
       </div>
-      <Link href={`mailto:${email}`}>
+      <Link legacyBehavior href={`mailto:${email}`}>
         <a className="flex items-center p-2 text-xl text-slate-400 transition duration-200 ease-in-out hover:rounded-md hover:bg-slate-900 hover:text-white">
           <FaEnvelope />
           <span className="ml-2 text-lg text-white">{email}</span>
@@ -103,7 +106,7 @@ const ResumeLinks = () => {
     <div className="p-2">
       <h3 className="p-2 text-xl font-bold">Links</h3>
       {resume_links.map((item, index) => (
-        <Link href={item.ref} key={index}>
+        <Link legacyBehavior href={item.ref} key={index}>
           <a
             className="flex items-center p-2 text-2xl text-slate-400 transition duration-200 ease-in-out hover:rounded-md hover:bg-slate-900 hover:text-white"
             target="_blank"

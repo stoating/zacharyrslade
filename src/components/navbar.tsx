@@ -37,7 +37,7 @@ const NavHome = () => {
   const home = navbar.home[language as Language];
 
   return (
-    <Link href="/#hero">
+    <Link legacyBehavior href="/#hero">
       <a
         className="invisible w-0 hover:text-sky-300 hover:transition-colors hover:duration-300 md:visible md:w-auto md:px-2 md:pb-1"
         onClick={(e) => smoothScroll(e, "#hero")}
@@ -54,7 +54,7 @@ const NavAbout = () => {
   const about = navbar.about[language as Language];
 
   return (
-    <Link href="/#about">
+    <Link legacyBehavior href="/#about">
       <a
         className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#about")}
@@ -71,7 +71,7 @@ const NavResume = () => {
   const resume = navbar.resume[language as Language];
 
   return (
-    <Link href="/#resume">
+    <Link legacyBehavior href="/#resume">
       <a
         className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#resume")}
@@ -88,7 +88,7 @@ const NavStoating = () => {
   const stoating = navbar.stoating[language as Language];
 
   return (
-    <Link href="/#stoating">
+    <Link legacyBehavior href="/#stoating">
       <a
         className="px-2 pb-1 hover:text-sky-300 hover:transition-colors hover:duration-300"
         onClick={(e) => smoothScroll(e, "#stoating")}
@@ -105,7 +105,7 @@ const NavContact = () => {
   const contact = navbar.contact[language as Language];
 
   return (
-    <Link href="/#contact">
+    <Link legacyBehavior href="/#contact">
       <a
         className="invisible w-0 hover:text-sky-300 hover:transition-colors hover:duration-300 md:visible md:w-auto md:px-2 md:pb-1"
         onClick={(e) => smoothScroll(e, "#contact")}
