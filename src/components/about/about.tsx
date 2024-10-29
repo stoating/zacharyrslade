@@ -4,7 +4,7 @@ import { ContextLanguage } from "../../context/language";
 import { Language } from "../../data/_types";
 import { about } from "../../data/about";
 
-import * as svg from "./svgs";
+import { svg } from "./svgs";
 
 export const About = () => {
   return (
