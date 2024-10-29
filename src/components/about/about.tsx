@@ -21,6 +21,15 @@ export const About = () => {
 };
 
 const AboutIcon = () => {
+
+  const ap_1 = typeof svg.arrow_1 === 'string' ? svg.arrow_1 : '';
+  const ap_2 = typeof svg.arrow_2 === 'string' ? svg.arrow_2 : '';
+  const ap_3 = typeof svg.arrow_3 === 'string' ? svg.arrow_3 : '';
+  const gp = typeof svg.gear === 'string' ? svg.gear : '';
+  const cp_1 = typeof svg.code_1 === 'string' ? svg.code_1 : '';
+  const cp_2 = typeof svg.code_2 === 'string' ? svg.code_2 : '';
+  const cp_3 = typeof svg.code_3 === 'string' ? svg.code_3 : '';
+
   const arrow_svg = (
     <svg
       version="1.0"
@@ -34,9 +43,9 @@ const AboutIcon = () => {
         fill="#373c4d"
         stroke="none"
       >
-        <path d={svg.arrow_1} />
-        <path d={svg.arrow_2} />
-        <path d={svg.arrow_3} />
+        <path d={ap_1} />
+        <path d={ap_2} />
+        <path d={ap_3} />
       </g>
     </svg>
   );
@@ -53,7 +62,7 @@ const AboutIcon = () => {
         fill="#8e909a"
         stroke="none"
       >
-        <path d={svg.gear} />
+        <path d={gp} />
       </g>
     </svg>
   );
@@ -70,9 +79,9 @@ const AboutIcon = () => {
         fill="#bebfc4"
         stroke="none"
       >
-        <path d={svg.code_1} />
-        <path d={svg.code_2} />
-        <path d={svg.code_3} />
+        <path d={cp_1} />
+        <path d={cp_2} />
+        <path d={cp_3} />
       </g>
     </svg>
   );
@@ -119,55 +128,69 @@ const AboutText = () => {
 };
 
 const AboutTransitionBottom = () => {
+
+  const w11 = typeof svg.wave_1_1 === 'string' ? svg.wave_1_1 : '';
+  const w12 = typeof svg.wave_1_2 === 'string' ? svg.wave_1_2 : '';
+  const w21 = typeof svg.wave_2_1 === 'string' ? svg.wave_2_1 : '';
+  const w22 = typeof svg.wave_2_2 === 'string' ? svg.wave_2_2 : '';
+  const w31 = typeof svg.wave_3_1 === 'string' ? svg.wave_3_1 : '';
+  const w32 = typeof svg.wave_3_2 === 'string' ? svg.wave_3_2 : '';
+  const w41 = typeof svg.wave_4_1 === 'string' ? svg.wave_4_1 : '';
+  const w42 = typeof svg.wave_4_2 === 'string' ? svg.wave_4_2 : '';
+  const w51 = typeof svg.wave_5_1 === 'string' ? svg.wave_5_1 : '';
+  const w52 = typeof svg.wave_5_2 === 'string' ? svg.wave_5_2 : '';
+  const w61 = typeof svg.wave_6_1 === 'string' ? svg.wave_6_1 : '';
+  const w62 = typeof svg.wave_6_2 === 'string' ? svg.wave_6_2 : '';
+
   return (
     <div className="w-screen bg-white bg-cover bg-center bg-no-repeat">
       <svg viewBox="0 0 900 200" width="100%" height="100%" version="1.1">
-        <path d={svg.wave_1_1} fill="#ffffff">
+        <path d={w11} fill="#ffffff">
           <animate
             attributeName="d"
             dur="10000ms"
             repeatCount="indefinite"
-            values={svg.wave_1_1 + ";" + svg.wave_1_2 + ";" + svg.wave_1_1}
+            values={w11 + ";" + w12 + ";" + w11}
           ></animate>
         </path>
-        <path d={svg.wave_2_1} fill="#bebfc4">
+        <path d={w21} fill="#bebfc4">
           <animate
             attributeName="d"
             dur="9000ms"
             repeatCount="indefinite"
-            values={svg.wave_2_1 + ";" + svg.wave_2_2 + ";" + svg.wave_2_1}
+            values={w21 + ";" + w22 + ";" + w21}
           ></animate>
         </path>
-        <path d={svg.wave_3_1} fill="#8e909a">
+        <path d={w31} fill="#8e909a">
           <animate
             attributeName="d"
             dur="8000ms"
             repeatCount="indefinite"
-            values={svg.wave_3_1 + ";" + svg.wave_3_2 + ";" + svg.wave_3_1}
+            values={w31 + ";" + w32 + ";" + w31}
           ></animate>
         </path>
-        <path d={svg.wave_4_1} fill="#616472">
+        <path d={w41} fill="#616472">
           <animate
             attributeName="d"
             dur="7000ms"
             repeatCount="indefinite"
-            values={svg.wave_4_1 + ";" + svg.wave_4_2 + ";" + svg.wave_4_1}
+            values={w41 + ";" + w42 + ";" + w41}
           ></animate>
         </path>
-        <path d={svg.wave_5_1} fill="#373c4d">
+        <path d={w51} fill="#373c4d">
           <animate
             attributeName="d"
             dur="6000ms"
             repeatCount="indefinite"
-            values={svg.wave_5_1 + ";" + svg.wave_5_2 + ";" + svg.wave_5_1}
+            values={w51 + ";" + w52 + ";" + w51}
           ></animate>
         </path>
-        <path d={svg.wave_6_1} fill="#0f172a">
+        <path d={w61} fill="#0f172a">
           <animate
             attributeName="d"
             dur="6000ms"
             repeatCount="indefinite"
-            values={svg.wave_6_1 + ";" + svg.wave_6_2 + ";" + svg.wave_6_1}
+            values={w61 + ";" + w62 + ";" + w61}
           ></animate>
         </path>
       </svg>
