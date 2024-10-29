@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Header } from "../components/header";
 import { Hero } from "../components/hero/hero";
-import { About } from "../components/about/about";
+//import { About } from "../components/about/about";
 import { Resume } from "../components/resume/resume";
 import { Stoating } from "../components/stoating";
 import { Contact } from "../components/contact/contact";
