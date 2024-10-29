@@ -18,7 +18,6 @@ const App: NextPage = () => {
         <Header />
         <NavigationBar />
         <Hero />
-        <About />
         <Resume />
         <Stoating />
         <Contact />
