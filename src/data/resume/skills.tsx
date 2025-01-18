@@ -39,10 +39,10 @@ export const skills: Skills = {
         },
         {
           name: {
-            en: "Microsoft Project",
-            de: "Microsoft Project",
+            en: "Bitbucket",
+            de: "Bitbucket",
           },
-          rank: 2,
+          rank: 4,
         },
       ],
     },
@@ -54,22 +54,22 @@ export const skills: Skills = {
       examples: [
         {
           name: {
-            en: "Git",
-            de: "Git",
+            en: "SCM - IBM Rational Team Concert",
+            de: "SCM - IBM Rational Team Concert",
           },
           rank: 5,
         },
         {
           name: {
-            en: "Agile",
-            de: "Agil",
+            en: "SCM - Git",
+            de: "SCM - Git",
           },
           rank: 3,
         },
         {
           name: {
-            en: "DOORS",
-            de: "DOORS",
+            en: "Method - Agile",
+            de: "Method - Agile",
           },
           rank: 4,
         },
@@ -83,22 +83,22 @@ export const skills: Skills = {
       examples: [
         {
           name: {
-            en: "C",
-            de: "C",
+            en: "Python",
+            de: "Python",
           },
-          rank: 5,
+          rank: 4,
         },
         {
           name: {
-            en: "Python",
-            de: "Python",
+            en: "C",
+            de: "C",
           },
           rank: 3,
         },
         {
           name: {
-            en: "JavaScript",
-            de: "JavaScript",
+            en: "Clojure",
+            de: "Clojure",
           },
           rank: 2,
         },
